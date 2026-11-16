@@ -34,7 +34,7 @@ nav.dock { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17, 3
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
 .card.link { display: block; transition: transform 0.2s; }
 .card.link:active { transform: scale(0.98); }
-.btn { display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--bg); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; width: 100%; }
+.btn { display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--bg); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; }
 .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; background: rgba(212, 175, 55, 0.15); color: var(--gold); border: 1px solid rgba(212, 175, 55, 0.3); }
 .hero { text-align: center; padding: 30px 0; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
 .hero h1 { font-size: 36px; color: var(--gold-light); margin-bottom: 12px; line-height: 1.1; }
@@ -53,12 +53,12 @@ nav.dock { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17, 3
 .legal-text { font-family: var(--serif); font-size: 16px; line-height: 1.7; color: #ccd6f6; }
 .search-bar { width: 100%; padding: 12px 16px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 15px; margin-bottom: 20px; }
 
-/* Botones de Audio Dual */
-.audio-group { display: flex; gap: 8px; margin-top: 12px; }
-.btn-kokoro { flex: 1; background: rgba(212, 175, 55, 0.1); color: var(--gold); border: 1px solid rgba(212, 175, 55, 0.3); padding: 10px; border-radius: 8px; font-size: 12px; font-weight: 600; text-align: center; }
-.btn-kokoro:active { background: rgba(212, 175, 55, 0.2); }
-.btn-ttsmaker { flex: 1; background: rgba(100, 255, 218, 0.1); color: var(--teal); border: 1px solid rgba(100, 255, 218, 0.3); padding: 10px; border-radius: 8px; font-size: 12px; font-weight: 600; text-align: center; }
-.btn-ttsmaker:active { background: rgba(100, 255, 218, 0.2); }
+/* Botones de Audio Híbridos */
+.audio-controls { display: flex; gap: 8px; margin-top: 12px; }
+.say { display: flex; flex: 1; align-items: center; justify-content: center; gap: 6px; background: rgba(212, 175, 55, 0.1); color: var(--gold); padding: 10px 8px; border-radius: 8px; font-size: 12px; font-weight: 600; transition: background 0.2s; }
+.say:active { background: rgba(212, 175, 55, 0.2); }
+.say.tts { background: rgba(100, 255, 218, 0.1); color: var(--teal); }
+.say.tts:active { background: rgba(100, 255, 218, 0.2); }
 </style>
 </head>
 <body>
@@ -79,7 +79,7 @@ nav.dock { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17, 3
 
 <script>
 // ==========================================
-// CONTENIDO EXHAUSTIVO DEL CURSO (16 MÓDULOS)
+// CONTENIDO EXHAUSTIVO (16 MÓDULOS)
 // ==========================================
 const DATA = {
   modules: [
@@ -243,10 +243,11 @@ function markCompleted(id) {
 }
 
 // ==========================================
-// MOTOR DE AUDIO: KOKORO (LOCAL) + TTSMAKER (WEB)
+// VOICE LAB: KOKORO (IA LOCAL) & TTSMAKER (IA NUBE)
 // ==========================================
 let ttsModel = null;
 
+// 1. Función Kokoro (Descarga el modelo de 80MB)
 window.speakKokoro = async function(text, btnElement) {
   const originalText = btnElement.innerHTML;
   
@@ -255,16 +256,18 @@ window.speakKokoro = async function(text, btnElement) {
       btnElement.innerHTML = "🔊...";
       const audio = await ttsModel.generate(text, { voice: "af_bella" });
       const blob = new Blob([audio.toWav()], { type: "audio/wav" });
-      new Audio(URL.createObjectURL(blob)).play();
-      btnElement.innerHTML = originalText;
+      const url = URL.createObjectURL(blob);
+      const player = new Audio(url);
+      player.play();
+      player.onended = () => { btnElement.innerHTML = originalText; };
     } catch (e) {
       btnElement.innerHTML = originalText;
-      alert("Error al reproducir Kokoro.");
+      alert("Error al reproducir.");
     }
     return;
   }
 
-  btnElement.innerHTML = "⏳ Cargando...";
+  btnElement.innerHTML = "⏳ Descargando...";
   btnElement.style.opacity = "0.7";
   
   try {
@@ -272,23 +275,32 @@ window.speakKokoro = async function(text, btnElement) {
     ttsModel = await module.KokoroTTS.from_pretrained("onnx-community/Kokoro-82M-v1.0-ONNX", { dtype: "q8" });
     btnElement.innerHTML = originalText;
     btnElement.style.opacity = "1";
-    window.speakKokoro(text, btnElement); // Reproducir al cargar
+    window.speakKokoro(text, btnElement); // Reproducir al terminar
   } catch (e) {
-    console.error("Fallo Kokoro:", e);
-    btnElement.innerHTML = "⚠️ Usar TTSMaker";
+    btnElement.innerHTML = originalText;
     btnElement.style.opacity = "1";
-    alert("No se pudo descargar Kokoro (80MB). Usa el botón verde de TTSMaker que está al lado.");
-    setTimeout(() => { btnElement.innerHTML = originalText; }, 3000);
+    alert("No se pudo descargar Kokoro (80MB). Puede ser por falta de memoria o mala señal. Usa el botón 'TTSMaker' al lado.");
   }
 };
 
-window.openTTSMaker = function(text) {
-  navigator.clipboard.writeText(text).then(() => {
-    alert("Texto copiado. Se abrirá TTSMaker para que generes tu MP3 gratis.");
-    window.open("https://ttsmaker.com/", "_blank");
-  }).catch(() => {
-    alert("No se pudo copiar el texto.");
-  });
+// 2. Función TTSMaker (Copia y comparte de forma nativa)
+window.shareTTSMaker = async function(text) {
+  try {
+    if (navigator.share) {
+      await navigator.share({
+        title: 'Pronunciación Legal English',
+        text: text,
+      });
+      // Después de compartir, abrimos TTSMaker
+      setTimeout(() => window.open("https://ttsmaker.com/", "_blank"), 500);
+    } else {
+      await navigator.clipboard.writeText(text);
+      alert("Texto copiado al portapapeles. Se abrirá TTSMaker para que pegues el texto y generes el MP3 con IA.");
+      window.open("https://ttsmaker.com/", "_blank");
+    }
+  } catch (err) {
+    console.warn("Error compartiendo:", err);
+  }
 };
 
 // ==========================================
@@ -338,9 +350,9 @@ function router() {
         <div class="card">
           <h4 style="color:var(--gold-light);margin-bottom:12px;">${l.t}</h4>
           <div class="legal-text">${l.body}</div>
-          <div class="audio-group">
-            <button class="btn-kokoro" onclick="speakKokoro('${l.t}', this)">🟡 IA Local</button>
-            <button class="btn-ttsmaker" onclick="openTTSMaker('${l.t}')">🟢 TTSMaker Web</button>
+          <div class="audio-controls">
+            <button class="say" onclick="speakKokoro('${l.t}', this)">🎙️ Kokoro IA</button>
+            <button class="say tts" onclick="shareTTSMaker('${l.t}')">☁️ TTSMaker</button>
           </div>
         </div>
       `).join('')}
@@ -363,25 +375,25 @@ function router() {
       <div class="hero">
         <span class="eyebrow">Voice Lab</span>
         <h2>Pronunciación IA</h2>
-        <p>Elige tu motor de voz preferido.</p>
+        <p>Elige entre IA Local (Rápida) o IA en la Nube (Máxima Calidad).</p>
       </div>
       
-      <div class="card" style="background:var(--bg2);border-color:var(--border);">
-        <h4 style="color:var(--gold-light);margin-bottom:12px;">Prueba ambos motores</h4>
-        <div class="audio-group">
-          <button class="btn-kokoro" style="padding:16px;" onclick="speakKokoro('Welcome to the Legal English Voice Lab.', this)">🟡 Probar Kokoro (IA Local)</button>
-          <button class="btn-ttsmaker" style="padding:16px;" onclick="openTTSMaker('Welcome to the Legal English Voice Lab.')">🟢 Probar TTSMaker (Web)</button>
+      <div class="card" style="background:var(--bg2);border-color:var(--teal);">
+        <h4 style="color:var(--teal);margin-bottom:8px;">Prueba de Audio</h4>
+        <div class="audio-controls">
+          <button class="say" onclick="speakKokoro('Welcome to the Legal English Voice Lab.', this)">🎙️ Kokoro IA</button>
+          <button class="say tts" onclick="shareTTSMaker('Welcome to the Legal English Voice Lab.')">☁️ TTSMaker</button>
         </div>
-        <p style="font-size:12px;color:var(--mute);margin-top:12px;">Kokoro descarga 80MB. TTSMaker abre la web oficial.</p>
+        <p style="font-size:12px;color:var(--mute);margin-top:12px;"><b>Kokoro:</b> Descarga 80MB la primera vez.<br><b>TTSMaker:</b> Copia el texto y abre la web para generar MP3.</p>
       </div>
       
       <h4 style="margin:20px 0 10px;">Términos Clave</h4>
       ${['Consideration', 'Indemnification', 'Stare Decisis', 'Fiduciary Duty', 'Estoppel', 'Specific Performance'].map(word => `
         <div class="card" style="padding:16px;">
-          <h4 style="color:var(--gold-light);margin:0 0 8px 0;">${word}</h4>
-          <div class="audio-group">
-            <button class="btn-kokoro" onclick="speakKokoro('${word}', this)">🟡 IA Local</button>
-            <button class="btn-ttsmaker" onclick="openTTSMaker('${word}')">🟢 TTSMaker</button>
+          <h4 style="color:var(--gold-light);margin:0;">${word}</h4>
+          <div class="audio-controls">
+            <button class="say" onclick="speakKokoro('${word}', this)">🎙️ Kokoro IA</button>
+            <button class="say tts" onclick="shareTTSMaker('${word}')">☁️ TTSMaker</button>
           </div>
         </div>
       `).join('')}
