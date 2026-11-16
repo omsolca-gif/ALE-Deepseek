@@ -3,948 +3,280 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b1522">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Legal EN">
-<meta name="description" content="Curso superior de American Legal English. 16 módulos, 8 voces IA, offline.">
-<link rel="manifest" href='data:application/manifest+json,{"name":"Legal English Voice Lab Pro","short_name":"Legal EN","start_url":"./","display":"standalone","background_color":"%230b1522","theme_color":"%230b1522","icons":[{"src":"data:image/svg%2Bxml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 512 512%27%3E%3Crect width=%27512%27 height=%27512%27 fill=%27%230b1522%27/%3E%3Ctext x=%27256%27 y=%27340%27 font-size=%27280%27 font-family=%27Georgia%27 fill=%27%23af915f%27 text-anchor=%27middle%27%3E%C2%A7%3C/text%3E%3C/svg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"any"}]}'>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b1522'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Georgia' fill='%23af915f' text-anchor='middle'%3E%C2%A7%3C/text%3E%3C/svg%3E">
-<title>Legal English · Voice Lab Pro</title>
+<meta name="theme-color" content="#0A192F">
+<title>Legal English · Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b1522;--bg2:#101e30;--card:#12233a;--card2:#16293f;--line:#22384f;--line2:#2d4763;--gold:#af915f;--gold2:#e2c98a;--cream:#fce1b6;--text:#f3f5f8;--mute:#9db0c4;--dim:#6d8299;--ok:#54b78e;--bad:#e07070;--serif:Georgia,serif;--sans:-apple-system,"Segoe UI",Roboto,system-ui,sans-serif}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--sans);min-height:100dvh}
-body{background:radial-gradient(1200px 500px at 80% -10%,rgba(175,145,95,.07),transparent 60%),radial-gradient(900px 400px at -10% 20%,rgba(45,90,140,.10),transparent 55%),var(--bg)}
-.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:calc(env(safe-area-inset-top) + 12px) 16px 12px;background:rgba(11,21,34,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top h1{flex:1;margin:0;font:400 19px/1.2 var(--serif);letter-spacing:.04em;color:var(--gold2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.icon-btn{background:none;border:0;color:var(--gold);font-size:30px;line-height:1;padding:0 6px;cursor:pointer}
-.pill{background:none;border:1px solid var(--gold);color:var(--gold2);border-radius:99px;padding:7px 16px;font-weight:600;font-size:13px;cursor:pointer}
-.pill:hover{background:var(--gold);color:var(--bg)}
-main{padding:20px 16px calc(104px + env(safe-area-inset-bottom));max-width:720px;margin:0 auto}
-.skip{position:absolute;left:-999px;top:8px;background:var(--gold2);color:#0b1522;padding:8px 14px;border-radius:8px;z-index:50}
-.skip:focus{left:8px}
-.dock{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:center;background:rgba(9,17,28,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:20}
-.dock a{flex:1;max-width:130px;text-align:center;color:var(--mute);text-decoration:none;font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:9px 2px 8px}
-.dock a svg{display:block;width:22px;height:22px;margin:0 auto 3px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.dock a.on{color:var(--gold2)}
-h2,h3{font-family:var(--serif);font-weight:400}
-h2{font-size:24px;line-height:1.25;margin:4px 0 10px}
-h3{margin:0 0 4px;font-size:17.5px}
-.eyebrow{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.mute{color:var(--mute);font-size:14px}
-.dim{color:var(--dim);font-size:12.5px}
-.legal{font-family:var(--serif);font-size:16.5px;line-height:1.6}
-q{color:var(--cream);font-style:italic}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:12px}
-a.card{display:block;color:inherit;text-decoration:none}
-.hero{background:linear-gradient(165deg,#1a3050,#0e1e33 55%,#0b1522);border:1px solid var(--line2);border-radius:20px;padding:26px 22px;margin-bottom:14px;position:relative;overflow:hidden}
-.hero::after{content:"§";position:absolute;right:6px;bottom:-46px;font:400 170px var(--serif);color:rgba(175,145,95,.09);pointer-events:none}
-.hero h2{font-size:27px;margin:6px 0 10px}
-.bar{height:6px;background:#0a1726;border-radius:9px;overflow:hidden;margin-top:12px}
-.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:9px}
-.ring{width:88px;height:88px;flex:none}
-.ring circle{fill:none;stroke-width:7;stroke-linecap:round}
-.ring .bgc{stroke:#1c3249}.ring .fgc{stroke:var(--gold2)}
-.ring text{fill:var(--cream);font:600 19px var(--sans)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center}
-.stat b{display:block;font:400 24px var(--serif);color:var(--cream)}
-.stat span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
-.btn{display:block;width:100%;background:var(--gold);color:#0b1522;border:0;border-radius:12px;padding:14px;font-weight:700;font-size:15.5px;margin-top:12px;cursor:pointer;text-align:center;text-decoration:none}
-.btn.ghost{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
-.btnrow{display:flex;gap:10px}.btnrow .btn{margin-top:12px}
-.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.tag{font-size:11px;border:1px solid var(--line2);border-radius:99px;padding:3px 10px;color:var(--mute);white-space:nowrap}
-.done{color:var(--ok);font-weight:700}
-.opt{display:block;width:100%;text-align:left;background:var(--bg2);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:14px 14px 14px 44px;margin:8px 0;font-size:15px;cursor:pointer;position:relative}
-.opt::before{content:attr(data-l);position:absolute;left:12px;top:50%;transform:translateY(-50%);width:22px;height:22px;border:1px solid var(--line2);border-radius:7px;display:grid;place-items:center;font:600 11px var(--sans);color:var(--mute)}
-.opt.ok{border-color:var(--ok);background:rgba(84,183,142,.12)}
-.opt.bad{border-color:var(--bad);background:rgba(224,112,112,.1)}
-.tip{background:rgba(84,183,142,.08);border:1px solid rgba(84,183,142,.25);padding:12px 14px;border-radius:10px;font-size:14px;margin-top:12px}
-.say{background:none;border:1px solid var(--line2);color:var(--gold2);border-radius:99px;padding:5px 12px;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-top:6px}
-.say svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-#toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:#1b3050;border:1px solid var(--gold);color:var(--cream);padding:11px 20px;border-radius:99px;font-size:13.5px;font-weight:600;opacity:0;pointer-events:none;transition:all .3s ease;z-index:50;max-width:88vw;text-align:center}
-#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.listlink{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:10px}
-.listlink .num{font:400 20px var(--serif);color:var(--gold);width:30px;text-align:center;flex:none}
-.listlink .grow{flex:1;min-width:0}
-.listlink .arr{color:var(--dim);font-size:18px}
-.seg{display:flex;background:#081320;border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:14px;gap:4px}
-.seg button{flex:1;background:none;border:0;color:var(--mute);padding:9px 4px;border-radius:9px;font-weight:600;font-size:12.5px;cursor:pointer}
-.seg button.on{background:var(--gold);color:var(--bg)}
-.flip{perspective:1200px;height:280px;margin-bottom:12px;cursor:pointer}
-.flip .in{position:relative;height:100%;transition:transform .55s;transform-style:preserve-3d}
-.flip.on .in{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px;border-radius:20px;background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line2)}
-.face.back{transform:rotateY(180deg)}
-.face .big{font:400 36px var(--serif);color:var(--cream)}
-.gitem{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
-.gitem h4{margin:0;font:400 17px var(--serif);color:var(--cream);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.gitem .cat{font-size:10px;color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:1px 8px}
-.gitem p{margin:6px 0 0;font-size:13.5px;color:var(--mute)}
-.gitem .es{color:var(--gold2);font-weight:600}
-@media(min-width:680px){.hero h2{font-size:32px}main{padding-top:28px}}
+:root {
+  --bg: #0A192F; --bg2: #112240; --card: #172A45; --card-hover: #1E3557;
+  --gold: #D4AF37; --gold-light: #F4E4BC; --teal: #64FFDA;
+  --text: #E6F1FF; --mute: #8892B0; --border: #233554;
+  --serif: 'Playfair Display', Georgia, serif; --sans: 'Inter', -apple-system, sans-serif;
+  --ok: #4ADE80; --bad: #F87171;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 var(--sans); min-height: 100vh; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
+p { margin: 0 0 12px 0; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+.hidden { display: none !important; }
+
+header { position: sticky; top: 0; z-index: 50; background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: var(--serif); font-size: 20px; color: var(--gold); letter-spacing: 0.5px; }
+main { padding: 24px 20px 100px; max-width: 800px; margin: 0 auto; }
+nav.dock { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17, 34, 64, 0.98); border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); z-index: 50; }
+.dock a { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: var(--mute); transition: color 0.2s; }
+.dock a.active { color: var(--gold); }
+.dock svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; display: block; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+.card.link { display: block; transition: transform 0.2s; }
+.card.link:active { transform: scale(0.98); }
+.btn { display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--bg); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; }
+.badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; background: rgba(212, 175, 55, 0.15); color: var(--gold); border: 1px solid rgba(212, 175, 55, 0.3); }
+.hero { text-align: center; padding: 30px 0; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+.hero h1 { font-size: 36px; color: var(--gold-light); margin-bottom: 12px; line-height: 1.1; }
+.hero p { color: var(--mute); font-size: 15px; max-width: 500px; margin: 0 auto 20px; }
+.list-item { display: flex; align-items: center; padding: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; }
+.list-item .num { font-family: var(--serif); font-size: 20px; color: var(--mute); width: 40px; }
+.list-item .content { flex: 1; }
+.list-item h4 { font-size: 16px; margin-bottom: 4px; color: var(--text); }
+.list-item p { font-size: 13px; color: var(--mute); margin: 0; }
+.list-item .arrow { color: var(--gold); font-size: 20px; }
+.opt { display: block; width: 100%; text-align: left; background: var(--bg2); border: 1px solid var(--border); padding: 16px; border-radius: 8px; margin-bottom: 10px; color: var(--text); }
+.opt.correct { background: rgba(74, 222, 128, 0.1); border-color: var(--ok); }
+.opt.wrong { background: rgba(248, 113, 113, 0.1); border-color: var(--bad); }
+.opt:disabled { cursor: default; }
+.flip-card { perspective: 1000px; height: 220px; margin-bottom: 16px; cursor: pointer; }
+.flip-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+.flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; border-radius: 12px; background: var(--card); border: 1px solid var(--border); }
+.flip-back { transform: rotateY(180deg); background: var(--bg2); border-color: var(--gold); }
+.tip { background: rgba(100, 255, 218, 0.05); border-left: 3px solid var(--teal); padding: 16px; border-radius: 0 8px 8px 0; font-size: 14px; margin: 16px 0; }
+.legal-text { font-family: var(--serif); font-size: 16px; line-height: 1.7; color: #ccd6f6; }
+.say { display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(212, 175, 55, 0.1); color: var(--gold); padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; width: 100%; margin-top: 10px; }
+.say:active { background: rgba(212, 175, 55, 0.2); }
+.search-bar { width: 100%; padding: 12px 16px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 15px; margin-bottom: 20px; }
 </style>
 </head>
 <body>
-<a class="skip" href="#view">Saltar al contenido</a>
-<header class="top">
-  <button id="back" class="icon-btn" aria-label="Volver" hidden>‹</button>
-  <h1 id="title">Legal English · Voice Lab</h1>
-  <button id="install" class="pill" hidden>Instalar</button>
+
+<header>
+  <div class="logo">Legal English · Pro</div>
+  <div style="color:var(--gold);font-weight:600;font-size:14px" id="xp-display">0 XP</div>
 </header>
-<main id="view" tabindex="-1"></main>
-<div id="toast" role="status" aria-live="polite"></div>
-<nav class="dock" aria-label="Navegación principal">
-  <a href="#/" data-tab="home"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>Inicio</a>
-  <a href="#/modules" data-tab="modules"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7l7-4 7 4"/><path d="M5 7 2.5 13a3.5 3.5 0 0 0 5 0L5 7z"/><path d="M19 7l-2.5 6a3.5 3.5 0 0 0 5 0L19 7z"/><path d="M8 21h8"/></svg>Módulos</a>
-  <a href="#/lab" data-tab="lab"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>Voice Lab</a>
-  <a href="#/practice" data-tab="practice"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg>Práctica</a>
-  <a href="#/profile" data-tab="profile"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.5"/><path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5"/></svg>Perfil</a>
+
+<main id="app"></main>
+
+<nav class="dock">
+  <a href="#/" id="nav-home" class="active"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio</a>
+  <a href="#/modules" id="nav-modules"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Módulos</a>
+  <a href="#/lab" id="nav-lab"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>Voice Lab</a>
+  <a href="#/practice" id="nav-practice"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>Práctica</a>
 </nav>
 
 <script>
-window.COURSE = {modules:[],falseFriends:[],redlines:[],glossary:[],phrases:[]};
-const M = window.COURSE.modules;
-const mk = (id,title,es,level,hours,lessons,quiz,dialogues=[]) => ({id,title,es,level,hours,lessons,quiz,dialogues});
+const DATA = {
+  glossary: [
+    { t: "Consideration", es: "Contraprestación", d: "Requisito del Common Law: un intercambio de valor mutuo." },
+    { t: "Estoppel", es: "Doctrina de los actos propios", d: "Imposibilidad de alegar algo contrario a la propia conducta previa." },
+    { t: "Fiduciary Duty", es: "Deber fiduciario", d: "Obligación de lealtad y cuidado." },
+    { t: "Tort", es: "Responsabilidad extracontractual", d: "Daño civil que no deriva de un contrato." },
+    { t: "Specific Performance", es: "Cumplimiento forzoso", d: "El tribunal obliga a cumplir lo pactado." },
+    { t: "Escrow", es: "Depósito en garantía", d: "Fondos retenidos por un tercero." },
+    { t: "Warranty", es: "Garantía contractual", d: "Promesa de que un hecho es verdadero." },
+    { t: "Indemnity", es: "Indemnidad", d: "Reembolsar pérdidas o defender a la otra parte." }
+  ],
+  falseFriends: [
+    { en: "Actionable", wrong: "Accionable", right: "Que da base a una demanda", ex: "The statement is actionable." },
+    { en: "Consideration", wrong: "Consideración (amabilidad)", right: "Contraprestación", ex: "Without consideration, it's a gift." },
+    { en: "Execute", wrong: "Ejecutar (matar)", right: "Firmar un documento", ex: "The lease was executed yesterday." },
+    { en: "Damages", wrong: "Daños físicos", right: "Indemnización económica", ex: "The court awarded $50,000 in damages." },
+    { en: "Attorney", wrong: "Apoderado", right: "Abogado", ex: "I need to consult my attorney." },
+    { en: "Sentence", wrong: "Sentencia civil", right: "Pena penal", ex: "He received a 5-year sentence." }
+  ],
+  modules: [
+    {
+      id: "m1", title: "The American Legal System", es: "Sistema Jurídico", level: "B1-B2", hours: 8,
+      lessons: [
+        { t: "Federalism", body: "<p>EE. UU. tiene un sistema dual: 50 estados y 1 federal. El derecho contractual es <b>estatal</b>. El UCC regula venta de bienes.</p>" },
+        { t: "Court System", body: "<p>Federal: District Courts → Courts of Appeals → Supreme Court. Necesitas <i>Diversity Jurisdiction</i> (>$75,000) o <i>Federal Question</i>.</p>" }
+      ],
+      quiz: [
+        { q: "¿Quién regula los contratos en EE. UU.?", o: ["Federal", "Estatal", "Napoleónico", "ONU"], a: 1, e: "Es materia estatal." },
+        { q: "¿Qué es Stare Decisis?", o: ["Cosa juzgada", "Seguir precedentes", "Prescripción", "Apelación"], a: 1, e: "Obligación de seguir fallos anteriores." }
+      ]
+    },
+    {
+      id: "m2", title: "Contract Drafting", es: "Redacción Contractual", level: "B2-C1", hours: 12,
+      lessons: [
+        { t: "Shall vs May", body: "<p><b>Shall</b> = Obligación. <b>May</b> = Facultad. <b>Shall not</b> = Prohibición.</p><div class='tip'>Nunca uses 'will' para obligaciones.</div>" }
+      ],
+      quiz: [
+        { q: "¿Qué verbo prohíbe?", o: ["May", "Will", "Shall not"], a: 2, e: "Shall not es prohibición." }
+      ]
+    }
+  ]
+};
 
-M.push(mk("m1","The American Legal System","Sistema jurídico de EE. UU.","B1–B2",8,[
-  {t:"Federalism & sources of law",body:`<p>EE. UU. tiene <b>dos sistemas paralelos</b>: federal y estatal. La <b>Constitution</b> es suprema; debajo: <b>statutes</b>, <b>regulations</b> y <b>case law</b>. El <b>UCC</b> regula venta de bienes.</p><p class="tip">No existe un Código Civil uniforme; Luisiana es la excepción civilista.</p>`},
-  {t:"Court system & jurisdiction",body:`<p><b>District Courts</b> → <b>Courts of Appeals</b> → <b>Supreme Court</b>. Competencia federal: <i>federal question</i> o <i>diversity jurisdiction</i> (>$75,000). <b>Venue</b> es el lugar geográfico.</p>`},
-  {t:"Stare decisis & precedent",body:`<p><b>Stare decisis</b> obliga a seguir precedentes vinculantes. <b>Ratio decidendi</b> vs. <b>obiter dictum</b>.</p>`},
-  {t:"Adversarial system & jury",body:`<p>Las partes impulsan la prueba. Estándares: <b>preponderance</b> (civil), <b>clear and convincing</b>, <b>beyond reasonable doubt</b> (penal).</p>`}
-],[
-  {q:"Contratos mercantiles en EE. UU. se rigen por…",o:["Derecho federal","Derecho estatal","Código Napoleón","Derecho internacional"],a:1,e:"Contract law es materia estatal."},
-  {q:"“Stare decisis” significa…",o:["Cosa juzgada","Mantener lo decidido","Prescripción","Prueba plena"],a:1,e:"Obliga a seguir precedentes."},
-  {q:"Un precedente de otra jurisdicción es…",o:["Binding authority","Persuasive authority","Ratio decidendi","Obiter dictum"],a:1,e:"Persuade pero no vincula."},
-  {q:"Estándar probatorio civil típico:",o:["Beyond reasonable doubt","Preponderance of the evidence","Clear and convincing","Prueba de cargo"],a:1,e:">50% de probabilidad."}
-],[{title:"Client intake — federal claim",lines:[["Attorney","Good morning. Can you tell me what happened?"],["Client","I was fired after reporting safety violations at a federal contractor."],["Attorney","That could be a federal whistleblower claim. We need to file in District Court."]]}]));
+let state = {
+  xp: parseInt(localStorage.getItem('xp') || '0'),
+  completed: JSON.parse(localStorage.getItem('completed') || '[]'),
+};
 
-M.push(mk("m2","Contract Drafting Fundamentals","Redacción contractual","B2–C1",12,[
-  {t:"Shall, may, must, will",body:`<p><b>Shall</b> = obligación; <b>may</b> = facultad; <b>must</b> = condición; <b>will</b> = intención futura. <b>Shall not</b> = prohibición.</p><p class="tip">Use <i>shall</i> solo si puede sustituirlo por “has a duty to”.</p>`},
-  {t:"Anatomy of a contract",body:`<p>Title → Parties → Recitals → Definitions → Operative → Reps & Warranties → Covenants → Conditions → Indemnification → Termination → Boilerplate → Execution.</p>`},
-  {t:"Conditions & logic",body:`<p><b>Condition precedent</b> suspende la obligación. <b>Subject to</b> = con sujeción a. <b>Provided that</b> = siempre que.</p>`},
-  {t:"Numbers, dates & time",body:`<p>Escriba importes en letra y número. <b>Business days</b> vs. <b>calendar days</b>. Formato EE. UU.: <i>March 5, 2027</i>. <b>Time is of the essence</b>.</p>`}
-],[
-  {q:"¿Qué verbo crea obligación?",o:["may","shall","will","might"],a:1,e:"Shall impone un deber."},
-  {q:"“The Licensee may sublicense” significa…",o:["debe","tiene prohibido","tiene la facultad","sublicenciará"],a:2,e:"May = facultad discrecional."},
-  {q:"“Recitals” equivale a…",o:["Firmas","Considerandos","Definiciones","Penalidades"],a:1,e:"Exponen antecedentes."},
-  {q:"“Subject to Section 8.2” significa…",o:["Sujeto a aprobación","Con sujeción a la cláusula 8.2","Eliminada","Objeto"],a:1,e:"Subordina la disposición."}
-],[{title:"Negotiating a cap",lines:[["Buyer","We need an uncapped indemnity for IP infringement."],["Seller","We can accept a cap at 2x fees, with a carve-out for willful misconduct."],["Buyer","Agreed, but confidentiality breaches must be uncapped."]]}]));
-
-M.push(mk("m3","Representations & Warranties","Declaraciones y garantías","C1",10,[
-  {t:"Reps vs. Warranties vs. Covenants",body:`<p><b>Representation</b>: declaración de hechos pasados/presentes. <b>Warranty</b>: promesa de que un hecho es verdadero. <b>Covenant</b>: promesa de conducta futura.</p>`},
-  {t:"Knowledge qualifiers",body:`<p><b>To the Seller’s Knowledge</b> limita la garantía al conocimiento actual. <b>Materiality scrape</b> ignora calificadores de materialidad al calcular daños.</p>`},
-  {t:"Survival & fundamental reps",body:`<p>Las reps sobreviven al cierre por un plazo. Las <b>fundamental reps</b> sobreviven más o indefinidamente.</p>`}
-],[
-  {q:"Promesa sobre conducta futura es…",o:["Representation","Recital","Covenant","Counterpart"],a:2,e:"Covenant = compromiso."},
-  {q:"“To the Seller’s Knowledge”…",o:["Hace ilimitada","Limita al conocimiento","Convierte en covenant","Elimina"],a:1,e:"Knowledge qualifier."}
-],[{title:"Negotiating a knowledge qualifier",lines:[["Buyer","We want a flat warranty that there is no litigation."],["Seller","We can only warrant to our knowledge, after reasonable inquiry."]]}]));
-
-M.push(mk("m4","Liability & Remedies","Responsabilidad y remedios","C1",10,[
-  {t:"Damages",body:`<p><b>Compensatory</b>, <b>consequential</b>, <b>liquidated</b> (no penalty), <b>punitive</b>, <b>nominal</b>.</p>`},
-  {t:"Limitation of liability",body:`<p>Exclusión de daños indirectos + <b>cap</b> + <b>carve-outs</b> (dolo, confidencialidad).</p>`},
-  {t:"Indemnify, defend & hold harmless",body:`<p><b>Indemnify</b> = reembolsar; <b>defend</b> = asumir defensa; <b>hold harmless</b> = mantener indemne.</p>`}
-],[
-  {q:"“Liquidated damages” =",o:["Daños líquidos","Indemnización preestablecida","Daños punitivos","Costas"],a:1,e:"Suma pactada."},
-  {q:"Un “cap” es…",o:["Excepción","Tope máximo","Seguro","Garantía"],a:1,e:"Límite cuantitativo."},
-  {q:"“Carve-outs” son…",o:["Excepciones","Covenants","Recitals","Waivers"],a:0,e:"Excluyen supuestos."}
-],[]));
-
-M.push(mk("m5","Boilerplate & General Clauses","Cláusulas generales","B2–C1",8,[
-  {t:"Entire agreement & severability",body:`<p><b>Entire Agreement</b> excluye acuerdos previos. <b>Severability</b> salva el resto si una cláusula es nula.</p>`},
-  {t:"Governing law & jury waiver",body:`<p>Ley aplicable + foro + <b>waiver of jury trial</b>.</p>`},
-  {t:"Force majeure & assignment",body:`<p>En Common Law la fuerza mayor no se presume: debe estar en el contrato.</p>`}
-],[
-  {q:"Cláusula de salvaguarda:",o:["Waiver","Severability","Assignment","Notices"],a:1,e:"Divisibilidad."},
-  {q:"En Common Law, la fuerza mayor…",o:["Siempre aplica","Solo si el contrato la prevé","Es inconstitucional","Solo terremotos"],a:1,e:"Contractual."},
-  {q:"“Exclusive jurisdiction”…",o:["Cualquier tribunal","Solo los designados","No hay tribunal","Arbitraje obligatorio"],a:1,e:"Cierra el foro."}
-],[]));
-
-M.push(mk("m6","M&A & Corporate Transactions","Fusiones y adquisiciones","C1",14,[
-  {t:"Deal phases",body:`<p>NDA → LOI → Due diligence → SPA/APA → Signing → Conditions → Closing → Post-closing.</p>`},
-  {t:"Share vs. Asset deal",body:`<p><b>Share deal</b>: compra acciones y hereda pasivos. <b>Asset deal</b>: elige activos y pasivos.</p>`},
-  {t:"Price mechanisms",body:`<p><b>Escrow</b>, <b>earn-out</b>, <b>locked box</b>, <b>MAC/MAE</b>, <b>R&W insurance</b>.</p>`}
-],[
-  {q:"Un LOI generalmente es…",o:["Vinculante","No vinculante salvo cláusulas","Escritura","Sentencia"],a:1,e:"Non-binding."},
-  {q:"Dinero con un tercero como garantía:",o:["Earn-out","Escrow","Proxy","Quorum"],a:1,e:"Escrow."},
-  {q:"Derecho del minoritario a vender:",o:["Drag-along","Tag-along","Pre-emptive","Earn-out"],a:1,e:"Tag-along."}
-],[{title:"Due diligence request",lines:[["Buyer","Please provide all material contracts and a schedule of pending litigation."],["Seller","We'll upload to the data room by Friday."]]}]));
-
-M.push(mk("m7","U.S. Civil Litigation","Litigio civil","C1",12,[
-  {t:"Pleadings",body:`<p><b>Complaint</b> → <b>Answer</b> o <b>Motion to dismiss</b> (12(b)(6)). <b>Service of process</b>.</p>`},
-  {t:"Discovery",body:`<p><b>Interrogatories</b>, <b>RFPs</b>, <b>depositions</b>, <b>requests for admission</b>.</p>`},
-  {t:"Motions & trial",body:`<p><b>Summary judgment</b>, <b>in limine</b>, <b>TRO</b>. Juicio: voir dire, opening, direct/cross, closing, verdict.</p>`}
-],[
-  {q:"Preguntas escritas bajo juramento:",o:["Depositions","Interrogatories","Requests for admission","Motions"],a:1,e:"Interrogatories."},
-  {q:"“Motion to dismiss” por 12(b)(6)…",o:["Incompetencia","Falta de pretensión válida","Prueba ilegal","Jurado sesgado"],a:1,e:"Failure to state a claim."},
-  {q:"“Dismissal with prejudice”…",o:["Puede reintentarse","No puede volver a presentarse","Hubo discriminación","Se cambió de sede"],a:1,e:"Cosa juzgada."}
-],[]));
-
-M.push(mk("m8","International Arbitration","Arbitraje internacional","C1–C2",10,[
-  {t:"Arbitration clause",body:`<p>Institución, <b>seat</b>, número de árbitros, idioma, ley aplicable.</p>`},
-  {t:"New York Convention 1958",body:`<p>Reconocimiento y ejecución de laudos extranjeros. <b>Kompetenz-kompetenz</b> y <b>separability</b>.</p>`},
-  {t:"Emergency & costs",body:`<p><b>Emergency arbitrator</b>, <b>security for costs</b>. <b>Costs follow the event</b>.</p>`}
-],[
-  {q:"El “seat” determina…",o:["Hotel","Ley procesal y tribunales","Idioma","Honorarios"],a:1,e:"Lex arbitri."},
-  {q:"“Award” significa…",o:["Premio","Laudo arbitral","Demanda","Prueba"],a:1,e:"Laudo."},
-  {q:"Convención clave:",o:["Viena 1980","Nueva York 1958","La Haya 1965","Montevideo 1933"],a:1,e:"Nueva York 1958."}
-],[]));
-
-M.push(mk("m9","Intellectual Property & Licensing","Propiedad intelectual","C1",10,[
-  {t:"Four pillars of IP",body:`<p><b>Patents</b> (20 años), <b>trademarks</b> (renovables), <b>copyright</b> (vida+70), <b>trade secrets</b>.</p>`},
-  {t:"Work made for hire",body:`<p>En EE. UU. el empleador es autor inicial en ciertos casos. En Costa Rica el autor es siempre la persona física.</p>`},
-  {t:"License grammar",body:`<p><b>Grant</b>, <b>scope</b>, <b>royalties</b>, <b>sublicensing</b>, <b>term</b>. “Perpetual” ≠ “irrevocable”.</p>`}
-],[
-  {q:"“Work made for hire”…",o:["Autor conserva","Empleador dueño inicial","Obra gratis","Sin copyright"],a:1,e:"Doctrina de EE. UU."},
-  {q:"“Hereby assigns” vs. “agrees to assign”:",o:["Sinónimos","Presente vs. futuro","El segundo es más fuerte","Ambos nulos"],a:1,e:"Diferencia crucial."}
-],[]));
-
-M.push(mk("m10","Employment & Compliance","Laboral y compliance","B2–C1",8,[
-  {t:"At-will employment",body:`<p>En EE. UU. cualquiera puede terminar la relación sin causa, salvo excepciones legales.</p>`},
-  {t:"Restrictive covenants",body:`<p><b>NDA</b>, <b>non-compete</b>, <b>non-solicit</b>, <b>invention assignment</b>.</p>`},
-  {t:"FCPA & compliance",body:`<p><b>FCPA</b> prohíbe sobornos a funcionarios extranjeros. <b>Red flags</b>, <b>whistleblower</b>, <b>OFAC</b>.</p>`}
-],[
-  {q:"“At-will employment”…",o:["Solo con causa","Terminar sin causa","Sin contrato","Cesantía"],a:1,e:"Regla EE. UU."},
-  {q:"“Non-solicitation” prohíbe…",o:["Competir","Llevarse clientes/empleados","Revelar secretos","Trabajar abroad"],a:1,e:"Más estrecho."},
-  {q:"FCPA sanciona…",o:["Evasión","Sobornos a funcionarios","Lavado","Monopolios"],a:1,e:"Anticorrupción."}
-],[]));
-
-M.push(mk("m11","Legal Writing & Correspondence","Escritura jurídica","B2–C1",8,[
-  {t:"Plain English",body:`<p>Voz activa, oraciones cortas, sin dobletes (<i>null and void</i>).</p>`},
-  {t:"Professional email",body:`<p><i>Further to our call… / Please find attached… / Should you have any questions…</i></p>`},
-  {t:"IRAC & legal memo",body:`<p><b>Issue → Rule → Application → Conclusion</b>.</p>`}
-],[
-  {q:"Voz activa:",o:["Notice shall be given by Seller","Seller shall give notice","Notice is to be given","It shall be noticed"],a:1,e:"Sujeto + verbo."},
-  {q:"“Without prejudice”…",o:["Sin discriminación","No utilizable como prueba","Sin costo","Efectos inmediatos"],a:1,e:"Protege negociación."},
-  {q:"IRAC: “R” es…",o:["Remedy","Rule","Request","Review"],a:1,e:"Rule."}
-],[]));
-
-M.push(mk("m12","Common Law vs. Civil Law","Common Law vs. Civil Law","C1",8,[
-  {t:"Sources & precedent",body:`<p>Common Law: <b>stare decisis</b>. Civil Law: códigos.</p>`},
-  {t:"Consideration & formation",body:`<p>Common Law requiere <b>offer</b>, <b>acceptance</b>, <b>consideration</b>. Sin consideration: solo <b>deed</b>.</p>`},
-  {t:"Trusts & equity",body:`<p><b>Trust</b> ≈ fideicomiso. <b>Tort</b> = responsabilidad extracontractual.</p>`}
-],[
-  {q:"Parte vinculante de precedente:",o:["Obiter dictum","Ratio decidendi","Headnote","Dissent"],a:1,e:"Ratio decidendi."},
-  {q:"“Tort” corresponde a…",o:["Delito penal","Responsabilidad extracontractual","Contrato","Tasa"],a:1,e:"Tort law."},
-  {q:"Sin “consideration”, exigible solo si…",o:["Es oral","Consta en un deed","Un lunes","Dos testigos"],a:1,e:"Deed sustituye."}
-],[]));
-
-M.push(mk("m13","Negotiation & Deal-Making","Negociación y cierre","C1",10,[
-  {t:"BATNA, ZOPA, Reservation Price",body:`<p><b>BATNA</b>: mejor alternativa. <b>Reservation price</b>: punto de walk-away. <b>ZOPA</b>: rango donde cerrar.</p>`},
-  {t:"Anchoring & framing",body:`<p><b>Anchor</b>: primera cifra. Framing: <i>market standard</i>.</p>`},
-  {t:"Concessions",body:`<p>Nunca concedas sin pedir; concesiones decrecientes.</p>`}
-],[
-  {q:"“BATNA” significa…",o:["Best Alternative To a Negotiated Agreement","Bargaining And Trade Act","Basic Arbitration Treaty","Binding Agreement"],a:0,e:"Plan B."},
-  {q:"La “ZOPA” es…",o:["Lugar de reunión","Zona de acuerdo","Abogado","Contrato"],a:1,e:"Zone of Possible Agreement."},
-  {q:"“Anchoring”…",o:["Primera cifra","Anclar barco","Firmar","Email"],a:0,e:"Primera oferta."},
-  {q:"Regla de concesiones:",o:["Conceder sin pedir","Decrecientes y recíprocas","Nunca","Solo al final"],a:1,e:"Reciprocidad."},
-  {q:"“Walk-away position”…",o:["Posición final","Punto de abandono","Precio audiencia","Retainer"],a:1,e:"Reservation price."}
-],[]));
-
-M.push(mk("m14","IP Litigation & Enforcement","Litigio y enforcement de PI","C1",10,[
-  {t:"Cease and desist letters",body:`<p><b>C&D</b> notifica formalmente. Debe ser <b>precisa</b> y <b>medida</b>.</p>`},
-  {t:"DMCA takedowns",body:`<p><b>DMCA</b>: notificación a plataformas (YouTube, Amazon, Meta).</p>`},
-  {t:"Patent & trademark litigation",body:`<p>Patentes: <b>Markman hearing</b>. Marcas: <b>likelihood of confusion</b>.</p>`}
-],[
-  {q:"“Cease and desist” debe ser…",o:["Vaga","Precisa y medida","Verbal","Anónima"],a:1,e:"Identifica IP."},
-  {q:"“DMCA takedown” se envía a…",o:["Tribunal federal","Plataforma digital","Registro Patentes","Notario"],a:1,e:"Plataformas."},
-  {q:"“Markman hearing”…",o:["Fianza","Interpretar claims","Elegir jurado","Notificar"],a:1,e:"Interpretación."},
-  {q:"“Likelihood of confusion”…",o:["Patentes","Trademark","Trade secrets","Copyright"],a:1,e:"Marca registrada."}
-],[]));
-
-M.push(mk("m15","Data Privacy & Cybersecurity","Privacidad de datos","C1",10,[
-  {t:"GDPR, CCPA",body:`<p><b>GDPR</b>: base legal, DPO, multas 4%. <b>CCPA/CPRA</b>: California. <b>Ley 8968</b> (Costa Rica).</p>`},
-  {t:"Cross-border data transfers",body:`<p><b>SCCs</b>, <b>BCRs</b>, <b>adequacy decisions</b>. Post-<i>Schrems II</i>: <b>TIA</b>.</p>`},
-  {t:"Data breach notification",body:`<p>GDPR: 72 horas. CCPA: expedito.</p>`}
-],[
-  {q:"El GDPR aplica a…",o:["Solo EU","Empresas que tratan datos de residentes EU","Solo gobiernos","Solo bancos"],a:1,e:"Extraterritorial."},
-  {q:"Plazo GDPR:",o:["24 h","72 h","30 días","1 año"],a:1,e:"72 horas."},
-  {q:"“SCCs”…",o:["Standard Contractual Clauses","Secure Cloud Controls","System Compliance Cert","Standard Cyber Code"],a:0,e:"Transferencia."},
-  {q:"Un “processor”…",o:["Decide fines","Trata por cuenta del controller","Registra marca","Notifica juez"],a:1,e:"Por cuenta."}
-],[]));
-
-M.push(mk("m16","Legal Tech, AI & the Future of Law","Legal tech e IA","C1–C2",10,[
-  {t:"AI in document review",body:`<p><b>TAR</b>: machine learning para revisión. Aceptado si defendible (<i>Da Silva Moore</i>).</p>`},
-  {t:"Contract analytics & CLM",body:`<p><b>CLM</b>: repositorio, alertas. La IA sugiere; el humano decide.</p>`},
-  {t:"AI ethics & privilege",body:`<p>Riesgos: <b>hallucinations</b>, <b>privilege waiver</b>, <b>bias</b>. ABA Formal Opinion 512.</p>`}
-],[
-  {q:"“TAR”…",o:["Technology-Assisted Review","Trade Arbitration Rule","Total Access Review","Tax Audit Report"],a:0,e:"Revisión asistida."},
-  {q:"Riesgo clave de IA:",o:["Gratis","Hallucinations","No apagar","Habla inglés"],a:1,e:"Citas inventadas."},
-  {q:"“CLM”…",o:["Contract Lifecycle Management","Civil Litigation Motion","Corporate Legal Mandate","Cross-Border Law"],a:0,e:"Gestión contractual."},
-  {q:"Subir confidencial a IA pública…",o:["Mejor respuesta","Waiver of privilege","Ahorro","Nada"],a:1,e:"Riesgo confidencialidad."}
-],[]));
-
-window.COURSE.falseFriends = [
-  ["Actionable","Accionable","Que da base a una demanda","The statement is actionable as defamation."],
-  ["Consideration","Consideración","Contraprestación","The contract failed for lack of consideration."],
-  ["Execute","Ejecutar","Firmar y otorgar formalmente","The deed was executed before a notary."],
-  ["Damages","Daños","Indemnización por daños y perjuicios","The court awarded damages of $50,000."],
-  ["Attorney","Apoderado","Abogado (EE. UU.)","Retain an attorney before the hearing."],
-  ["Sentence","Sentencia","Pena impuesta","He received a five-year sentence."],
-  ["Process","Proceso","Notificación / emplazamiento","Process was served on the defendant."],
-  ["Jurisdiction","Solo territorio","Competencia del tribunal","The court lacks jurisdiction."],
-  ["Instance","Instancia","Caso, ejemplo","For instance, the lease was silent."],
-  ["Prosecutor","Procurador","Fiscal","The prosecutor filed charges."],
-  ["Demand","Demanda","Requerimiento","A demand letter was sent."],
-  ["Eventual","Eventual (posible)","Final, definitivo","The eventual outcome was a settlement."],
-  ["Actual","Actual (presente)","Real, efectivo","Actual damages must be proven."],
-  ["Compromise","Compromiso","Transacción","The parties reached a compromise."],
-  ["Firm","Firma","Despacho / bufete","She joined a law firm in New York."],
-  ["Policy","Policía","Póliza / política","The insurance policy excludes floods."],
-  ["Library","Librería","Biblioteca","The firm's law library."],
-  ["Discovery","Descubrimiento","Exhibición de prueba","Discovery closes in March."],
-  ["Deception","Decepción","Engaño","The plaintiff proved deception."],
-  ["Sensible","Sensible","Sensato","A sensible approach."],
-  ["Assist","Asistir (estar presente)","Ayudar","Counsel will assist the witness."],
-  ["Attend","Atender","Asistir a","All directors attended."],
-  ["Breach","Brecha","Incumplimiento","A material breach."],
-  ["Claim","Clamor","Pretensión / reclamo","Three claims in the complaint."],
-  ["Court","Corte (solo superior)","Tribunal","The court granted the motion."],
-  ["Diversion","Diversión","Desviación","Diversion of funds is fraud."],
-  ["Evidence","Evidencia (obviedad)","Prueba","The evidence was inadmissible."],
-  ["Hearing","Oído","Audiencia","The hearing is on Monday."],
-  ["Injunction","Injunción","Medida cautelar","A preliminary injunction."],
-  ["Liable","Liable","Responsable civilmente","Held liable."],
-  ["Motion","Moción parlamentaria","Solicitud procesal","Motion to dismiss."],
-  ["Party","Partido / fiesta","Parte","Each Party shall bear costs."],
-  ["Relief","Alivio","Pretensión / tutela","Injunctive relief."],
-  ["Suit","Traje","Pleito","Filed suit."],
-  ["Void","Vacío","Nulo","The clause is void."],
-  ["Waiver","—","Renuncia","No waiver shall be implied."]
-].map(([en,wrong,right,ex])=>({en,wrong,right,ex}));
-
-window.COURSE.redlines = [
-  {title:"Indemnidad ilimitada",orig:"Supplier shall indemnify Customer for all losses of any kind.",fix:"Supplier shall indemnify Customer against Losses arising from third-party claims alleging IP infringement, subject to the Limitation of Liability section.",why:"Define hecho generador y sujeta a tope."},
-  {title:"Esfuerzos ambiguos",orig:"Seller shall use best efforts to deliver on time.",fix:"Seller shall use commercially reasonable efforts to deliver by the Delivery Date.",why:"“Best efforts” no tiene estándar uniforme."},
-  {title:"Plazo indefinido",orig:"Buyer shall pay as soon as possible.",fix:"Buyer shall pay each undisputed invoice within thirty (30) days after receipt.",why:"Plazo cierto evita disputas."},
-  {title:"Ley aplicable incompleta",orig:"This contract is under Costa Rican law and US courts.",fix:"This Agreement shall be governed by the laws of Costa Rica. The courts of San José shall have exclusive jurisdiction.",why:"Define ley y foro con precisión."},
-  {title:"Shall mal usado",orig:"This Agreement shall be effective on 1 January 2027.",fix:"This Agreement is effective on 1 January 2027.",why:"El contrato no impone un deber."},
-  {title:"Confidencialidad eterna",orig:"All information shall be confidential forever.",fix:"Confidential Information shall be kept confidential for five (5) years from disclosure, except for information required by law.",why:"Sin plazo ni excepciones es inmanejable."},
-  {title:"Fecha ambigua",orig:"Delivery shall occur on 03/04/2027.",fix:"Delivery shall occur on 3 April 2027.",why:"03/04 es ambiguo."}
-];
-
-window.COURSE.glossary = [
-  {t:"Affidavit",es:"Declaración jurada",d:"Declaración escrita bajo juramento.",c:"Litigio"},
-  {t:"Arbitration",es:"Arbitraje",d:"Resolución por árbitros.",c:"Arbitraje"},
-  {t:"Award",es:"Laudo arbitral",d:"Decisión final.",c:"Arbitraje"},
-  {t:"Breach",es:"Incumplimiento",d:"Violación contractual.",c:"Contratos"},
-  {t:"Cap",es:"Tope máximo",d:"Límite de responsabilidad.",c:"Contratos"},
-  {t:"Closing",es:"Cierre",d:"Consumación de transacción.",c:"M&A"},
-  {t:"Consideration",es:"Contraprestación",d:"Requisito Common Law.",c:"Contratos"},
-  {t:"Covenant",es:"Compromiso",d:"Promesa de hacer/no hacer.",c:"Contratos"},
-  {t:"Damages",es:"Indemnización",d:"Reparación pecuniaria.",c:"Litigio"},
-  {t:"Discovery",es:"Exhibición probatoria",d:"Fase pre-juicio.",c:"Litigio"},
-  {t:"Escrow",es:"Depósito en garantía",d:"Fondos con tercero.",c:"M&A"},
-  {t:"Governing law",es:"Ley aplicable",d:"Legislación del contrato.",c:"Contratos"},
-  {t:"Indemnify",es:"Indemnizar",d:"Reparar pérdidas.",c:"Contratos"},
-  {t:"Injunction",es:"Medida cautelar",d:"Orden judicial.",c:"Litigio"},
-  {t:"Jurisdiction",es:"Competencia",d:"Poder del tribunal.",c:"Litigio"},
-  {t:"Lien",es:"Gravamen",d:"Carga sobre bien.",c:"Contratos"},
-  {t:"Motion",es:"Solicitud procesal",d:"Petición al tribunal.",c:"Litigio"},
-  {t:"Representation",es:"Declaración",d:"Afirmación sobre hechos.",c:"Contratos"},
-  {t:"Severability",es:"Divisibilidad",d:"Salva contrato.",c:"Contratos"},
-  {t:"Specific performance",es:"Cumplimiento forzoso",d:"Remedio equitativo.",c:"Contratos"},
-  {t:"Stare decisis",es:"Precedente",d:"Seguir lo decidido.",c:"Sistema"},
-  {t:"Tort",es:"Responsabilidad extracontractual",d:"Daño civil fuera del contrato.",c:"Sistema"},
-  {t:"Venue",es:"Lugar del juicio",d:"Ubicación apropiada.",c:"Litigio"},
-  {t:"Waiver",es:"Renuncia",d:"Abandono de derecho.",c:"Contratos"},
-  {t:"Warranty",es:"Garantía contractual",d:"Promesa de hecho.",c:"Contratos"}
-];
-
-window.COURSE.phrases = [
-  {cat:"Client meetings",items:[
-    ["Let's go over the key terms before we sign.","Repasemos los términos clave."],
-    ["I'd like to flag a potential issue with the indemnity clause.","Señalar un problema con la indemnización."],
-    ["What is your client's walk-away position?","¿Cuál es su punto de abandono?"],
-    ["Shall we take this offline?","¿Lo tratamos aparte?"]
-  ]},
-  {cat:"Negotiation",items:[
-    ["That's a deal-breaker for us.","Inaceptable."],
-    ["We can live with that cap.","Aceptamos ese tope."],
-    ["Let's split the difference.","Punto medio."],
-    ["We'll get back to you with a markup by Friday.","Comentarios el viernes."]
-  ]},
-  {cat:"Hearings",items:[
-    ["May it please the Court.","Con el permiso del Tribunal."],
-    ["Objection, leading question.","Objeción, pregunta sugestiva."],
-    ["I move to strike the last answer.","Solicito eliminar respuesta."],
-    ["No further questions.","Sin más preguntas."]
-  ]}
-];
-
-window.READINGS = [
-  {id:"r01",module:"m1",level:"B2",title:"Marbury v. Madison",text:`In 1803, the U.S. Supreme Court decided Marbury v. Madison, establishing the principle of judicial review. Chief Justice John Marshall held that it is "emphatically the province and duty of the judicial department to say what the law is." The decision gave federal courts the power to declare acts of Congress unconstitutional.`,glossary:[["judicial review","control de constitucionalidad"],["cornerstone","piedra angular"]],questions:[
-    {q:"Marbury v. Madison established…",o:["Right to jury","Judicial review","Federalism","Executive privilege"],a:1,e:"Judicial review."},
-    {q:"Who says what the law is?",o:["President","Congress","Judicial department","States"],a:2,e:"Marshall."},
-    {q:"Judicial review applies to acts of…",o:["Congress","Citizens","States","President"],a:0,e:"Congress."},
-    {q:"The decision is…",o:["Minor","Cornerstone","Irrelevant","Overruled"],a:1,e:"Foundational."}
-  ]},
-  {id:"r02",module:"m2",level:"B2",title:"Anatomy of a Term Sheet",text:`A term sheet summarizes the principal terms of a proposed investment or transaction. It is typically non-binding, except for provisions on confidentiality, exclusivity and governing law.`,glossary:[["non-binding","no vinculante"],["term sheet","hoja de términos"]],questions:[
-    {q:"A term sheet is usually…",o:["Fully binding","Non-binding except specific clauses","Final contract","Court order"],a:1,e:"Non-binding."},
-    {q:"Typical term?",o:["Criminal record","Liquidation preference","Patent claim","Jury verdict"],a:1,e:"Financing term."},
-    {q:"“Drag-along” allows…",o:["Minority block","Majority force sell","Veto","Repurchase"],a:1,e:"Force sale."},
-    {q:"Purpose:",o:["Replace contract","Align expectations","Avoid lawyers","Register company"],a:1,e:"Roadmap."}
-  ]},
-  {id:"r03",module:"m7",level:"C1",title:"Discovery Explained",text:`Discovery is the pre-trial phase in which each party may obtain evidence from the other. The Federal Rules of Civil Procedure permit interrogatories, requests for production, requests for admission and depositions. Courts may impose sanctions for failure to comply.`,glossary:[["interrogatories","interrogatorios"],["depositions","declaraciones"]],questions:[
-    {q:"Discovery occurs…",o:["After trial","Before trial","On appeal","In arbitration"],a:1,e:"Pre-trial."},
-    {q:"NOT discovery tool:",o:["Interrogatories","Depositions","Requests for admission","Summary judgment"],a:3,e:"Motion."},
-    {q:"Scope is…",o:["Narrow","Broad, non-privileged","Limited to witnesses","Public records"],a:1,e:"Broad relevance."},
-    {q:"Non-compliance may result in…",o:["Bonus","Sanctions","New trial","Fine only"],a:1,e:"Sanctions."}
-  ]},
-  {id:"r04",module:"m8",level:"C1",title:"New York Convention",text:`The 1958 New York Convention requires courts of contracting states to give effect to arbitration agreements and to recognize and enforce arbitral awards made in other contracting states. Article V lists limited grounds for refusing enforcement.`,glossary:[["enforcement","ejecución"],["award","laudo"]],questions:[
-    {q:"Adopted in…",o:["1958","1980","1965","1933"],a:0,e:"1958."},
-    {q:"Requires courts to…",o:["Ignore arbitration","Give effect to arbitration and awards","Enforce only domestic","Reopen merits"],a:1,e:"Pro-arbitration."},
-    {q:"Grounds to refuse:",o:["Unlimited","Limited in Article V","Decided by arbitrator","Economic"],a:1,e:"Limited."},
-    {q:"The Convention is…",o:["Regional","Backbone of arbitration","Only Europe","Not in Latam"],a:1,e:"+170 states."}
-  ]},
-  {id:"r05",module:"m10",level:"B2",title:"At-Will Employment",text:`In the United States, most employment is "at-will," meaning either party may terminate at any time, with or without cause. However, at-will employment is subject to statutory exceptions: anti-discrimination laws, whistleblower protections, and public policy.`,glossary:[["at-will","a voluntad"],["whistleblower","denunciante"]],questions:[
-    {q:"At-will allows termination…",o:["Only with cause","With or without cause","Only notice","Only employee"],a:1,e:"Both parties."},
-    {q:"Exception:",o:["Discrimination laws","Vacation policy","Office hours","Dress code"],a:0,e:"Discrimination."},
-    {q:"Belief that firing needs cause is…",o:["True","Myth","Federal law","Union rule"],a:1,e:"Myth."},
-    {q:"At-will is…",o:["Universal absolute","Subject to exceptions","Executives only","Prohibited"],a:1,e:"Exceptions."}
-  ]},
-  {id:"r06",module:"m5",level:"C1",title:"Force Majeure After COVID",text:`The COVID-19 pandemic prompted courts to revisit force majeure clauses. In common law, force majeure is contractual: if a party wants relief for unforeseen events, it must be specified. Parties increasingly include epidemic and government-order language.`,glossary:[["force majeure","fuerza mayor"],["unforeseen","imprevisto"]],questions:[
-    {q:"In common law, force majeure is…",o:["Statutory","Contractual","Constitutional","Procedural"],a:1,e:"Contractual."},
-    {q:"After COVID, contracts include…",o:["Epidemic language","Fewer clauses","Nothing new","Only arbitration"],a:0,e:"Pandemic-specific."},
-    {q:"Clauses often require…",o:["Silence","Prompt notice","Notary","Registration"],a:1,e:"Notice."},
-    {q:"Termination applies if…",o:["Minor event","Exceeds specified duration","Agreement","Nothing"],a:1,e:"Sunset clauses."}
-  ]},
-  {id:"r07",module:"m13",level:"C1",title:"Negotiating an Earn-Out",text:`An earn-out is a contingent purchase price mechanism. The buyer pays an additional amount if the target achieves specified financial or operational milestones post-closing. Key points include the metric (revenue vs. EBITDA), the measurement period, accounting principles, and control over the business.`,glossary:[["earn-out","precio contingente"],["EBITDA","beneficio operativo"]],questions:[
-    {q:"An earn-out is…",o:["Discount","Contingent price","Tax","Warranty"],a:1,e:"Contingent."},
-    {q:"Common metric:",o:["Headcount","Revenue or EBITDA","Contracts","Square footage"],a:1,e:"Financial."},
-    {q:"Often leads to…",o:["Easy closings","Disputes","No drafting","Lower prices"],a:1,e:"Disputes."},
-    {q:"Key issue:",o:["Notary","Control during period","Color","Office"],a:1,e:"Control."}
-  ]},
-  {id:"r08",module:"m15",level:"C1",title:"Cross-Border Data Transfers",text:`Cross-border data transfers require a legal mechanism under the GDPR. Standard Contractual Clauses (SCCs) remain the most common tool, but after Schrems II, parties must also conduct a Transfer Impact Assessment (TIA) analyzing the destination country's surveillance laws.`,glossary:[["SCCs","cláusulas contractuales tipo"],["TIA","evaluación de impacto"]],questions:[
-    {q:"SCCs are…",o:["Treaty","Standard Contractual Clauses","Fine","Arbitration rule"],a:1,e:"Clauses."},
-    {q:"After Schrems II, must conduct…",o:["Nothing","TIA","Background check","Jury trial"],a:1,e:"TIA."},
-    {q:"BCRs apply to…",o:["Single transfers","Intra-group","Consumer","Patent"],a:1,e:"Intra-group."},
-    {q:"Mechanism depends on…",o:["Transfer price","Destination legal framework","Language","Arbitrator"],a:1,e:"Adequacy."}
-  ]},
-  {id:"r09",module:"m12",level:"B2",title:"Peppercorn Theory",text:`In common law, a contract requires consideration: a bargained-for exchange. The peppercorn theory holds that even a nominal consideration, such as one dollar or a peppercorn, can satisfy the requirement if the parties genuinely bargained for it. Courts do not assess adequacy.`,glossary:[["consideration","contraprestación"],["nominal","simbólico"]],questions:[
-    {q:"Consideration requires…",o:["Notary","Bargained-for exchange","Two witnesses","Registration"],a:1,e:"Exchange."},
-    {q:"Peppercorn theory allows…",o:["No consideration","Nominal consideration","Illegal consideration","Future only"],a:1,e:"Symbolic."},
-    {q:"Courts assess…",o:["Adequacy","Existence","Color","Nationality"],a:1,e:"Only existence."},
-    {q:"Consideration required in…",o:["Civil law","Common law","Maritime","Criminal"],a:1,e:"Common law."}
-  ]},
-  {id:"r10",module:"m9",level:"C1",title:"Reading a Patent Claim",text:`A patent claim defines the scope of protection. It is written as a single sentence with a preamble, a transitional phrase (such as "comprising" or "consisting of"), and a body listing elements. "Comprising" is open-ended; "consisting of" is closed.`,glossary:[["claim","reivindicación"],["comprising","que comprende"]],questions:[
-    {q:"Patent claim defines…",o:["Inventor name","Scope of protection","Filing fee","Jurisdiction"],a:1,e:"Metes and bounds."},
-    {q:"“Consisting of” is…",o:["Open-ended","Closed","Optional","Irrelevant"],a:1,e:"Closed."},
-    {q:"Infringement requires…",o:["Some elements","Every element of one claim","Inventor approval","Jury"],a:1,e:"All-elements."},
-    {q:"“Comprising” is…",o:["Closed","Open-ended","Prohibited","Deprecated"],a:1,e:"Open."}
-  ]},
-  {id:"r11",module:"m6",level:"B2",title:"Fiduciary Duty",text:`Directors and officers owe fiduciary duties to the corporation and its shareholders. Two core duties are the duty of care and the duty of loyalty. The business judgment rule protects directors from liability when they act in good faith, on an informed basis, and in the best interests of the corporation.`,glossary:[["fiduciary duty","deber fiduciario"],["business judgment rule","regla del criterio empresarial"]],questions:[
-    {q:"Fiduciary duties owed to…",o:["Competitors","Corporation and shareholders","Notary","Government"],a:1,e:"Corporation."},
-    {q:"Two core duties:",o:["Care and loyalty","Profit and growth","Silence","Speed"],a:0,e:"Care & loyalty."},
-    {q:"Business judgment rule…",o:["Punishes","Protects good faith","Banks only","Replaces care"],a:1,e:"Safe harbor."},
-    {q:"Bad faith director…",o:["Protected","May be liable","Immune","Must resign"],a:1,e:"Liable."}
-  ]},
-  {id:"r12",module:"m16",level:"C1",title:"AI and Legal Practice",text:`Generative AI is transforming legal practice. Tools can draft contracts, summarize cases, and review documents. However, lawyers must verify outputs, protect client confidentiality, and understand the limitations of the models. The ABA has issued guidance emphasizing competence and confidentiality.`,glossary:[["generative AI","IA generativa"],["verify","verificar"]],questions:[
-    {q:"Generative AI can…",o:["Replace judges","Draft contracts","Ignore ethics","Guarantee accuracy"],a:1,e:"Assists."},
-    {q:"Lawyers must…",o:["Trust blindly","Verify and protect","Avoid tech","Ignore clients"],a:1,e:"Verify."},
-    {q:"ABA has issued…",o:["No guidance","Guidance on AI","Ban on AI","New court"],a:1,e:"Formal Opinion 512."},
-    {q:"Key risk:",o:["Too accurate","Hallucinations","Slow","Excessive cost"],a:1,e:"Hallucinations."}
-  ]}
-];
-
-window.DIALOGUES = [
-  {id:"d01",module:"m1",title:"Client intake — federal claim",context:"Whistleblower issue.",lines:[["Attorney","Good morning. Can you walk me through what happened?"],["Client","I was fired after reporting safety violations at a federal contractor."],["Attorney","That could be a federal whistleblower claim. We would file in District Court."]]},
-  {id:"d02",module:"m2",title:"Negotiating a liability cap",context:"Services agreement.",lines:[["Buyer","Our client cannot accept an uncapped liability."],["Seller","We can agree to a cap at 2x annual fees, with carve-outs for willful misconduct and confidentiality."],["Buyer","Add IP indemnity as a carve-out and we have a deal."]]},
-  {id:"d03",module:"m6",title:"Due diligence request",context:"M&A data room.",lines:[["Buyer","Please upload all material contracts and a schedule of pending litigation to the data room by Friday."],["Seller","We will. Some documents require redaction under existing NDAs."]]},
-  {id:"d04",module:"m7",title:"Deposition objection",context:"Cross-examination.",lines:[["Attorney","You saw the defendant leave the building at 3 p.m., correct?"],["Opposing Counsel","Objection, leading question."],["Judge","Sustained. Rephrase, counsel."]]},
-  {id:"d05",module:"m8",title:"Arbitration opening",context:"ICC hearing.",lines:[["Counsel","May it please the Tribunal. This case concerns a breach of a distribution agreement."],["Arbitrator","Please proceed, counsel."]]},
-  {id:"d06",module:"m10",title:"HR termination call",context:"At-will employment.",lines:[["HR","We're terminating your employment effective today."],["Employee","Why? I thought I was performing well."],["HR","Under at-will employment, no cause is required."]]},
-  {id:"d07",module:"m13",title:"Explaining BATNA",context:"Settlement decision.",lines:[["Client","Should we accept their offer?"],["Attorney","Before deciding, let's review your BATNA. If litigation is viable, your leverage is higher."]]},
-  {id:"d08",module:"m14",title:"Cease and desist",context:"Trademark infringement.",lines:[["Client","They are using our trademark on their website."],["Attorney","We'll send a C&D identifying the registration number, the infringing use, and demanding an accounting."]]},
-  {id:"d09",module:"m15",title:"Negotiating a DPA",context:"Privacy terms.",lines:[["Client","We need SCCs and a 24-hour breach notification."],["Vendor","24 hours is aggressive; we propose 48 hours. We accept SCCs with a TIA."]]},
-  {id:"d10",module:"m16",title:"AI review with client",context:"Document review.",lines:[["Client","Can we use AI for the review? It's 2 million documents."],["Attorney","Yes — we'll use TAR with a validated workflow, disclose the methodology, and sample for quality."]]}
-];
-
-window.WORKSHOPS = [
-  {id:"w01",module:"m2",title:"Redline a SaaS MSA",duration:"45 min",level:"C1",goal:"Detectar y corregir 6 cláusulas abusivas.",steps:["Lee el MSA completo.","Identifica: indemnidad ilimitada; falta de liability cap; definición vaga; SLA sin remedios; cesión libre; falta de cláusula de datos.","Redacta la cláusula correctiva.","Revisa el markup.","Explica el riesgo mitigado."],deliverable:"Markup con 6 cláusulas corregidas."},
-  {id:"w02",module:"m3",title:"Draft Reps & Warranties Article",duration:"60 min",level:"C1",goal:"Redactar el artículo 3 de un SPA.",steps:["Elige 5 reps esenciales.","Añade knowledge qualifier y materiality.","Define Knowledge.","Incluye as of Closing Date.","Añade cláusula de supervivencia."],deliverable:"Artículo 3 completo."},
-  {id:"w03",module:"m11",title:"Client Intake Memo",duration:"40 min",level:"B2",goal:"Memo estructurado.",steps:["Escucha el diálogo Client intake.","Estructura: Facts → Issues → Short Answer → Next Steps.","Aplica BLUF.","Cita 2 causas de acción.","Lista documentos."],deliverable:"Memo de 1 página."},
-  {id:"w04",module:"m7",title:"Mock Deposition",duration:"50 min",level:"C1",goal:"Practicar direct y cross.",steps:["Parejas: abogado y testigo.","5 preguntas de direct.","5 de cross.","2 objeciones por lado.","No further questions."],deliverable:"Guion de preguntas."},
-  {id:"w05",module:"m8",title:"Draft Arbitration Clause",duration:"30 min",level:"C1",goal:"Cláusula completa.",steps:["Institución: ICC/ICDR/CCA.","Seat, árbitros, idioma, ley.","Etapa escalonada previa.","Costs follow the event.","Revisa foros."],deliverable:"Cláusula de 1 párrafo."},
-  {id:"w06",module:"m15",title:"Respond to Data Breach",duration:"45 min",level:"C1",goal:"Protocolo de respuesta.",steps:["Recibe reporte.","Determina si es personal data breach.","Notificación (72 h).","Notifica titulares si alto riesgo.","Documenta."],deliverable:"Notificación regulatoria."},
-  {id:"w07",module:"m13",title:"Negotiate Earn-Out",duration:"50 min",level:"C1",goal:"Cerrar términos.",steps:["Métrica.","Umbral y periodo.","Control del negocio.","Resolución de disputas.","Term sheet."],deliverable:"Term sheet de earn-out."},
-  {id:"w08",module:"m12",title:"Explain US Judgment",duration:"40 min",level:"B2",goal:"Traducir sentencia.",steps:["Lee sentencia.","Explica: holding, dicta, revisión.","Diferencia judgment, verdict, sentence.","Res judicata.","Resumen en español."],deliverable:"Memo bilingüe."}
-];
-
-window.CONTRACTS = [
-  {id:"c01",title:"Mutual NDA (bilingual)",module:"m3",language:"EN/ES",body:`MUTUAL NON-DISCLOSURE AGREEMENT
-
-This Mutual Non-Disclosure Agreement ("Agreement") is entered into on [Date] by and between:
-PARTY A: [Company Name], a corporation organized under the laws of the State of Delaware, USA.
-PARTY B: [Company Name S.A.], a corporation organized under the laws of the Republic of Costa Rica.
-
-1. PURPOSE: The Parties wish to explore a potential cross-border business collaboration (the "Purpose").
-
-2. CONFIDENTIALITY: The Receiving Party shall maintain the Disclosing Party's Confidential Information in strict secrecy using the degree of care it uses for its own confidential data, but in no event less than reasonable care.
-
-3. EXCLUSIONS: Information is not confidential if it: (a) is publicly known without breach; (b) was independently developed; (c) was rightfully received from a third party without restriction; (d) is required to be disclosed by law.
-
-4. INJUNCTIVE RELIEF: Each Party acknowledges that breach would cause irreparable harm for which monetary damages alone would be inadequate, entitling the non-breaching Party to seek injunctive relief.
-
-5. GOVERNING LAW & ARBITRATION: This Agreement shall be governed by the laws of Costa Rica. Disputes shall be resolved by binding arbitration under the CCA Rules.`},
-  {id:"c02",title:"Master Services Agreement (Zonas Francas)",module:"m2",language:"EN",body:`MASTER SERVICES AGREEMENT
-
-This Master Services Agreement ("MSA") is entered into by and between [Client Corp], a California corporation, and [Costa Rica Tech Solutions Limitada], a Costa Rican entity located in Coyol Free Zone.
-
-1. SERVICES: Provider shall perform the services described in each Statement of Work ("SOW").
-
-2. FEES & PAYMENT: Client shall pay undisputed invoices within thirty (30) days of receipt in US Dollars.
-
-3. INTELLECTUAL PROPERTY: All deliverables shall be work made for hire. To the extent any deliverable does not qualify as such under Costa Rican law, Provider hereby irrevocably assigns to Client all economic rights therein.
-
-4. LIABILITY CAP: Except for gross negligence, willful misconduct, or breach of confidentiality, neither party shall be liable for indirect damages. Provider's aggregate liability shall not exceed the fees paid in the preceding twelve (12) months.
-
-5. INDEPENDENT CONTRACTOR: Provider is an independent contractor. Nothing herein creates an employment relationship.
-
-6. GOVERNING LAW: This MSA shall be governed by the laws of the State of California. Disputes resolved by arbitration under the ICDR Rules, seat in San José, Costa Rica, in English.`},
-  {id:"c03",title:"Real Estate PSA (Guanacaste)",module:"m6",language:"EN",body:`REAL ESTATE PURCHASE AND SALE AGREEMENT (PSA)
-
-Property: Finca Number [XXXXX-000], Folio Real, Registered Survey Plan [G-XXXXXX-XXXX].
-Location: Nosara, Nicoya, Guanacaste, Costa Rica.
-
-1. PURCHASE PRICE: One Million Two Hundred Thousand US Dollars ($1,200,000.00 USD).
-
-2. EARNEST MONEY DEPOSIT: Buyer shall deposit $60,000.00 USD with Escrow Agent within three (3) business days of signing.
-
-3. DUE DILIGENCE: Buyer shall have thirty (30) days to conduct environmental, water availability, cadastral, and registry searches.
-
-4. CLOSING: Closing shall occur before a designated Costa Rican Civil Law Notary Public, subject to: (a) clean title; (b) valid water availability certificate; (c) SETENA environmental viability.
-
-5. ESCROW DISBURSEMENT: Escrow Agent shall disburse the Net Purchase Price to Seller solely upon receipt of joint written instructions and written confirmation from the Closing Notary that the Deed of Transfer has been presented to the National Registry free of new liens.`},
-  {id:"c04",title:"Engagement Letter (USD fees)",module:"m11",language:"EN",body:`FORMAL LEGAL ENGAGEMENT LETTER
-
-Date: [Date]
-To: [Client Corp] (Delaware)
-From: [Attorney Name], Attorney-at-Law & Civil Law Notary, San José, Costa Rica
-
-RE: ENGAGEMENT OF LEGAL SERVICES
-
-Dear Client:
-
-We are pleased to accept the legal representation of [Client Corp] in connection with Cross-Border Technology Advisory in Costa Rica.
-
-1. SCOPE: (a) Legal analysis of Costa Rican and international statutes; (b) Drafting and negotiation of cross-border agreements; (c) Formal Legal Opinion Letters subject to customary assumptions.
-
-2. FEES: Hourly rate of $285.00 USD for Senior Partner time, recorded in increments of tenths of an hour.
-
-3. RETAINER: Client shall wire an initial refundable retainer deposit of $5,000.00 USD upon execution of this letter.
-
-4. CONFIDENTIALITY & GOVERNING LAW: Strict attorney-client confidentiality applies. This Engagement Letter shall be governed by the laws of Costa Rica.`},
-  {id:"c05",title:"Arbitration Agreement (ICC)",module:"m8",language:"EN",body:`ARBITRATION AGREEMENT
-
-Any dispute arising out of or in connection with this Agreement, including any question regarding its existence, validity or termination, shall be referred to and finally resolved by arbitration administered by the International Chamber of Commerce (ICC) under the ICC Rules of Arbitration.
-
-The seat of the arbitration shall be San José, Costa Rica.
-The number of arbitrators shall be one (1).
-The language of the arbitration shall be English, provided that witness testimony may be submitted in Spanish.
-
-The Parties agree to attempt in good faith to resolve any dispute through executive negotiations within twenty (20) days of written notice.
-
-The prevailing party shall be entitled to recover its reasonable attorneys' fees and procedural costs.`},
-  {id:"c06",title:"SPA Excerpt — Share Purchase",module:"m6",language:"EN",body:`SHARE PURCHASE AGREEMENT (EXCERPT)
-
-ARTICLE 2 — PURCHASE AND SALE
-2.1 Purchase and Sale of Shares. At the Closing, Seller shall sell, assign, transfer and deliver to Buyer all right, title and interest in and to the Shares, free and clear of all Liens.
-2.2 Purchase Price. The aggregate purchase price for the Shares is $10,000,000 USD (the "Purchase Price").
-
-ARTICLE 3 — REPRESENTATIONS AND WARRANTIES OF SELLER
-Seller represents and warrants to Buyer that, as of the date hereof and as of the Closing Date:
-3.1 Organization. Seller is duly organized, validly existing and in good standing under the laws of Costa Rica.
-3.2 Authority. Seller has full power and authority to execute and deliver this Agreement.
-3.3 Capitalization. The Shares constitute 100% of the issued and outstanding capital stock.
-3.4 Financial Statements. The Financial Statements fairly present, in all material respects, the financial condition of the Company.
-3.5 Litigation. There is no pending or, to Seller's Knowledge, threatened Litigation against the Company.
-
-ARTICLE 8 — INDEMNIFICATION
-8.1 Indemnification by Seller. Seller shall indemnify, defend and hold harmless Buyer from and against any and all Losses arising out of any breach of any representation, warranty, covenant or agreement of Seller.
-8.2 Limitations. Seller's aggregate liability under Section 8.1 shall not exceed 15% of the Purchase Price, except for Fundamental Representations, which shall be capped at the Purchase Price.`}
-];
-
-window.EXAMS = [
-  {id:"ex_b2",level:"B2",title:"Mock Exam B2",minutes:45,questions:[
-    {q:"“Consideration” =",o:["Amabilidad","Contraprestación","Atención","Respeto"],a:1,e:"Bargained-for exchange."},
-    {q:"“Damages” =",o:["Daños físicos","Indemnización","Rotura","Accidente"],a:1,e:"Monetary compensation."},
-    {q:"“Shall” creates…",o:["Una facultad","Una obligación","Una intención","Un derecho"],a:1,e:"Duty."},
-    {q:"“Breach” =",o:["Brecha","Incumplimiento","Rotura","Fractura"],a:1,e:"Violation."},
-    {q:"“Venue” =",o:["Lugar del juicio","Idioma","Moneda","Notario"],a:0,e:"Location."},
-    {q:"“Tort” =",o:["Delito penal","Responsabilidad extracontractual","Contrato","Tasa"],a:1,e:"Civil wrong."},
-    {q:"“Cap” =",o:["Tope","Suelo","Seguro","Fianza"],a:0,e:"Maximum."},
-    {q:"“Waiver” =",o:["Garantía","Renuncia","Cesión","Notificación"],a:1,e:"Surrender."},
-    {q:"Term sheet provisions are…",o:["Binding","Non-binding","Criminal","Void"],a:1,e:"Non-binding."},
-    {q:"Discovery occurs…",o:["At trial","Before trial","On appeal","In jail"],a:1,e:"Pre-trial."},
-    {q:"At-will means…",o:["Only with cause","Any time, with/without cause","Only by employee","Only with notice"],a:1,e:"Free termination."},
-    {q:"New York Convention requires…",o:["Ignoring awards","Recognition of foreign awards","Reopening merits","US law"],a:1,e:"Pro-enforcement."},
-    {q:"SCCs used for…",o:["Data transfers","Patents","Criminal","Real estate"],a:0,e:"Standard Contractual Clauses."},
-    {q:"“The Seller ___ deliver by March 5.”",o:["may","shall","might","could"],a:1,e:"Shall."},
-    {q:"“The Buyer ___ sublicense without consent.”",o:["shall not","may not","will not","should not"],a:0,e:"Prohibition."},
-    {q:"“If any provision is invalid, rest remains” =",o:["Severability","Entire agreement","Waiver","Notices"],a:0,e:"Severability."},
-    {q:"“Time is of the essence” makes deadline…",o:["Optional","Material","Irrelevant","Advisory"],a:1,e:"Essential."},
-    {q:"“Further to our call” is…",o:["Opening line","Closing","Objection","Jurisdiction"],a:0,e:"Email opening."}
-  ]},
-  {id:"ex_c1",level:"C1",title:"Mock Exam C1",minutes:60,questions:[
-    {q:"“Liquidated damages” =",o:["Daños líquidos","Indemnización preestablecida","Daños punitivos","Costas"],a:1,e:"Pre-agreed sum."},
-    {q:"“Carve-out” =",o:["Excepción","Cesión","Garantía","Notificación"],a:0,e:"Exception."},
-    {q:"“Escrow” =",o:["Depósito en garantía","Fianza","Préstamo","Arrendamiento"],a:0,e:"Escrow account."},
-    {q:"“Tag-along” =",o:["Derecho a acompañar","Derecho a vetar","Derecho de tanteo","Derecho de arrastre"],a:0,e:"Minority right."},
-    {q:"“Drag-along” =",o:["Derecho a bloquear","Derecho a obligar a vender","Derecho a comprar","Derecho a notificar"],a:1,e:"Majority force."},
-    {q:"“Sandbagging” =",o:["Reclamo por breach conocido","Renuncia","Notificación tardía","Cesión"],a:0,e:"Post-closing claims."},
-    {q:"“DTSA” protects…",o:["Patentes","Trade secrets","Marcas","Copyright"],a:1,e:"Trade secrets."},
-    {q:"“BATNA” =",o:["Plan B","Acuerdo","Contrato","Fianza"],a:0,e:"Best Alternative."},
-    {q:"Clause excluding prior agreements:",o:["Entire Agreement","Severability","Waiver","Notices"],a:0,e:"Integration."},
-    {q:"“MAC” clause allows…",o:["Withdrawing","Changing price","Canceling warranty","Modifying law"],a:0,e:"Exit right."},
-    {q:"“Fundamental representation”…",o:["Vence 30 días","Sobrevive más","No exigible","Oral"],a:1,e:"Longer survival."},
-    {q:"“Earn-out” is…",o:["Discount","Contingent price","Tax","Warranty"],a:1,e:"Contingent."},
-    {q:"“Specific performance” is…",o:["Damages","Equitable remedy","Injunction","Penalty"],a:1,e:"Equitable."},
-    {q:"“Anti-sandbagging” means…",o:["Buyer can claim for known","Buyer cannot claim for known","Buyer waives all","Buyer must notify"],a:1,e:"Restriction."},
-    {q:"Motion to dismiss 12(b)(6) challenges…",o:["Facts","Legal sufficiency","Evidence","Jurors"],a:1,e:"Failure to state claim."},
-    {q:"Deposition is…",o:["Verdict","Testimony under oath pre-trial","Closing","Writ"],a:1,e:"Pre-trial sworn."},
-    {q:"Summary judgment granted when…",o:["Jury undecided","No genuine dispute of material fact","Defendant defaults","Settle"],a:1,e:"No material dispute."},
-    {q:"With prejudice dismissal…",o:["Allows refiling","Bars refiling","Reverses","Criminal only"],a:1,e:"Res judicata."},
-    {q:"NY Convention awards are…",o:["Unenforceable","Recognized and enforced","Only NY","Appealable"],a:1,e:"Enforcement."},
-    {q:"Seat of arbitration determines…",o:["Hotel","Lex arbitri","Fee","Language"],a:1,e:"Procedural law."},
-    {q:"Costs follow the event means…",o:["Each pays own","Loser pays winner","Nobody","State pays"],a:1,e:"Prevailing recovers."},
-    {q:"Cease and desist should be…",o:["Vague","Precise and measured","Verbal","Anonymous"],a:1,e:"Precise."},
-    {q:"DMCA takedown sent to…",o:["Court","Platform","Patent Office","Notary"],a:1,e:"Platform."},
-    {q:"GDPR breach deadline:",o:["24h","72h","30 days","1 year"],a:1,e:"72 hours."}
-  ]},
-  {id:"ex_c2",level:"C2",title:"Mock Exam C2",minutes:75,questions:[
-    {q:"“Hereby assigns” vs. “agrees to assign”:",o:["None","Present vs. future","Only grammatical","Both void"],a:1,e:"Stanford v. Roche."},
-    {q:"“Kompetenz-kompetenz”…",o:["Arbitrator decides jurisdiction","Court decides first","Appeal","Two-tier"],a:0,e:"Competence."},
-    {q:"“Separability” of arbitration clause means…",o:["Survives contract nullity","Merges","Dies","Severable only if agreed"],a:0,e:"Autonomy."},
-    {q:"“Alter ego” liability involves…",o:["Piercing veil","Second entity","Trustee","Notary"],a:0,e:"Veil-piercing."},
-    {q:"“Deed” in common law used because…",o:["Requires consideration","Substitutes consideration","Registered","Notarized"],a:1,e:"Solemn form."},
-    {q:"Parol evidence rule bars…",o:["Written terms","Prior oral terms contradicting","All testimony","Jury"],a:1,e:"Extrinsic evidence."},
-    {q:"“Promissory estoppel” requires…",o:["Consideration","Detrimental reliance","Notarization","Witnesses"],a:1,e:"Reliance."},
-    {q:"“Sub judice” =",o:["Under judicial consideration","Settled","Dismissed","Appealed"],a:0,e:"Pending."},
-    {q:"“Tipping basket” means…",o:["Claim only excess","Claim from first dollar after threshold","Never claim","Return excess"],a:1,e:"Spillover."},
-    {q:"“Materiality scrape” benefits…",o:["Seller","Buyer","Notary","Arbitrator"],a:1,e:"Buyer."},
-    {q:"“Exclusive remedy” clause…",o:["Opens all remedies","Closes others","Doubles damages","Waives caps"],a:1,e:"Sole."},
-    {q:"“No third-party beneficiaries” prevents…",o:["Assignment","Third parties enforcing","Notarization","Arbitration"],a:1,e:"No enforcement."},
-    {q:"“MAC” clause in M&A allows…",o:["Price increase","Buyer to walk","Seller to walk","Both renegotiate"],a:1,e:"Exit."},
-    {q:"“Locked box” vs. completion accounts…",o:["Fixed price at signing","Adjusts at closing","No price","No closing"],a:0,e:"Fixed."},
-    {q:"“W&I insurance” covers…",o:["Breach of reps","Litigation costs","Arbitration fees","Patents"],a:0,e:"Warranty insurance."},
-    {q:"ABA Formal Opinion 512 addresses…",o:["Notary","Generative AI","Patents","Arbitration"],a:1,e:"AI guidance."},
-    {q:"“Litigation hold” required…",o:["After trial","When litigation anticipated","Only court order","Only criminal"],a:1,e:"Anticipation."},
-    {q:"“Work product” covers…",o:["All files","Attorney's mental impressions","Public records","Bank statements"],a:1,e:"Work product."},
-    {q:"Attorney-client privilege belongs to…",o:["Attorney","Client","Court","Notary"],a:1,e:"Client."},
-    {q:"“Ex parte communication” with represented party…",o:["Allowed","Generally prohibited","Required","Neutral"],a:1,e:"Prohibited."},
-    {q:"“Pro hac vice” means…",o:["Permanent","Temporary admission","Retired","Federal-only"],a:1,e:"Case-specific."},
-    {q:"“Conflict of interest” waiver must be…",o:["Oral","Informed and written","Implied","Judicial"],a:1,e:"Written."}
-  ]}
-];
-
-window.DRILLS = [
-  {id:"p01",title:"cap / cup",pairs:[["The liability cap is $1M.","The liability cup is empty."],["We agreed on a cap.","We agreed on a cup."]]},
-  {id:"p02",title:"suit / soot",pairs:[["She filed suit in federal court.","The soot damaged the building."],["A civil suit.","A dirty soot."]]},
-  {id:"p03",title:"breach / breeze",pairs:[["This is a material breach.","The breeze is cool."],["The breach of warranty.","The ocean breeze."]]},
-  {id:"p04",title:"lien / lean",pairs:[["The property has a lien.","The tower is lean."],["Clear of liens.","Lean meat."]]},
-  {id:"p05",title:"tenant / tenet",pairs:[["The tenant must vacate.","That is a core tenet."],["Tenant improvements.","A legal tenet."]]},
-  {id:"p06",title:"thirteen / thirty",pairs:[["Thirteen days.","Thirty days."],["Thirteen thousand.","Thirty thousand."]]},
-  {id:"p07",title:"March 5 / May 3",pairs:[["March 5, 2027.","May 3, 2027."],["The fifth of March.","The third of May."]]},
-  {id:"p08",title:"indemnify / indemnity",pairs:[["We agree to indemnify.","The indemnity clause."],["Indemnified party.","Indemnification basket."]]},
-  {id:"p09",title:"Smith / Smythe",pairs:[["Mr. Smith signed the contract.","Mr. Smythe signed the contract."],["Ms. Smith.","Ms. Smythe."]]},
-  {id:"p10",title:"CON-tract / con-TRACT",pairs:[["Sign the CON-tract.","They con-TRACT-ed the disease."],["A written CON-tract.","To con-TRACT a service."]]}
-];
-</script>
-
-<script>
-(function(){
-'use strict';
-const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-const C = window.COURSE, R = window.READINGS, D = window.DIALOGUES, W = window.WORKSHOPS;
-const K = window.CONTRACTS, E = window.EXAMS, P = window.DRILLS;
-const KEY = "legal-english-pro";
-const DEF = { lessons:{}, quiz:{}, cards:{}, xp:0, streak:0, last:"", wrong:[], exams:{} };
-
-let st = {};
-try { st = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){}
-st = Object.assign({}, DEF, st);
-const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(st)); }catch(e){} };
-const shuffle = a => { a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]} return a; };
-const ymd = d => { const p=n=>String(n).padStart(2,"0"); return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate()); };
-
-const now = new Date(), today = ymd(now);
-if(st.last !== today){
-  const y = ymd(new Date(now.getFullYear(),now.getMonth(),now.getDate()-1));
-  st.streak = st.last === y ? st.streak+1 : 1;
-  st.last = today; save();
+function updateXP(amount) {
+  state.xp += amount;
+  localStorage.setItem('xp', state.xp);
+  document.getElementById('xp-display').innerText = state.xp + ' XP';
 }
 
-const totalLessons = C.modules.reduce((n,m)=>n+m.lessons.length,0);
-const doneLessons = () => Object.keys(st.lessons).length;
-const modPct = m => Math.round((m.lessons.filter((_,i)=>st.lessons[m.id+i]).length / m.lessons.length)*100);
-const lvl = () => Math.min(Math.floor(Math.sqrt(st.xp/40))+1, 20);
-
-let toastT;
-function toast(msg){
-  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
-  clearTimeout(toastT); toastT = setTimeout(()=>t.classList.remove("show"), 2400);
-}
-function addXP(n, why){ st.xp += n; save(); toast("+"+n+" XP · "+why); }
-
-let tts = null;
-const VOICES = { f:["af_bella","af_nicole","af_sarah","af_sky"], m:["am_adam","am_michael","bm_george","bm_lewis"] };
-async function initTTS(){
-  if(tts) return tts;
-  toast("Cargando voces IA…");
-  try{
-    const mod = await import("https://esm.sh/kokoro-js@1.2.0");
-    tts = await mod.KokoroTTS.from_pretrained("onnx-community/Kokoro-82M-v1.0-ONNX", { dtype:"q8" });
-    toast("Voces listas");
-    return tts;
-  }catch(e){
-    console.warn("Kokoro no disponible, usando TTS del navegador", e);
-    toast("Usando TTS del navegador");
-    return null;
+function markCompleted(id) {
+  if (!state.completed.includes(id)) {
+    state.completed.push(id);
+    localStorage.setItem('completed', JSON.stringify(state.completed));
+    updateXP(50);
   }
 }
-async function speak(text, gender){
-  gender = gender || "f";
-  const model = await initTTS();
-  if(!model){
-    if("speechSynthesis" in window){
-      speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(text); u.lang="en-US"; u.rate=.92;
-      speechSynthesis.speak(u);
+
+// LÓGICA DE VOZ IA (Carga dinámica para no bloquear la app)
+let ttsModel = null;
+window.speakAI = async function(text) {
+  if (!ttsModel) {
+    alert("Iniciando voces IA... Esto tomará unos segundos la primera vez (descargando 80MB). Por favor, espera y vuelve a tocar el botón.");
+    try {
+      const module = await import("https://cdn.jsdelivr.net/npm/kokoro-js@1.2.0/dist/kokoro.web.js");
+      ttsModel = await module.KokoroTTS.from_pretrained("onnx-community/Kokoro-82M-v1.0-ONNX", { dtype: "q8" });
+      alert("¡Voces listas! Toca el botón de nuevo para escuchar.");
+    } catch (e) {
+      alert("Error al cargar IA. Revisa tu conexión WiFi.");
+      console.error(e);
     }
     return;
   }
-  try{
-    const voices = VOICES[gender] || VOICES.f;
-    const voice = voices[Math.floor(Math.random()*voices.length)];
-    const audio = await model.generate(text, { voice });
-    const blob = new Blob([audio.toWav()], { type:"audio/wav" });
+  
+  try {
+    const audio = await ttsModel.generate(text, { voice: "af_bella" });
+    const blob = new Blob([audio.toWav()], { type: "audio/wav" });
     const url = URL.createObjectURL(blob);
-    const player = new Audio(url);
-    player.play(); player.onended = () => URL.revokeObjectURL(url);
-  }catch(e){
-    console.warn(e); toast("Error de audio");
-  }
-}
-function sayBtn(text, gender){
-  gender = gender || "f";
-  const safe = String(text).replace(/"/g,"&quot;");
-  return '<button class="say" data-say="'+safe+'" data-gender="'+gender+'"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>Escuchar</button>';
-}
-document.addEventListener("click", e => {
-  const b = e.target.closest("[data-say]");
-  if(b) speak(b.dataset.say, b.dataset.gender);
-});
-
-const pages = {
-  home(){
-    shell("Legal English · Voice Lab Pro","home");
-    const pct = Math.round((doneLessons()/totalLessons)*100);
-    const next = C.modules.find(m=>modPct(m)<100) || C.modules[0];
-    const nextL = next.lessons.findIndex((_,i)=>!st.lessons[next.id+i]);
-    const href = nextL>=0 ? "#/lesson/"+next.id+"/"+nextL : "#/quiz/"+next.id;
-    $("#view").innerHTML = '<div class="card hero"><div class="eyebrow">16 módulos · 8 voces IA</div><h2>Domina el inglés jurídico de EE. UU.</h2><p class="mute">'+totalLessons+' lecciones · '+R.length+' lecturas · '+D.length+' diálogos · '+W.length+' talleres · '+K.length+' contratos · '+E.length+' exámenes</p><div class="row" style="margin-top:14px"><div style="flex:1"><div class="eyebrow">Tu progreso</div><p class="mute">'+doneLessons()+' de '+totalLessons+' · '+pct+'%</p></div>'+ring(pct)+'</div><a class="btn" href="'+href+'">'+(nextL>=0?"Continuar: "+next.lessons[nextL].t:"Quiz: "+next.title)+'</a></div><div class="grid"><div class="stat"><b>'+st.streak+'</b><span>racha</span></div><div class="stat"><b>Nv. '+lvl()+'</b><span>'+st.xp+' XP</span></div></div><a class="listlink" href="#/lab"><span class="num">♪</span><span class="grow"><b>Voice Lab</b><br><span class="mute">8 voces Kokoro</span></span><span class="arr">›</span></a><a class="listlink" href="#/modules"><span class="num">§</span><span class="grow"><b>16 módulos</b><br><span class="mute">Contratos, litigio, M&A, arbitraje, IP</span></span><span class="arr">›</span></a><a class="listlink" href="#/readings"><span class="num">¶</span><span class="grow"><b>Lecturas</b><br><span class="mute">'+R.length+' pasajes</span></span><span class="arr">›</span></a><a class="listlink" href="#/dialogues"><span class="num">¶</span><span class="grow"><b>Diálogos</b><br><span class="mute">'+D.length+' role-plays</span></span><span class="arr">›</span></a><a class="listlink" href="#/workshops"><span class="num">⚒</span><span class="grow"><b>Talleres</b><br><span class="mute">'+W.length+' laboratorios</span></span><span class="arr">›</span></a><a class="listlink" href="#/contracts"><span class="num">📄</span><span class="grow"><b>Contratos</b><br><span class="mute">'+K.length+' plantillas</span></span><span class="arr">›</span></a><a class="listlink" href="#/exam"><span class="num">🎓</span><span class="grow"><b>Exámenes</b><br><span class="mute">'+E.length+' simulacros</span></span><span class="arr">›</span></a><a class="listlink" href="#/practice"><span class="num">⚡</span><span class="grow"><b>Práctica</b><br><span class="mute">Quizzes, drills, redlining</span></span><span class="arr">›</span></a>';
-  },
-  modules(){
-    shell("Módulos","modules");
-    $("#view").innerHTML = C.modules.map((m,i)=>'<a class="card" href="#/module/'+m.id+'"><div class="row"><span class="eyebrow">Módulo '+String(i+1).padStart(2,"0")+'</span><span class="tag">'+m.level+' · '+m.hours+' h</span></div><h3 style="margin-top:8px">'+m.title+'</h3><p class="mute" style="margin:0">'+m.es+'</p><div class="bar"><i style="width:'+modPct(m)+'%"></i></div><div class="row" style="margin-top:6px"><span class="dim">'+m.lessons.length+' lecciones</span>'+(st.quiz[m.id]!=null?'<span class="tag">Quiz '+st.quiz[m.id]+'%</span>':'<span class="dim">Quiz pendiente</span>')+'</div></a>').join("");
-  },
-  module(id){
-    const m = C.modules.find(x=>x.id===id); if(!m) return pages.home();
-    shell(m.title,"modules","#/modules");
-    $("#view").innerHTML = '<div class="eyebrow">'+m.level+' · '+m.hours+' horas</div><h2>'+m.title+'</h2><p class="mute">'+m.es+'</p>'
-    + m.lessons.map((l,i)=>'<a class="listlink" href="#/lesson/'+m.id+'/'+i+'"><span class="num">'+(i+1)+'</span><span class="grow"><b>'+l.t+'</b></span>'+(st.lessons[m.id+i]?'<span class="done">✓</span>':'<span class="arr">›</span>')+'</a>').join("")
-    + '<a class="btn" href="#/quiz/'+m.id+'">Quiz del módulo</a>';
-  },
-  lesson(id,i){
-    const m = C.modules.find(x=>x.id===id); i=+i; const l = m && m.lessons[i];
-    if(!l) return pages.home();
-    shell(m.title,"modules","#/module/"+id);
-    const done = !!st.lessons[id+i];
-    const nextHref = i+1<m.lessons.length?"#/lesson/"+id+"/"+(i+1):"#/quiz/"+id;
-    $("#view").innerHTML = '<div class="card lesson"><div class="row"><span class="eyebrow">Lección '+(i+1)+' de '+m.lessons.length+'</span>'+(done?'<span class="done">✓ Leída</span>':'')+'</div><h2 style="margin:8px 0 12px">'+l.t+'</h2>'+l.body+'</div><div class="btnrow">'+(i>0?'<a class="btn ghost" href="#/lesson/'+id+'/'+(i-1)+'">‹ Anterior</a>':'')+'<button class="btn" id="done">'+(i+1<m.lessons.length?(done?"Siguiente ›":"Marcar leída (+10 XP)"):(done?"Ir al quiz ›":"Terminar (+10 XP)"))+'</button></div>';
-    $("#done").onclick = ()=>{ if(!st.lessons[id+i]){ st.lessons[id+i]=1; addXP(10,"lección"); } save(); location.hash = nextHref; };
-  },
-  quiz(id){
-    const m = C.modules.find(x=>x.id===id); if(!m) return pages.home();
-    runQuiz(shuffle(m.quiz.map(q=>Object.assign({},q,{mid:id}))), "Quiz · "+m.title, "#/module/"+id, p=>{
-      st.quiz[id] = Math.max(st.quiz[id]||0,p); addXP(Math.round(p/5),"quiz "+p+"%"); save();
-    });
-  },
-  readings(){
-    shell("Lecturas","library");
-    $("#view").innerHTML = '<p class="mute">Pasajes jurídicos con preguntas.</p>' + R.map(r=>'<a class="card" href="#/reading/'+r.id+'"><div class="row"><span class="eyebrow">'+r.module.toUpperCase()+' · '+r.level+'</span><span class="tag">'+r.questions.length+' preguntas</span></div><h3>'+r.title+'</h3></a>').join("");
-  },
-  reading(id){
-    const r = R.find(x=>x.id===id); if(!r) return pages.readings();
-    shell(r.title,"library","#/readings");
-    $("#view").innerHTML = '<div class="eyebrow">'+r.module.toUpperCase()+' · '+r.level+'</div><h2>'+r.title+'</h2><div class="card"><p class="legal">'+r.text+'</p></div><div class="card"><h3>Glosario</h3>'+r.glossary.map(g=>'<p><b>'+g[0]+'</b> — '+g[1]+'</p>').join("")+'</div><div class="card" id="qzone"><h3>Comprensión</h3></div>';
-    setTimeout(()=>runQuizInline(shuffle(r.questions.map(q=>Object.assign({},q,{mid:r.module}))), $("#qzone")), 100);
-  },
-  dialogues(){
-    shell("Diálogos","practice");
-    $("#view").innerHTML = '<p class="mute">Role-plays con audio.</p>' + D.map(d=>'<div class="card"><div class="row"><span class="eyebrow">'+d.module.toUpperCase()+'</span>'+sayBtn(d.lines.map(l=>l[1]).join(" "))+'</div><h3>'+d.title+'</h3><p class="mute">'+d.context+'</p>'+d.lines.map(l=>'<p><b>'+l[0]+':</b> '+l[1]+'</p>').join("")+'</div>').join("");
-  },
-  workshops(){
-    shell("Talleres","practice");
-    $("#view").innerHTML = '<p class="mute">Laboratorios guiados.</p>' + W.map(w=>'<a class="card" href="#/workshop/'+w.id+'"><div class="row"><span class="eyebrow">'+w.module.toUpperCase()+' · '+w.level+'</span><span class="tag">'+w.duration+'</span></div><h3>'+w.title+'</h3><p class="mute">'+w.goal+'</p></a>').join("");
-  },
-  workshop(id){
-    const w = W.find(x=>x.id===id); if(!w) return pages.workshops();
-    shell(w.title,"practice","#/workshops");
-    $("#view").innerHTML = '<div class="eyebrow">'+w.module.toUpperCase()+' · '+w.level+' · '+w.duration+'</div><h2>'+w.title+'</h2><div class="card"><h3>Objetivo</h3><p class="mute">'+w.goal+'</p></div><div class="card"><h3>Pasos</h3><ol>'+w.steps.map(s=>'<li style="margin-bottom:10px">'+s+'</li>').join("")+'</ol></div><div class="card"><h3>Entregable</h3><p class="tip">'+w.deliverable+'</p></div>';
-  },
-  contracts(){
-    shell("Contratos modelo","library");
-    $("#view").innerHTML = '<p class="mute">Plantillas de referencia.</p>' + K.map(c=>'<a class="card" href="#/contract/'+c.id+'"><div class="row"><span class="eyebrow">'+c.module.toUpperCase()+' · '+c.language+'</span></div><h3>'+c.title+'</h3></a>').join("");
-  },
-  contract(id){
-    const c = K.find(x=>x.id===id); if(!c) return pages.contracts();
-    shell(c.title,"library","#/contracts");
-    $("#view").innerHTML = '<div class="eyebrow">'+c.module.toUpperCase()+' · '+c.language+'</div><h2>'+c.title+'</h2><div class="card"><pre style="white-space:pre-wrap;font-family:Georgia,serif;font-size:14px;line-height:1.6;color:var(--cream)">'+c.body+'</pre></div><div class="row">'+sayBtn(c.body.slice(0,400))+'</div>';
-  },
-  exam(){
-    shell("Exámenes","practice");
-    $("#view").innerHTML = '<p class="mute">Simulacros B2, C1 y C2.</p>' + E.map(ex=>{ const best = (st.exams||{})[ex.id]||0; return '<a class="card" href="#/exam/'+ex.id+'"><div class="row"><span class="eyebrow">Nivel '+ex.level+'</span><span class="tag">'+ex.minutes+' min</span></div><h3>'+ex.title+'</h3><p class="mute">'+ex.questions.length+' preguntas · mejor: '+best+'%</p></a>'; }).join("");
-  },
-  examDetail(id){
-    const ex = E.find(x=>x.id===id); if(!ex) return pages.exam();
-    runQuiz(shuffle(ex.questions.map(q=>Object.assign({},q,{mid:"exam"}))), "Examen "+ex.level, "#/exam", p=>{
-      st.exams = st.exams || {};
-      st.exams[ex.id] = Math.max(st.exams[ex.id]||0, p);
-      addXP(Math.round(p/3), "examen "+ex.level+" "+p+"%"); save();
-    });
-  },
-  practice(){
-    shell("Práctica","practice");
-    $("#view").innerHTML = '<a class="listlink" href="#/practice/quick"><span class="num">⚡</span><span class="grow"><b>Práctica rápida</b><br><span class="mute">10 preguntas aleatorias</span></span><span class="arr">›</span></a><a class="listlink" href="#/practice/cards"><span class="num">⇄</span><span class="grow"><b>Falsos amigos</b><br><span class="mute">'+C.falseFriends.length+' tarjetas</span></span><span class="arr">›</span></a><a class="listlink" href="#/practice/redline"><span class="num">§</span><span class="grow"><b>Redlining</b><br><span class="mute">'+C.redlines.length+' cláusulas</span></span><span class="arr">›</span></a><a class="listlink" href="#/practice/drills"><span class="num">♪</span><span class="grow"><b>Pronunciación</b><br><span class="mute">'+P.length+' pares mínimos</span></span><span class="arr">›</span></a><a class="listlink" href="#/dialogues"><span class="num">¶</span><span class="grow"><b>Diálogos</b><br><span class="mute">'+D.length+' role-plays</span></span><span class="arr">›</span></a><a class="listlink" href="#/workshops"><span class="num">⚒</span><span class="grow"><b>Talleres</b><br><span class="mute">'+W.length+' laboratorios</span></span><span class="arr">›</span></a>';
-  },
-  quick(){
-    const all = C.modules.flatMap(m=>m.quiz.map(q=>Object.assign({},q,{mid:m.id})));
-    runQuiz(shuffle(all).slice(0,10), "Práctica rápida","#/practice", p=>addXP(Math.round(p/5),"práctica "+p+"%"));
-  },
-  cards(){
-    shell("Falsos amigos","practice","#/practice");
-    const q = shuffle(C.falseFriends);
-    let i=0;
-    const draw = ()=>{
-      if(i>=q.length){ $("#view").innerHTML='<div class="card hero" style="text-align:center"><h2>Sesión completada</h2><p class="mute">'+q.length+' tarjetas</p></div><a class="btn" href="#/practice">Volver</a>'; return; }
-      const f = q[i];
-      $("#view").innerHTML = '<p class="mute">'+(i+1)+'/'+q.length+'</p><div class="flip" id="flip"><div class="in"><div class="face"><div class="eyebrow">¿Qué significa?</div><div class="big">'+f.en+'</div><p class="mute">Toca para revelar</p></div><div class="face back"><p style="text-decoration:line-through;color:var(--bad)">✗ '+f.wrong+'</p><p style="font-size:19px">✓ <b>'+f.right+'</b></p><p class="legal mute">"'+f.ex+'"</p></div></div></div><div class="row">'+sayBtn(f.en+". "+f.ex)+'</div><div class="btnrow"><button class="btn ghost" id="no">Otra vez</button><button class="btn" id="yes">La sabía</button></div>';
-      const fl = $("#flip"); fl.onclick = ()=>fl.classList.toggle("on");
-      $("#yes").onclick = ()=>{ i++; draw(); addXP(1,"repaso"); };
-      $("#no").onclick = ()=>{ q.push(f); i++; draw(); };
-    }; draw();
-  },
-  redline(){
-    shell("Redlining","practice","#/practice");
-    $("#view").innerHTML = C.redlines.map((r,i)=>'<div class="card"><div class="row"><span class="eyebrow">Reto '+(i+1)+'</span>'+sayBtn(r.orig)+'</div><h3>'+r.title+'</h3><p class="legal" style="color:var(--bad)">'+r.orig+'</p><div id="r'+i+'" hidden><p class="eyebrow" style="color:var(--ok)">Versión profesional</p><p class="legal" style="color:var(--ok)">'+r.fix+'</p><p class="tip">'+r.why+'</p></div><button class="btn ghost" data-r="'+i+'">Revelar (+2 XP)</button></div>').join("");
-    $$("[data-r]").forEach(b=>b.onclick=()=>{ const i=b.dataset.r; $("#r"+i).hidden=false; b.remove(); addXP(2,"redline"); });
-  },
-  drills(){
-    shell("Pronunciación","practice","#/practice");
-    $("#view").innerHTML = '<p class="mute">Escucha cada par mínimo.</p>' + P.map(d=>'<div class="card"><h3>'+d.title+'</h3>'+d.pairs.map(p=>'<p>'+p[0]+' '+sayBtn(p[0])+'<br>'+p[1]+' '+sayBtn(p[1])+'</p>').join("")+'</div>').join("");
-  },
-  lab(){
-    shell("Voice Lab","lab");
-    $("#view").innerHTML = '<div class="card hero"><div class="eyebrow">Laboratorio</div><h2>8 voces IA · Kokoro</h2><p class="mute">4 masculinas · 4 femeninas · Apache 2.0. Primera vez descarga ~80 MB.</p></div><div class="card"><h3>Texto para practicar</h3><textarea id="labText" style="width:100%;min-height:100px;padding:12px;border:1px solid var(--line);background:var(--bg2);color:var(--text);border-radius:12px;font-family:inherit">The parties agree to submit the dispute to arbitration in New York.</textarea><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px"><div><label class="eyebrow">Voz</label><select id="labVoice" style="width:100%;padding:10px;background:var(--bg2);color:var(--text);border:1px solid var(--line);border-radius:10px"><option value="f">Femenina</option><option value="m">Masculina</option></select></div><div><label class="eyebrow">Info</label><p class="mute" style="font-size:11px;margin:0">Usa WiFi la primera vez.</p></div></div><button class="btn" id="labSpeak">▶ Escuchar</button></div><div class="card"><h3>Frases de práctica</h3>'+C.phrases.map(p=>'<div class="eyebrow" style="margin-top:12px">'+p.cat+'</div>'+p.items.map(i=>'<p>'+i[0]+' '+sayBtn(i[0])+'<br><span class="mute">'+i[1]+'</span></p>').join("")).join("")+'</div>';
-    $("#labSpeak").onclick = ()=> speak($("#labText").value, $("#labVoice").value);
-  },
-  library(){
-    shell("Biblioteca","library");
-    let tab = "glosario";
-    const draw = ()=>{
-      let html = '<div class="seg"><button data-k="glosario" class="'+(tab==="glosario"?"on":"")+'">Glosario</button><button data-k="phrases" class="'+(tab==="phrases"?"on":"")+'">Frases</button></div>';
-      if(tab==="glosario"){
-        html += C.glossary.map(g=>'<div class="gitem"><h4>'+g.t+' '+sayBtn(g.t)+' <span class="cat">'+g.c+'</span></h4><p><span class="es">'+g.es+'</span> — '+g.d+'</p></div>').join("");
-      } else {
-        html += C.phrases.map(p=>'<div class="card"><h3>'+p.cat+'</h3>'+p.items.map(i=>'<p>'+i[0]+' '+sayBtn(i[0])+'<br><span class="mute">'+i[1]+'</span></p>').join("")+'</div>').join("");
-      }
-      $("#view").innerHTML = html;
-      $$(".seg button").forEach(b=>b.onclick=()=>{ tab=b.dataset.k; draw(); });
-    }; draw();
-  },
-  profile(){
-    shell("Perfil","profile");
-    const examCount = Object.keys(st.exams||{}).length;
-    $("#view").innerHTML = '<div class="card hero"><div class="eyebrow">Tu expediente</div><h2>Nivel '+lvl()+'</h2><p class="mute">'+st.xp+' XP · Racha: '+st.streak+' días</p></div><div class="grid3"><div class="stat"><b>'+doneLessons()+'</b><span>Lecciones</span></div><div class="stat"><b>'+Math.round((doneLessons()/totalLessons)*100)+'%</b><span>Curso</span></div><div class="stat"><b>'+examCount+'</b><span>Exámenes</span></div></div><button class="btn ghost" id="export">Exportar progreso</button><button class="btn ghost" id="reset" style="color:var(--bad);border-color:var(--bad)">Borrar todo</button>';
-    $("#export").onclick = ()=>{ const b=new Blob([JSON.stringify(st)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download="progreso-legal-english.json"; a.click(); };
-    $("#reset").onclick = ()=>{ if(confirm("¿Borrar todo?")){ try{localStorage.removeItem(KEY);}catch(e){} st=Object.assign({},DEF); save(); location.hash="#/"; } };
+    new Audio(url).play();
+  } catch (e) {
+    console.error(e);
   }
 };
 
-function runQuiz(qs, title, back, onDone){
-  shell(title, back.indexOf("module")===0?"modules":"practice", back);
-  let i=0, ok=0;
-  const draw = ()=>{
-    if(i>=qs.length){ const p=Math.round((ok/qs.length)*100); onDone&&onDone(p); save();
-      $("#view").innerHTML='<div class="card hero" style="text-align:center"><div class="eyebrow">Resultado</div><h2 style="font-size:44px;margin:8px 0">'+p+'%</h2><p class="mute">'+ok+' de '+qs.length+'</p></div><a class="btn" href="'+back+'">Volver</a>'; return; }
-    const q = qs[i];
-    $("#view").innerHTML = '<div class="row"><span class="mute">Pregunta '+(i+1)+' de '+qs.length+'</span><span class="tag">Correctas: '+ok+'</span></div><div class="bar"><i style="width:'+(i/qs.length)*100+'%"></i></div><div class="card"><h3 style="font-family:var(--sans);font-weight:600;font-size:16.5px">'+q.q+'</h3>'+q.o.map((o,k)=>'<button class="opt" data-k="'+k+'" data-l="'+["A","B","C","D"][k]+'">'+o+'</button>').join("")+'<div id="ex"></div></div>';
-    $$(".opt").forEach(b=>b.onclick=()=>{
-      const k=+b.dataset.k, good=k===q.a;
-      if(good) ok++; else if(!st.wrong.some(w=>w.q===q.q)) st.wrong.push(q);
-      $$(".opt").forEach(x=>{ x.disabled=true; if(+x.dataset.k===q.a) x.classList.add("ok"); });
-      if(!good) b.classList.add("bad");
-      $("#ex").innerHTML = '<p class="tip">'+(good?"✓ Correcto.":"✗ Incorrecto.")+' '+q.e+'</p><button class="btn" id="nx">'+(i+1<qs.length?"Siguiente":"Ver resultado")+'</button>';
-      $("#nx").onclick=()=>{ i++; draw(); }; save();
-    });
-  }; draw();
-}
-
-function runQuizInline(qs, container){
-  if(!container) return;
-  let i=0, ok=0;
-  const draw = ()=>{
-    if(i>=qs.length){ const p=Math.round((ok/qs.length)*100); addXP(Math.round(p/5),"lectura "+p+"%");
-      container.innerHTML = '<h3>Resultado</h3><p class="mute">'+p+'% · '+ok+'/'+qs.length+'</p>'; return; }
-    const q = qs[i];
-    container.innerHTML = '<h3>Comprensión</h3><p class="mute">'+(i+1)+'/'+qs.length+'</p><h3 style="font-family:var(--sans);font-weight:600;font-size:16px">'+q.q+'</h3>'+q.o.map((o,k)=>'<button class="opt" data-k="'+k+'" data-l="'+["A","B","C","D"][k]+'">'+o+'</button>').join("")+'<div id="ex2"></div>';
-    container.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
-      const k=+b.dataset.k, good=k===q.a;
-      if(good) ok++;
-      container.querySelectorAll(".opt").forEach(x=>{ x.disabled=true; if(+x.dataset.k===q.a) x.classList.add("ok"); });
-      if(!good) b.classList.add("bad");
-      $("#ex2").innerHTML = '<p class="tip">'+(good?"✓":"✗")+' '+q.e+'</p><button class="btn" id="nx2">'+(i+1<qs.length?"Siguiente":"Ver resultado")+'</button>';
-      $("#nx2").onclick=()=>{ i++; draw(); };
-    });
-  }; draw();
-}
-
-function shell(title, tab, back){
-  $("#title").textContent = title;
-  const b = $("#back"); b.hidden = !back;
-  b.onclick = ()=> location.hash = back || "#/";
-  $$(".dock a").forEach(a=>a.classList.toggle("on", a.dataset.tab===tab));
+function router() {
+  const hash = window.location.hash || '#/';
+  const app = document.getElementById('app');
+  document.querySelectorAll('.dock a').forEach(a => a.classList.remove('active'));
+  
+  if (hash === '#/' || hash === '') {
+    document.getElementById('nav-home').classList.add('active');
+    app.innerHTML = `
+      <div class="hero">
+        <span class="eyebrow">Master Edition</span>
+        <h1>Legal English</h1>
+        <p>Domina el sistema del Common Law.</p>
+        <div class="badge">${state.completed.length} Módulos Completados</div>
+      </div>
+      ${DATA.modules.map(m => `
+        <a href="#/module/${m.id}" class="card link">
+          <span class="eyebrow">${m.level}</span>
+          <h4 style="font-size:20px;margin:4px 0;">${m.title}</h4>
+          <p style="color:var(--mute);font-size:14px;margin:0;">${m.es}</p>
+        </a>
+      `).join('')}
+    `;
+  } 
+  else if (hash.startsWith('#/module/')) {
+    const id = hash.split('/')[2];
+    const mod = DATA.modules.find(m => m.id === id);
+    if (!mod) return location.hash = '#/';
+    document.getElementById('nav-modules').classList.add('active');
+    app.innerHTML = `
+      <a href="#/" style="color:var(--mute);font-size:14px;">← Volver</a>
+      <h2 style="margin:20px 0 10px;">${mod.title}</h2>
+      ${mod.lessons.map(l => `
+        <div class="card">
+          <h4 style="color:var(--gold-light);margin-bottom:12px;">${l.t}</h4>
+          <div class="legal-text">${l.body}</div>
+          <button class="say" onclick="speakAI('${l.t}')">🎙️ Escuchar título (IA)</button>
+        </div>
+      `).join('')}
+      <h3 style="margin:24px 0 16px;">Evaluación</h3>
+      ${mod.quiz.map((q, qIndex) => `
+        <div class="card">
+          <p style="font-weight:600;margin-bottom:12px;">${q.q}</p>
+          ${q.o.map((opt, oIndex) => `
+            <button class="opt" onclick="checkAnswer(this, ${oIndex === q.a}, '${q.e}')">${opt}</button>
+          `).join('')}
+          <div class="tip hidden"></div>
+        </div>
+      `).join('')}
+    `;
+  }
+  else if (hash === '#/lab') {
+    document.getElementById('nav-lab').classList.add('active');
+    app.innerHTML = `
+      <div class="hero">
+        <span class="eyebrow">Voice Lab</span>
+        <h2>Pronunciación IA</h2>
+        <p>Voces hiperrealistas con Kokoro.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--teal);margin-bottom:12px;">Prueba el Audio</h4>
+        <button class="say" onclick="speakAI('Welcome to the Legal English Voice Lab.')">▶ Probar Kokoro IA</button>
+        <p style="font-size:12px;color:var(--mute);margin-top:12px;">La primera vez descargará el modelo (80MB).</p>
+      </div>
+    `;
+  }
+  else if (hash === '#/practice') {
+    document.getElementById('nav-practice').classList.add('active');
+    app.innerHTML = `
+      <h2 style="margin-bottom:16px;">Práctica</h2>
+      <a href="#/practice/ff" class="list-item"><div class="num">⇄</div><div class="content"><h4>Falsos Amigos</h4></div><div class="arrow">›</div></a>
+    `;
+  }
+  else if (hash === '#/practice/ff') {
+    app.innerHTML = `
+      <a href="#/practice" style="color:var(--mute);font-size:14px;">← Volver</a>
+      <h3 style="margin:20px 0;">Falsos Amigos</h3>
+      ${DATA.falseFriends.map(f => `
+        <div class="card" onclick="this.querySelector('.answer').classList.toggle('hidden')">
+          <h4 style="color:var(--gold-light);">${f.en}</h4>
+          <p style="color:var(--bad);text-decoration:line-through;margin:8px 0;">❌ ${f.wrong}</p>
+          <div class="answer hidden">
+            <p style="color:var(--ok);font-weight:600;">✅ ${f.right}</p>
+            <p class="legal-text" style="font-size:14px;margin-top:8px;">"${f.ex}"</p>
+          </div>
+        </div>
+      `).join('')}
+    `;
+  }
   window.scrollTo(0,0);
 }
-function ring(pct){ const r=38,c=2*Math.PI*r; return '<svg class="ring" viewBox="0 0 88 88"><circle class="bgc" cx="44" cy="44" r="'+r+'"/><circle class="fgc" cx="44" cy="44" r="'+r+'" stroke-dasharray="'+c+'" stroke-dashoffset="'+(c*(1-pct/100))+'" transform="rotate(-90 44 44)"/><text x="44" y="50" text-anchor="middle">'+pct+'%</text></svg>'; }
 
-function route(){
-  const parts = (location.hash||"#/").slice(1).split("/");
-  const name = parts[0]||"", args = parts.slice(1);
-  let page = name || "home";
-  if(name==="practice" && args[0]) page = {quick:"quick",cards:"cards",redline:"redline",drills:"drills"}[args[0]] || "practice";
-  if(page==="exam" && args[0]) page = "examDetail";
-  const fn = pages[page] || pages.home;
-  fn.apply(null, args);
-}
-addEventListener("hashchange", route); route();
+window.checkAnswer = function(btn, isCorrect, explanation) {
+  const container = btn.parentElement;
+  container.querySelectorAll('.opt').forEach(b => b.disabled = true);
+  const tip = container.querySelector('.tip');
+  tip.classList.remove('hidden');
+  if (isCorrect) {
+    btn.classList.add('correct');
+    tip.innerHTML = `<b>✅ Correcto.</b> ${explanation}`;
+    updateXP(10);
+  } else {
+    btn.classList.add('wrong');
+    tip.innerHTML = `<b>❌ Incorrecto.</b> ${explanation}`;
+  }
+};
 
-let deferred;
-addEventListener("beforeinstallprompt", e=>{ e.preventDefault(); deferred=e; $("#install").hidden=false; });
-$("#install").onclick = async ()=>{ if(!deferred) return; deferred.prompt(); await deferred.userChoice; deferred=null; $("#install").hidden=true; };
-
-if("serviceWorker" in navigator){
-  const swCode = "const CACHE='legal-en-v1';self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./'])).then(()=>self.skipWaiting()));});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});self.addEventListener('fetch',e=>{const req=e.request;if(req.method!=='GET')return;const url=new URL(req.url);if(url.origin===location.origin){e.respondWith(caches.match(req).then(hit=>hit||fetch(req).then(res=>{if(res.ok&&res.type==='basic'){const cp=res.clone();caches.open(CACHE).then(c=>c.put(req,cp));}return res;}).catch(()=>caches.match('./'))));}else if(/esm\\.sh|cdn\\.jsdelivr|huggingface\\.co/.test(url.hostname)){e.respondWith(fetch(req).then(res=>{if(res.ok){const cp=res.clone();caches.open(CACHE).then(c=>c.put(req,cp));}return res;}).catch(()=>caches.match(req)));}});";
-  const blob = new Blob([swCode], {type:"application/javascript"});
-  const swUrl = URL.createObjectURL(blob);
-  navigator.serviceWorker.register(swUrl).catch(e=>console.warn("SW registration failed (normal on file:// and iOS):", e));
-}
-})();
+window.addEventListener('hashchange', router);
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('xp-display').innerText = state.xp + ' XP';
+  router();
+});
 </script>
 </body>
 </html>
