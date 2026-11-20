@@ -1,0 +1,145 @@
+<!doctype html>
+<!-- AUTOR: Omar Solano Carranza | consulta@tramitefacil.net | +506 6001-1310 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A192F">
+<title>Dental English Master · Omar Solano Carranza</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #0A192F; --bg2: #112240; --card: #172A45; --gold: #D4AF37; --gold-light: #F4E4BC; --teal: #64FFDA; --text: #E6F1FF; --mute: #8892B0; --border: #233554; --serif: 'Playfair Display', serif; --sans: 'Inter', sans-serif; --ok: #4ADE80; --bad: #F87171; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 var(--sans); min-height: 100vh; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
+p { margin: 0 0 12px 0; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+.hidden { display: none !important; }
+header { position: sticky; top: 0; z-index: 50; background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; justify-content: space-between; }
+.logo { font-family: var(--serif); font-size: 18px; color: var(--gold); }
+main { padding: 20px 20px 100px; max-width: 820px; margin: 0 auto; }
+.tabs-container { position: sticky; top: 57px; z-index: 40; background: var(--bg); padding: 10px 0; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+.tabs { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 0 20px; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { flex: none; padding: 8px 16px; border-radius: 20px; background: var(--bg2); color: var(--mute); font-size: 13px; font-weight: 600; white-space: nowrap; border: 1px solid var(--border); }
+.tab.active { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+.hero { text-align: center; padding: 20px 0; margin-bottom: 10px; }
+.hero h1 { font-size: 30px; color: var(--gold-light); }
+.opt { display: block; width: 100%; text-align: left; background: var(--bg2); border: 1px solid var(--border); padding: 14px; border-radius: 8px; margin-bottom: 8px; color: var(--text); font-size: 14px; }
+.opt.correct { background: rgba(74, 222, 128, 0.1); border-color: var(--ok); }
+.opt.wrong { background: rgba(248, 113, 113, 0.1); border-color: var(--bad); }
+.tip { background: rgba(100, 255, 218, 0.05); border-left: 3px solid var(--teal); padding: 14px; border-radius: 0 8px 8px 0; font-size: 13px; margin: 12px 0; }
+.legal-text { font-family: var(--serif); font-size: 15.5px; line-height: 1.7; color: #ccd6f6; }
+.search-bar { width: 100%; padding: 12px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); margin-bottom: 16px; }
+.audio-controls { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.say { display: flex; flex: 1 1 30%; align-items: center; justify-content: center; background: rgba(212, 175, 55, 0.1); color: var(--gold); padding: 8px 4px; border-radius: 6px; font-size: 10px; font-weight: 600; }
+.say.f1 { background: rgba(212, 175, 55, 0.15); color: #D4AF37; } .say.f2 { color: #F4E4BC; } .say.f3 { color: #FFC896; }
+.say.m1 { background: rgba(100, 255, 218, 0.1); color: #64FFDA; } .say.m2 { color: #88FFF0; } .say.m3 { color: #96DCFF; }
+.accordion { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; }
+.acc-header { background: var(--bg2); padding: 14px; cursor: pointer; display: flex; justify-content: space-between; }
+.acc-body { padding: 16px; display: none; border-top: 1px solid var(--border); }
+.acc-body.open { display: block; }
+</style>
+</head>
+<body>
+<header><div class="logo">Dental English · Master</div><div id="xp-display" style="color:var(--gold);font-weight:600">0 XP</div></header>
+<div class="tabs-container"><div class="tabs" id="main-tabs">
+  <button class="tab active" onclick="switchTab('lessons', this)">📖 Lecciones</button>
+  <button class="tab" onclick="switchTab('workshops', this)">🛠️ Talleres</button>
+  <button class="tab" onclick="switchTab('labs', this)">🎙️ Pronunciación</button>
+  <button class="tab" onclick="switchTab('reading', this)">📝 Lectura</button>
+  <button class="tab" onclick="switchTab('dict', this)">🦷 Diccionario</button>
+</div></div>
+<main id="app"></main>
+
+<script>
+const VOICES = { f1: "af_bella", f2: "af_nicole", f3: "bf_emma", m1: "am_adam", m2: "am_michael", m3: "bm_george" };
+let ttsModel = null;
+window.speakKokoro = async function(text, voiceKey, btnElement) {
+  const originalText = btnElement.innerHTML;
+  if (ttsModel) {
+    try { btnElement.innerHTML = "🔊..."; const audio = await ttsModel.generate(text, { voice: VOICES[voiceKey] }); const blob = new Blob([audio.toWav()], { type: "audio/wav" }); new Audio(URL.createObjectURL(blob)).play(); btnElement.innerHTML = originalText; } catch (e) { btnElement.innerHTML = originalText; }
+    return;
+  }
+  btnElement.innerHTML = "⏳...";
+  try { const module = await import("https://cdn.jsdelivr.net/npm/kokoro-js@1.2.0/dist/kokoro.web.js"); ttsModel = await module.KokoroTTS.from_pretrained("onnx-community/Kokoro-82M-v1.0-ONNX", { dtype: "q8" }); btnElement.innerHTML = originalText; window.speakKokoro(text, voiceKey, btnElement); } catch (e) { btnElement.innerHTML = originalText; alert("Descarga fallida. Intenta en WiFi."); }
+};
+
+// ================= CONTENIDO ODONTOLOGÍA =================
+const LESSONS = [
+  { id: "m1", title: "Módulo 1: Anatomía Dental y Terminología", weeks: [
+    { w: 1, t: "Tooth Anatomy", content: "<p>El diente se compone de <b>crown</b> (corona), <b>root</b> (raíz) y <b>pulp</b> (pulpa). El esmalte (<b>enamel</b>) es el tejido más duro del cuerpo. La <b>dentin</b> (dentina) rodea la pulpa.</p>", audio: "The tooth consists of the crown, the root, and the pulp. Enamel is the hardest tissue in the human body." },
+    { w: 2, t: "Dental Charting", content: "<p>El <b>charting</b> es el registro gráfico de la salud dental. Se usan números del 1 al 32 para los dientes permanentes (sistema universal).</p>", audio: "Dental charting is the systematic recording of the condition of the teeth and gums." }
+  ], quiz: [
+    { q: "¿Cuál es el tejido más duro del cuerpo?", o: ["Dentin", "Pulp", "Enamel", "Cementum"], a: 2, e: "El esmalte (enamel) es el más duro." }
+  ]},
+  { id: "m2", title: "Módulo 2: Procedimientos y Equipos", weeks: [
+    { w: 3, t: "Restorative Procedures", content: "<p><b>Fillings</b> (empastes), <b>crowns</b> (coronas), <b>bridges</b> (puentes) e <b>implants</b> (implantes). Los materiales incluyen composite, amalgama y cerámica.</p>", audio: "Restorative dentistry includes fillings, crowns, bridges, and implants." },
+    { w: 4, t: "Instruments", content: "<p><b>Dental mirror</b> (espejo), <b>probe</b> (sonda), <b>scaler</b> (raspador), <b>drill</b> (taladro dental o pieza de mano).</p>", audio: "A dental mirror, a probe, and a scaler are basic instruments used in dental examinations." }
+  ], quiz: [
+    { q: "¿Qué es un 'scaler'?", o: ["Un espejo", "Un raspador de sarro", "Una sonda", "Un taladro"], a: 1, e: "El scaler elimina el sarro (tartar)." }
+  ]}
+];
+
+const WORKSHOPS = [
+  { id: "w1", title: "Taller 1: Patient History", desc: "Redacta la historia clínica de un paciente en inglés.", bad: "Patient has pain in the mouth.", good: "The patient presents with acute pain in the mandibular right quadrant, specifically at tooth #30.", why: "Se usa terminología precisa (cuadrante, diente específico) en lugar de vaguedades." }
+];
+
+const LABS = [
+  { id: "lab1", title: "Lab 1: Frases con Pacientes", phrase: "Please open your mouth and relax your jaw.", translation: "Por favor, abra la boca y relaje la mandíbula." },
+  { id: "lab2", title: "Lab 2: Instrucciones Post-operatorias", phrase: "Avoid eating hard foods for the next 24 hours.", translation: "Evite comer alimentos duros durante las próximas 24 horas." }
+];
+
+const READING_TESTS = [
+  { id: "r1", title: "Dental Caries Overview", text: "Dental caries, also known as tooth decay, is caused by bacteria that produce acid. It affects the enamel and can progress to the dentin and pulp. Prevention includes fluoride application and regular brushing.", questions: [
+    { q: "What causes dental caries?", o: ["Sugar only", "Bacteria producing acid", "Genetics", "Water"], a: 1, e: "Bacteria metabolize sugars and produce acid." }
+  ]}
+];
+
+const DICT = [
+  { t: "Crown", es: "Corona", def: "Parte visible del diente cubierta por esmalte." },
+  { t: "Root", es: "Raíz", def: "Parte del diente que se ancla al hueso." },
+  { t: "Enamel", es: "Esmalte", def: "Tejido más duro del cuerpo." },
+  { t: "Pulp", es: "Pulpa", def: "Tejido blando dentro del diente con nervios y vasos." },
+  { t: "Dentin", es: "Dentina", def: "Capa debajo del esmalte." },
+  { t: "Gingivitis", es: "Gingivitis", def: "Inflamación de las encías." },
+  { t: "Periodontitis", es: "Periodontitis", def: "Infección grave de las encías que daña el hueso." },
+  { t: "Caries", es: "Caries", def: "Destrucción del diente por bacterias." },
+  { t: "Filling", es: "Empaste", def: "Material para restaurar un diente." },
+  { t: "Extraction", es: "Extracción", def: "Remoción de un diente." }
+];
+
+// ================= LÓGICA DE LA APP =================
+let currentTab = 'lessons';
+window.switchTab = function(tab, btn) { currentTab = tab; document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); btn.classList.add('active'); render(); };
+window.toggleAccordion = function(el) { el.nextElementSibling.classList.toggle('open'); };
+window.checkAnswer = function(btn, isCorrect, explanation) { const p = btn.parentElement; p.querySelectorAll('.opt').forEach(b => b.disabled = true); const tip = p.querySelector('.tip'); tip.classList.remove('hidden'); if(isCorrect){ btn.classList.add('correct'); tip.innerHTML = "<b>✅ Correcto.</b> " + explanation; } else { btn.classList.add('wrong'); tip.innerHTML = "<b>❌ Incorrecto.</b> " + explanation; } };
+window.filterDict = function(q) { q = q.toLowerCase(); document.querySelectorAll('.dict-item').forEach(i => { i.style.display = i.innerText.toLowerCase().includes(q) ? 'block' : 'none'; }); };
+
+function render() {
+  const app = document.getElementById('app');
+  if (currentTab === 'lessons') {
+    app.innerHTML = `<div class="hero"><h1>Odontología en Inglés</h1><p>Terminología y procedimientos dentales.</p></div>` + LESSONS.map(mod => `
+      <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)"><h4>${mod.title}</h4><span>▾</span></div><div class="acc-body">
+        ${mod.weeks.map(w => `<div style="padding:12px 0;border-bottom:1px solid var(--border);"><h4 style="color:var(--gold-light);">${w.t}</h4><div class="legal-text">${w.content}</div><div class="audio-controls"><button class="say f1" onclick="speakKokoro('${w.audio}', 'f1', this)">F1</button><button class="say m1" onclick="speakKokoro('${w.audio}', 'm1', this)">M1</button></div></div>`).join('')}
+      </div></div>`).join('');
+  } else if (currentTab === 'workshops') {
+    app.innerHTML = `<div class="hero"><h1>Talleres Clínicos</h1></div>` + WORKSHOPS.map(w => `<div class="card"><h4 style="color:var(--gold-light)">${w.title}</h4><p style="font-size:13px;color:var(--mute)">${w.desc}</p><p style="color:var(--bad);text-decoration:line-through">❌ ${w.bad}</p><p style="color:var(--ok);font-weight:600">✅ ${w.good}</p><p style="font-size:12px;color:var(--mute)"><b>Por qué:</b> ${w.why}</p></div>`).join('');
+  } else if (currentTab === 'labs') {
+    app.innerHTML = `<div class="hero"><h1>Laboratorio de Pronunciación</h1></div>` + LABS.map(l => `<div class="card"><h4 style="color:var(--gold-light)">${l.title}</h4><p class="legal-text">"${l.phrase}"</p><p style="font-size:13px;color:var(--mute)">${l.translation}</p><div class="audio-controls"><button class="say f1" onclick="speakKokoro('${l.phrase}', 'f1', this)">F1</button><button class="say f2" onclick="speakKokoro('${l.phrase}', 'f2', this)">F2</button><button class="say f3" onclick="speakKokoro('${l.phrase}', 'f3', this)">F3</button><button class="say m1" onclick="speakKokoro('${l.phrase}', 'm1', this)">M1</button><button class="say m2" onclick="speakKokoro('${l.phrase}', 'm2', this)">M2</button><button class="say m3" onclick="speakKokoro('${l.phrase}', 'm3', this)">M3</button></div></div>`).join('');
+  } else if (currentTab === 'reading') {
+    app.innerHTML = `<div class="hero"><h1>Evaluación de Lectura</h1></div>` + READING_TESTS.map(r => `<div class="card"><h4 style="color:var(--gold-light)">${r.title}</h4><p class="legal-text">${r.text}</p>${r.questions.map(q => `<div style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px"><p>${q.q}</p>${q.o.map((o, j) => `<button class="opt" onclick="checkAnswer(this, ${j === q.a}, '${q.e}')">${o}</button>`).join('')}<div class="tip hidden"></div></div>`).join('')}</div>`).join('');
+  } else if (currentTab === 'dict') {
+    app.innerHTML = `<div class="hero"><h1>Diccionario Odontológico</h1></div><input class="search-bar" placeholder="Buscar..." onkeyup="filterDict(this.value)">` + DICT.map(d => `<div class="card dict-item"><h4 style="color:var(--gold-light)">${d.t}</h4><p style="font-size:13px"><b>${d.es}</b> — ${d.def}</p><div class="audio-controls"><button class="say f1" onclick="speakKokoro('${d.t}', 'f1', this)">F1</button><button class="say m1" onclick="speakKokoro('${d.t}', 'm1', this)">M1</button></div></div>`).join('');
+  }
+  window.scrollTo(0,0);
+}
+window.addEventListener('DOMContentLoaded', render);
+</script>
+<footer style="max-width:820px;margin:0 auto;padding:20px;border-top:1px solid var(--border);color:var(--mute);font-size:11px;text-align:center;">
+  <p><strong style="color:var(--gold);">Dental English Master</strong></p>
+  <p>Autor: Omar Solano Carranza | Email: consulta@tramitefacil.net<br>Tel: +506 6001-1310 · WA: +506 6262-1997</p>
+  <p>© 2026 Omar Solano Carranza. Todos los derechos reservados.</p>
+</footer>
+</body></html>
