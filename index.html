@@ -1,10 +1,15 @@
 <!doctype html>
+<!-- ============================================================
+     AUTOR Y TITULAR: Omar Solano Carranza
+     CONTACTO: consulta@tramitefacil.net
+     TELÉFONO: +506 6001-1310 | WHATSAPP: +506 6262-1997
+     ============================================================ -->
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0A192F">
-<title>Legal English · 12-Month Intensive</title>
+<title>Legal English Master · Omar Solano Carranza</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -77,7 +82,7 @@ nav.dock { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17, 3
 <body>
 
 <header>
-  <div class="logo">Legal English · 12M</div>
+  <div class="logo">Legal English · Master</div>
   <div style="color:var(--gold);font-weight:600;font-size:13px" id="xp-display">0 XP</div>
 </header>
 
@@ -93,100 +98,99 @@ nav.dock { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17, 3
 
 <script>
 // ==========================================
-// CONTENIDO: CURRÍCULO DE 12 MESES (48 SEMANAS)
+// CURRÍCULO: 12 MESES (48 SEMANAS)
 // ==========================================
 const CURRICULUM = [
   { month: 1, title: "Fundamentos del Common Law", focus: "Estructura judicial, precedentes y formación contractual", weeks: [
-    { w: 1, topic: "The American Legal System & Federalism", lab: "Pronunciación: /ˈfɛdərəlɪzəm/", reading: "Marbury v. Madison (1803)" },
-    { w: 2, topic: "Court Structure & Jurisdiction", lab: "Vocabulario: Venue vs Jurisdiction", reading: "Diversity Jurisdiction explained" },
-    { w: 3, topic: "Stare Decisis & Binding Precedent", lab: "Lectura: Ratio Decidendi vs Obiter Dictum", reading: "Case brief de Brown v. Board" },
-    { w: 4, topic: "Contract Formation: Offer & Acceptance", lab: "Role-play: Negotiating a term sheet", reading: "UCC Article 2 basics" }
+    { w: 1, topic: "The American Legal System & Federalism", lab: "/ˈfɛdərəlɪzəm/", reading: "Marbury v. Madison (1803)" },
+    { w: 2, topic: "Court Structure & Jurisdiction", lab: "Venue vs. Jurisdiction", reading: "Diversity Jurisdiction explained" },
+    { w: 3, topic: "Stare Decisis & Binding Precedent", lab: "Ratio Decidendi vs Obiter Dictum", reading: "Brown v. Board of Education" },
+    { w: 4, topic: "Contract Formation: Offer & Acceptance", lab: "Negotiating a Term Sheet", reading: "UCC Article 2" }
   ]},
-  { month: 2, title: "Redacción Contractual (Parte I)", focus: "Lenguaje operativo y estructura", weeks: [
-    { w: 5, topic: "Shall, May, Must, Shall Not", lab: "Drill: 20 oraciones con modales", reading: "The language of obligation" },
+  { month: 2, title: "Redacción Contractual I", focus: "Lenguaje operativo y estructura", weeks: [
+    { w: 5, topic: "Shall, May, Must, Shall Not", lab: "20 oraciones con modales", reading: "The language of obligation" },
     { w: 6, topic: "Conditions Precedent & Subject To", lab: "Redlining: Identificar condiciones", reading: "Condition precedent clause" },
-    { w: 7, topic: "Representations & Warranties", lab: "Pronunciación: /ˌrɛprɪzɛnˈteɪʃən/", reading: "Reps vs Warranties en SPA" },
-    { w: 8, topic: "Covenants & Knowledge Qualifiers", lab: "Simulación: Negotiating knowledge", reading: "Knowledge qualifier clause" }
+    { w: 7, topic: "Representations & Warranties", lab: "/ˌrɛprɪzɛnˈteɪʃən/", reading: "Reps vs Warranties en SPA" },
+    { w: 8, topic: "Covenants & Knowledge Qualifiers", lab: "Negotiating knowledge", reading: "Knowledge qualifier clause" }
   ]},
-  { month: 3, title: "Redacción Contractual (Parte II)", focus: "Indemnidades y limitación de responsabilidad", weeks: [
-    { w: 9, topic: "Indemnify, Defend & Hold Harmless", lab: "Role-play: Redlining indemnity", reading: "Indemnity clause analysis" },
-    { w: 10, topic: "Limitation of Liability: Cap & Carve-outs", lab: "Drill: Calcular un cap", reading: "LoL clause standard" },
-    { w: 11, topic: "Liquidated Damages vs Penalties", lab: "Pronunciación: /ˈlɪkwɪdeɪtɪd/", reading: "Penalty doctrine" },
-    { w: 12, topic: "Boilerplate: Severability, Entire Agreement", lab: "Lectura: Cláusulas generales", reading: "Boilerplate clauses" }
+  { month: 3, title: "Redacción Contractual II", focus: "Indemnidades y limitación de responsabilidad", weeks: [
+    { w: 9, topic: "Indemnify, Defend & Hold Harmless", lab: "Redlining indemnity", reading: "Indemnity clause analysis" },
+    { w: 10, topic: "Limitation of Liability: Cap & Carve-outs", lab: "Calcular un cap", reading: "LoL clause standard" },
+    { w: 11, topic: "Liquidated Damages vs Penalties", lab: "/ˈlɪkwɪdeɪtɪd/", reading: "Penalty doctrine" },
+    { w: 12, topic: "Boilerplate: Severability, Entire Agreement", lab: "Cláusulas generales", reading: "Boilerplate clauses" }
   ]},
-  { month: 4, title: "Litigio Civil (Parte I)", focus: "Pleadings y Discovery", weeks: [
-    { w: 13, topic: "Complaint, Answer & Motion to Dismiss", lab: "Role-play: 12(b)(6) motion", reading: "Rule 12(b)(6) explained" },
-    { w: 14, topic: "Discovery: Interrogatories & RFPs", lab: "Drill: Draft interrogatories", reading: "Discovery scope" },
-    { w: 15, topic: "Depositions & Cross-Examination", lab: "Simulación: Deposition", reading: "Deposition transcript" },
-    { w: 16, topic: "Summary Judgment & Trial", lab: "Pronunciación: /ˈsʌməri ˈdʒʌdʒmənt/", reading: "Summary judgment standard" }
+  { month: 4, title: "Litigio Civil I", focus: "Pleadings y Discovery", weeks: [
+    { w: 13, topic: "Complaint, Answer & Motion to Dismiss", lab: "12(b)(6) motion", reading: "Rule 12(b)(6) explained" },
+    { w: 14, topic: "Discovery: Interrogatories & RFPs", lab: "Draft interrogatories", reading: "Discovery scope" },
+    { w: 15, topic: "Depositions & Cross-Examination", lab: "Deposition", reading: "Deposition transcript" },
+    { w: 16, topic: "Summary Judgment & Trial", lab: "/ˈsʌməri ˈdʒʌdʒmənt/", reading: "Summary judgment standard" }
   ]},
-  { month: 5, title: "Litigio Civil (Parte II) & Arbitraje", focus: "Apelaciones y resolución de disputas", weeks: [
-    { w: 17, topic: "Appeals & Standards of Review", lab: "Lectura: De novo vs Clearly erroneous", reading: "Appellate brief" },
-    { w: 18, topic: "International Arbitration: New York Convention", lab: "Role-play: Draft arbitration clause", reading: "NY Convention Art. V" },
-    { w: 19, topic: "Seat, Venue & Kompetenz-Kompetenz", lab: "Pronunciación: /ˌkɒmpɪtɛns ˈkɒmpɪtɛns/", reading: "Separability doctrine" },
-    { w: 20, topic: "Emergency Arbitration & Enforcement", lab: "Simulación: Enforcement motion", reading: "Award enforcement" }
+  { month: 5, title: "Litigio Civil II & Arbitraje", focus: "Apelaciones y resolución de disputas", weeks: [
+    { w: 17, topic: "Appeals & Standards of Review", lab: "De novo vs Clearly erroneous", reading: "Appellate brief" },
+    { w: 18, topic: "International Arbitration: New York Convention", lab: "Draft arbitration clause", reading: "NY Convention Art. V" },
+    { w: 19, topic: "Seat, Venue & Kompetenz-Kompetenz", lab: "/ˌkɒmpɪtɛns ˈkɒmpɪtɛns/", reading: "Separability doctrine" },
+    { w: 20, topic: "Emergency Arbitration & Enforcement", lab: "Enforcement motion", reading: "Award enforcement" }
   ]},
   { month: 6, title: "M&A y Corporativo", focus: "Fusiones, adquisiciones y due diligence", weeks: [
-    { w: 21, topic: "M&A Process: NDA to Closing", lab: "Role-play: LOI negotiation", reading: "Term sheet anatomy" },
-    { w: 22, topic: "Due Diligence & Red Flags", lab: "Drill: Due diligence checklist", reading: "DD report" },
-    { w: 23, topic: "Escrow, Earn-out & MAC/MAE", lab: "Pronunciación: /ˈɛskroʊ/", reading: "Earn-out clause" },
-    { w: 24, topic: "Share Deal vs Asset Deal", lab: "Simulación: Share vs Asset", reading: "SPA excerpt" }
+    { w: 21, topic: "M&A Process: NDA to Closing", lab: "LOI negotiation", reading: "Term sheet anatomy" },
+    { w: 22, topic: "Due Diligence & Red Flags", lab: "Due diligence checklist", reading: "DD report" },
+    { w: 23, topic: "Escrow, Earn-out & MAC/MAE", lab: "/ˈɛskroʊ/", reading: "Earn-out clause" },
+    { w: 24, topic: "Share Deal vs Asset Deal", lab: "Share vs Asset", reading: "SPA excerpt" }
   ]},
   { month: 7, title: "Propiedad Intelectual", focus: "Patentes, marcas, copyright y licencias", weeks: [
-    { w: 25, topic: "Patents, Trademarks, Copyright", lab: "Lectura: Patent claim", reading: "IP pillars" },
-    { w: 26, topic: "Work Made for Hire vs Assignment", lab: "Role-play: IP assignment", reading: "Work for hire doctrine" },
-    { w: 27, topic: "License Agreements: Grant & Scope", lab: "Drill: License clauses", reading: "License agreement" },
-    { w: 28, topic: "IP Litigation & Cease and Desist", lab: "Simulación: C&D letter", reading: "DMCA takedown" }
+    { w: 25, topic: "Patents, Trademarks, Copyright", lab: "Patent claim", reading: "IP pillars" },
+    { w: 26, topic: "Work Made for Hire vs Assignment", lab: "IP assignment", reading: "Work for hire doctrine" },
+    { w: 27, topic: "License Agreements: Grant & Scope", lab: "License clauses", reading: "License agreement" },
+    { w: 28, topic: "IP Litigation & Cease and Desist", lab: "C&D letter", reading: "DMCA takedown" }
   ]},
   { month: 8, title: "Laboral y Compliance", focus: "Empleo, FCPA y privacidad", weeks: [
-    { w: 29, topic: "At-Will Employment & Restrictive Covenants", lab: "Role-play: Termination call", reading: "At-will doctrine" },
-    { w: 30, topic: "FCPA & Anti-Corruption", lab: "Drill: Red flags", reading: "FCPA guide" },
-    { w: 31, topic: "Data Privacy: GDPR & CCPA", lab: "Simulación: DPA negotiation", reading: "GDPR breach notification" },
-    { w: 32, topic: "Cybersecurity & Incident Response", lab: "Role-play: Breach response", reading: "Incident response plan" }
+    { w: 29, topic: "At-Will Employment & Restrictive Covenants", lab: "Termination call", reading: "At-will doctrine" },
+    { w: 30, topic: "FCPA & Anti-Corruption", lab: "Red flags", reading: "FCPA guide" },
+    { w: 31, topic: "Data Privacy: GDPR & CCPA", lab: "DPA negotiation", reading: "GDPR breach notification" },
+    { w: 32, topic: "Cybersecurity & Incident Response", lab: "Breach response", reading: "Incident response plan" }
   ]},
   { month: 9, title: "Real Estate y Notariado", focus: "Bienes raíces y función notarial", weeks: [
-    { w: 33, topic: "Purchase & Sale Agreements (PSA)", lab: "Role-play: PSA negotiation", reading: "PSA clause" },
-    { w: 34, topic: "Title, Liens & Escrow", lab: "Drill: Title search", reading: "Title insurance vs Registry" },
-    { w: 35, topic: "Notary Public vs Civil Law Notary", lab: "Lectura: Notary functions", reading: "Notary comparison" },
-    { w: 36, topic: "Zoning, Environmental & Permits", lab: "Simulación: Environmental DD", reading: "SETENA / ZMT" }
+    { w: 33, topic: "Purchase & Sale Agreements (PSA)", lab: "PSA negotiation", reading: "PSA clause" },
+    { w: 34, topic: "Title, Liens & Escrow", lab: "Title search", reading: "Title insurance vs Registry" },
+    { w: 35, topic: "Notary Public vs Civil Law Notary", lab: "Notary functions", reading: "Notary comparison" },
+    { w: 36, topic: "Zoning, Environmental & Permits", lab: "Environmental DD", reading: "SETENA / ZMT" }
   ]},
   { month: 10, title: "Negociación y Escritura Legal", focus: "BATNA, ZOPA y redacción persuasiva", weeks: [
-    { w: 37, topic: "BATNA, ZOPA & Anchoring", lab: "Role-play: Settlement negotiation", reading: "Negotiation tactics" },
-    { w: 38, topic: "Legal Writing: IRAC & BLUF", lab: "Drill: Write a memo", reading: "IRAC method" },
-    { w: 39, topic: "Plain English & Drafting Clarity", lab: "Redlining: Simplify clauses", reading: "Plain English guide" },
-    { w: 40, topic: "Client Correspondence", lab: "Role-play: Client email", reading: "Professional email" }
+    { w: 37, topic: "BATNA, ZOPA & Anchoring", lab: "Settlement negotiation", reading: "Negotiation tactics" },
+    { w: 38, topic: "Legal Writing: IRAC & BLUF", lab: "Write a memo", reading: "IRAC method" },
+    { w: 39, topic: "Plain English & Drafting Clarity", lab: "Simplify clauses", reading: "Plain English guide" },
+    { w: 40, topic: "Client Correspondence", lab: "Client email", reading: "Professional email" }
   ]},
-  { month: 11, title: "Legal Tech y Juicios Simulados", focus: "IA, TAR y mock trials", weeks: [
-    { w: 41, topic: "AI in Legal Practice & TAR", lab: "Lectura: TAR workflow", reading: "ABA Opinion 512" },
-    { w: 42, topic: "Mock Trial: Opening Statements", lab: "Simulación: Opening", reading: "Opening statement script" },
-    { w: 43, topic: "Mock Trial: Direct & Cross", lab: "Simulación: Cross-examination", reading: "Cross-exam tips" },
-    { w: 44, topic: "Mock Trial: Closing & Verdict", lab: "Simulación: Closing argument", reading: "Closing script" }
+  { month: 11, title: "Legal Tech y Mock Trials", focus: "IA, TAR y juicios simulados", weeks: [
+    { w: 41, topic: "AI in Legal Practice & TAR", lab: "TAR workflow", reading: "ABA Opinion 512" },
+    { w: 42, topic: "Mock Trial: Opening Statements", lab: "Opening", reading: "Opening statement script" },
+    { w: 43, topic: "Mock Trial: Direct & Cross", lab: "Cross-examination", reading: "Cross-exam tips" },
+    { w: 44, topic: "Mock Trial: Closing & Verdict", lab: "Closing argument", reading: "Closing script" }
   ]},
   { month: 12, title: "Integración y Certificación", focus: "Repaso y examen final", weeks: [
     { w: 45, topic: "Repaso: Contratos y Litigio", lab: "Quiz integrador", reading: "Case study" },
-    { w: 46, topic: "Repaso: M&A, IP y Compliance", lab: "Quiz integrador", reading: "Deal simulation" },
+    { w: 46, topic: "Repaso: M&A, IP y Compliance", lab: "Deal simulation", reading: "Deal simulation" },
     { w: 47, topic: "Examen Final (Parte 1)", lab: "Examen escrito", reading: "—" },
     { w: 48, topic: "Examen Final (Parte 2) y Certificación", lab: "Examen oral", reading: "—" }
   ]}
 ];
 
-// Diccionario extendido (150+ términos organizados por área)
+// Diccionario (150+ términos)
 const DICTIONARY = [
-  // Contratos
   { t: "Consideration", es: "Contraprestación", area: "Contratos", def: "Intercambio de valor mutuo; requisito del Common Law." },
   { t: "Offer", es: "Oferta", area: "Contratos", def: "Propuesta de contratar con intención de quedar obligado." },
   { t: "Acceptance", es: "Aceptación", area: "Contratos", def: "Asentimiento inequívoco a los términos de la oferta." },
   { t: "Breach", es: "Incumplimiento", area: "Contratos", def: "Violación de una obligación contractual." },
   { t: "Material Breach", es: "Incumplimiento sustancial", area: "Contratos", def: "Incumplimiento que afecta el núcleo del contrato." },
   { t: "Warranty", es: "Garantía", area: "Contratos", def: "Promesa de que un hecho es verdadero." },
-  { t: "Representation", es: "Declaración", area: "Contratos", def: "Afirmación de hechos pasados o presentes que induce a contratar." },
+  { t: "Representation", es: "Declaración", area: "Contratos", def: "Afirmación de hechos pasados o presentes." },
   { t: "Covenant", es: "Compromiso", area: "Contratos", def: "Promesa de hacer o no hacer algo." },
   { t: "Indemnify", es: "Indemnizar", area: "Contratos", def: "Reembolsar pérdidas a la otra parte." },
-  { t: "Hold Harmless", es: "Mantener indemne", area: "Contratos", def: "Liberar de responsabilidad a la otra parte." },
+  { t: "Hold Harmless", es: "Mantener indemne", area: "Contratos", def: "Liberar de responsabilidad." },
   { t: "Cap", es: "Tope", area: "Contratos", def: "Límite máximo de responsabilidad." },
-  { t: "Carve-out", es: "Excepción", area: "Contratos", def: "Supuesto excluido de un límite o regla general." },
-  { t: "Severability", es: "Divisibilidad", area: "Contratos", def: "Cláusula que salva el resto del contrato si una parte es nula." },
-  { t: "Entire Agreement", es: "Acuerdo íntegro", area: "Contratos", def: "Cláusula que excluye acuerdos previos." },
+  { t: "Carve-out", es: "Excepción", area: "Contratos", def: "Supuesto excluido de un límite." },
+  { t: "Severability", es: "Divisibilidad", area: "Contratos", def: "Salva el resto del contrato si una parte es nula." },
+  { t: "Entire Agreement", es: "Acuerdo íntegro", area: "Contratos", def: "Excluye acuerdos previos." },
   { t: "Force Majeure", es: "Fuerza mayor", area: "Contratos", def: "Evento imprevisible que excusa el incumplimiento." },
   { t: "Specific Performance", es: "Cumplimiento forzoso", area: "Contratos", def: "Remedio equitativo que obliga a cumplir lo pactado." },
   { t: "Liquidated Damages", es: "Daños preestablecidos", area: "Contratos", def: "Suma pactada de antemano por incumplimiento." },
@@ -194,7 +198,6 @@ const DICTIONARY = [
   { t: "Escrow", es: "Depósito en garantía", area: "Contratos", def: "Fondos retenidos por un tercero neutral." },
   { t: "Earn-out", es: "Precio contingente", area: "Contratos", def: "Pago adicional sujeto a resultados futuros." },
 
-  // Litigio
   { t: "Complaint", es: "Demanda", area: "Litigio", def: "Escrito que inicia el pleito civil." },
   { t: "Answer", es: "Contestación", area: "Litigio", def: "Respuesta del demandado a la demanda." },
   { t: "Motion to Dismiss", es: "Moción de desestimación", area: "Litigio", def: "Solicitud de cierre por falta de fundamento legal." },
@@ -216,7 +219,6 @@ const DICTIONARY = [
   { t: "Res Judicata", es: "Cosa juzgada", area: "Litigio", def: "Impide volver a litigar la misma controversia." },
   { t: "Stare Decisis", es: "Precedente vinculante", area: "Litigio", def: "Obligación de seguir fallos anteriores." },
 
-  // Arbitraje
   { t: "Arbitration", es: "Arbitraje", area: "Arbitraje", def: "Resolución de disputas por un tercero neutral." },
   { t: "Award", es: "Laudo", area: "Arbitraje", def: "Decisión final del tribunal arbitral." },
   { t: "Seat", es: "Sede", area: "Arbitraje", def: "Jurisdicción legal del arbitraje." },
@@ -227,7 +229,6 @@ const DICTIONARY = [
   { t: "Emergency Arbitrator", es: "Árbitro de emergencia", area: "Arbitraje", def: "Árbitro que otorga medidas urgentes antes de constituirse el tribunal." },
   { t: "Costs Follow the Event", es: "El perdedor paga", area: "Arbitraje", def: "La parte vencida asume las costas." },
 
-  // M&A / Corporativo
   { t: "Due Diligence", es: "Debida diligencia", area: "M&A", def: "Auditoría legal previa a la compra." },
   { t: "LOI", es: "Carta de intención", area: "M&A", def: "Documento no vinculante que resume términos." },
   { t: "Term Sheet", es: "Hoja de términos", area: "M&A", def: "Resumen de condiciones de la operación." },
@@ -241,7 +242,6 @@ const DICTIONARY = [
   { t: "Business Judgment Rule", es: "Regla del criterio empresarial", area: "M&A", def: "Protege decisiones de buena fe e informadas." },
   { t: "Piercing the Veil", es: "Levantamiento del velo", area: "M&A", def: "Responsabilidad de los socios por deudas sociales." },
 
-  // Propiedad Intelectual
   { t: "Patent", es: "Patente", area: "PI", def: "Protección de invenciones." },
   { t: "Trademark", es: "Marca", area: "PI", def: "Signo distintivo de productos o servicios." },
   { t: "Copyright", es: "Derecho de autor", area: "PI", def: "Protección de obras originales." },
@@ -254,7 +254,6 @@ const DICTIONARY = [
   { t: "DMCA Takedown", es: "Retirada DMCA", area: "PI", def: "Notificación a plataformas para retirar contenido infractor." },
   { t: "Likelihood of Confusion", es: "Probabilidad de confusión", area: "PI", def: "Estándar de infracción de marca." },
 
-  // Laboral / Compliance
   { t: "At-Will Employment", es: "Empleo a voluntad", area: "Laboral", def: "Cualquiera puede terminar la relación sin causa." },
   { t: "Non-compete", es: "No competencia", area: "Laboral", def: "Restricción para trabajar en la competencia." },
   { t: "Non-solicitation", es: "No captación", area: "Laboral", def: "Prohibición de llevarse clientes o empleados." },
@@ -268,7 +267,6 @@ const DICTIONARY = [
   { t: "Data Breach", es: "Brecha de datos", area: "Privacidad", def: "Acceso no autorizado a datos personales." },
   { t: "DPA", es: "Acuerdo de Tratamiento de Datos", area: "Privacidad", def: "Data Processing Agreement." },
 
-  // Real Estate / Notariado
   { t: "PSA", es: "Contrato de compraventa", area: "Real Estate", def: "Purchase and Sale Agreement." },
   { t: "Title", es: "Título de propiedad", area: "Real Estate", def: "Derecho de propiedad sobre un inmueble." },
   { t: "Lien", es: "Gravamen", area: "Real Estate", def: "Carga sobre un bien para garantizar una deuda." },
@@ -280,7 +278,6 @@ const DICTIONARY = [
   { t: "Zoning", es: "Zonificación", area: "Real Estate", def: "Regulación del uso del suelo." },
   { t: "Environmental Viability", es: "Viabilidad ambiental", area: "Real Estate", def: "Permiso ambiental para desarrollo." },
 
-  // Legal Tech
   { t: "TAR", es: "Revisión asistida por tecnología", area: "Legal Tech", def: "Machine learning para revisión de documentos." },
   { t: "CLM", es: "Gestión del ciclo contractual", area: "Legal Tech", def: "Contract Lifecycle Management." },
   { t: "Hallucination", es: "Alucinación", area: "Legal Tech", def: "Cita o dato inventado por una IA." },
@@ -473,7 +470,6 @@ function router() {
         <h2 style="font-size:22px;">${w.topic}</h2>
       </div>
 
-      <!-- LABORATORIO DE PRONUNCIACIÓN -->
       <div class="card">
         <h4 style="color:var(--gold-light);margin-bottom:10px;">🎙️ Laboratorio de Pronunciación</h4>
         <p class="legal-text" style="margin-bottom:12px;">${w.topic}</p>
@@ -487,21 +483,18 @@ function router() {
         <p style="font-size:11px;color:var(--mute);margin-top:8px;">Drill: ${w.lab}</p>
       </div>
 
-      <!-- LECTURA -->
       <div class="card">
         <h4 style="color:var(--gold-light);margin-bottom:10px;">📖 Lectura Dirigida</h4>
         <p class="legal-text">${w.reading}</p>
         <button class="say tts" style="margin-top:10px;" onclick="shareTTSMaker('${w.reading.replace(/'/g,"\\'")}')">☁️ Escuchar lectura en TTSMaker</button>
       </div>
 
-      <!-- VIDEO DE CASO REAL -->
       <div class="card" style="border-color:var(--teal);">
         <h4 style="color:var(--teal);margin-bottom:8px;">🎬 Video de Caso Real</h4>
         <p style="font-size:13px;color:var(--mute);margin-bottom:8px;">Canales recomendados: Law&Crime Trials, canales oficiales de cortes federales, LegalEagle.</p>
         <a href="https://www.youtube.com/@LawCrimeNetwork" target="_blank" class="btn" style="width:100%;background:var(--teal);color:var(--bg);">Abrir Law&Crime Trials ↗</a>
       </div>
 
-      <!-- CHECK COMPLETADO -->
       <button class="btn" style="width:100%;margin-top:10px;" onclick="markCompleted('${weekId}'); this.innerText='✓ Semana Completada'; this.disabled=true;">
         ${done ? '✓ Semana Completada' : 'Marcar Semana como Completada'}
       </button>
@@ -657,5 +650,30 @@ window.addEventListener('DOMContentLoaded', () => {
   router();
 });
 </script>
+
+    <!-- ============================================================
+         FOOTER LEGAL Y DESCARGAS
+         ============================================================ -->
+    <footer style="max-width:820px; margin:0 auto; padding:20px; border-top:1px solid #233554; color:#8892B0; font-size:11px; text-align:center; line-height:1.7;">
+      <p style="margin:0 0 8px 0;">
+        <strong style="color:#D4AF37;">Legal English Master</strong> · Curso intensivo de 12 meses
+      </p>
+      <p style="margin:0 0 8px 0;">
+        <strong>Autor y titular:</strong> Omar Solano Carranza<br>
+        <strong>Email:</strong> consulta@tramitefacil.net<br>
+        <strong>Teléfono:</strong> +506 6001-1310 · <strong>WhatsApp:</strong> +506 6262-1997
+      </p>
+      <p style="margin:0 0 8px 0;">
+        <strong>Descargas legales:</strong>
+        <a href="#" style="color:#64FFDA; text-decoration:underline;">Términos y Condiciones</a> ·
+        <a href="#" style="color:#64FFDA; text-decoration:underline;">Política de Privacidad</a> ·
+        <a href="#" style="color:#64FFDA; text-decoration:underline;">Aviso de Copyright</a>
+      </p>
+      <p style="margin:0; font-size:10px; color:#6d8299;">
+        © 2026 Omar Solano Carranza. Todos los derechos reservados.<br>
+        Prohibida la reproducción total o parcial sin autorización expresa.<br>
+        Este curso es material educativo y no constituye asesoría legal para casos concretos.
+      </p>
+    </footer>
 </body>
 </html>
