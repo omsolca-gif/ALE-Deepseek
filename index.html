@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0A192F">
-<title>Legal English · Pro</title>
+<title>Legal English · 12-Month Intensive</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -23,206 +23,275 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .hidden { display: none !important; }
 
 header { position: sticky; top: 0; z-index: 50; background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
-.logo { font-family: var(--serif); font-size: 20px; color: var(--gold); letter-spacing: 0.5px; }
-main { padding: 24px 20px 100px; max-width: 800px; margin: 0 auto; }
-nav.dock { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17, 34, 64, 0.98); border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); z-index: 50; }
-.dock a { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: var(--mute); transition: color 0.2s; }
+.logo { font-family: var(--serif); font-size: 19px; color: var(--gold); letter-spacing: 0.5px; }
+main { padding: 24px 20px 100px; max-width: 820px; margin: 0 auto; }
+nav.dock { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17, 34, 64, 0.98); border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 10px 0 calc(10px + env(safe-area-inset-bottom)); z-index: 50; }
+.dock a { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; font-weight: 600; color: var(--mute); transition: color 0.2s; }
 .dock a.active { color: var(--gold); }
 .dock svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; }
 
-.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; display: block; }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+.eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; display: block; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
 .card.link { display: block; transition: transform 0.2s; }
 .card.link:active { transform: scale(0.98); }
-.btn { display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--bg); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; }
-.badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; background: rgba(212, 175, 55, 0.15); color: var(--gold); border: 1px solid rgba(212, 175, 55, 0.3); }
-.hero { text-align: center; padding: 30px 0; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
-.hero h1 { font-size: 36px; color: var(--gold-light); margin-bottom: 12px; line-height: 1.1; }
-.hero p { color: var(--mute); font-size: 15px; max-width: 500px; margin: 0 auto 20px; }
-.list-item { display: flex; align-items: center; padding: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; }
-.list-item .num { font-family: var(--serif); font-size: 20px; color: var(--mute); width: 40px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--bg); padding: 12px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; }
+.badge { display: inline-block; padding: 3px 9px; border-radius: 20px; font-size: 10px; font-weight: 600; background: rgba(212, 175, 55, 0.15); color: var(--gold); border: 1px solid rgba(212, 175, 55, 0.3); }
+.hero { text-align: center; padding: 24px 0; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+.hero h1 { font-size: 32px; color: var(--gold-light); margin-bottom: 10px; line-height: 1.1; }
+.hero p { color: var(--mute); font-size: 14px; max-width: 500px; margin: 0 auto 16px; }
+.list-item { display: flex; align-items: center; padding: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; }
+.list-item .num { font-family: var(--serif); font-size: 18px; color: var(--mute); width: 36px; }
 .list-item .content { flex: 1; }
-.list-item h4 { font-size: 16px; margin-bottom: 4px; color: var(--text); }
-.list-item p { font-size: 13px; color: var(--mute); margin: 0; }
-.list-item .arrow { color: var(--gold); font-size: 20px; }
-.opt { display: block; width: 100%; text-align: left; background: var(--bg2); border: 1px solid var(--border); padding: 16px; border-radius: 8px; margin-bottom: 10px; color: var(--text); }
+.list-item h4 { font-size: 15px; margin-bottom: 3px; color: var(--text); }
+.list-item p { font-size: 12px; color: var(--mute); margin: 0; }
+.list-item .arrow { color: var(--gold); font-size: 18px; }
+.opt { display: block; width: 100%; text-align: left; background: var(--bg2); border: 1px solid var(--border); padding: 14px; border-radius: 8px; margin-bottom: 8px; color: var(--text); font-size: 14px; }
 .opt.correct { background: rgba(74, 222, 128, 0.1); border-color: var(--ok); }
 .opt.wrong { background: rgba(248, 113, 113, 0.1); border-color: var(--bad); }
 .opt:disabled { cursor: default; }
-.tip { background: rgba(100, 255, 218, 0.05); border-left: 3px solid var(--teal); padding: 16px; border-radius: 0 8px 8px 0; font-size: 14px; margin: 16px 0; }
-.legal-text { font-family: var(--serif); font-size: 16px; line-height: 1.7; color: #ccd6f6; }
-.search-bar { width: 100%; padding: 12px 16px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 15px; margin-bottom: 20px; }
+.tip { background: rgba(100, 255, 218, 0.05); border-left: 3px solid var(--teal); padding: 14px; border-radius: 0 8px 8px 0; font-size: 13px; margin: 12px 0; }
+.legal-text { font-family: var(--serif); font-size: 15.5px; line-height: 1.7; color: #ccd6f6; }
+.search-bar { width: 100%; padding: 12px 16px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 15px; margin-bottom: 16px; }
 
-/* Botones de Audio Híbridos */
-.audio-controls { display: flex; gap: 8px; margin-top: 12px; }
-.say { display: flex; flex: 1; align-items: center; justify-content: center; gap: 6px; background: rgba(212, 175, 55, 0.1); color: var(--gold); padding: 10px 8px; border-radius: 8px; font-size: 12px; font-weight: 600; transition: background 0.2s; }
+.audio-controls { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.say { display: flex; flex: 1 1 45%; align-items: center; justify-content: center; gap: 5px; background: rgba(212, 175, 55, 0.1); color: var(--gold); padding: 9px 6px; border-radius: 8px; font-size: 11px; font-weight: 600; transition: background 0.2s; }
 .say:active { background: rgba(212, 175, 55, 0.2); }
-.say.tts { background: rgba(100, 255, 218, 0.1); color: var(--teal); }
-.say.tts:active { background: rgba(100, 255, 218, 0.2); }
+.say.f1 { background: rgba(212, 175, 55, 0.15); color: #D4AF37; }
+.say.f2 { background: rgba(244, 228, 188, 0.1); color: #F4E4BC; }
+.say.m1 { background: rgba(100, 255, 218, 0.1); color: #64FFDA; }
+.say.m2 { background: rgba(100, 255, 218, 0.15); color: #88FFF0; }
+.say.tts { background: rgba(255, 255, 255, 0.05); color: #E6F1FF; }
+
+.timeline { display: flex; flex-direction: column; gap: 12px; }
+.month-block { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.month-header { background: var(--bg2); padding: 14px 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.month-header h3 { font-size: 16px; color: var(--gold-light); margin: 0; }
+.month-body { padding: 0 18px 14px; display: none; }
+.month-body.open { display: block; }
+.week-row { padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.week-row:last-child { border-bottom: none; }
+.week-row span { font-size: 13px; color: var(--mute); }
+.week-row a { font-size: 12px; color: var(--gold); font-weight: 600; }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">Legal English · Pro</div>
-  <div style="color:var(--gold);font-weight:600;font-size:14px" id="xp-display">0 XP</div>
+  <div class="logo">Legal English · 12M</div>
+  <div style="color:var(--gold);font-weight:600;font-size:13px" id="xp-display">0 XP</div>
 </header>
 
 <main id="app"></main>
 
 <nav class="dock">
   <a href="#/" id="nav-home" class="active"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio</a>
-  <a href="#/modules" id="nav-modules"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Módulos</a>
+  <a href="#/curriculum" id="nav-curriculum"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Programa</a>
   <a href="#/lab" id="nav-lab"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>Voice Lab</a>
   <a href="#/practice" id="nav-practice"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>Práctica</a>
+  <a href="#/dictionary" id="nav-dictionary"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Diccionario</a>
 </nav>
 
 <script>
 // ==========================================
-// CONTENIDO EXHAUSTIVO (16 MÓDULOS)
+// CONTENIDO: CURRÍCULO DE 12 MESES (48 SEMANAS)
 // ==========================================
-const DATA = {
-  modules: [
-    { id: "m1", title: "The American Legal System", es: "Sistema Jurídico de EE. UU.", level: "B1-B2", hours: 8, lessons: [
-      { t: "Federalism & Sources of Law", body: "<p>EE. UU. tiene un sistema dual: 50 estados y 1 federal. El derecho contractual es <b>estatal</b> (no federal). El <b>UCC</b> regula la venta de bienes muebles.</p><div class='tip'><b>CR vs EE. UU.:</b> En Costa Rica, el Código Civil regula todo. En EE. UU., si el contrato es de servicios, se rige por <i>Common Law</i> estatal.</div>" },
-      { t: "The Court System", body: "<p>Federal: <b>District Courts</b> → <b>Courts of Appeals</b> → <b>Supreme Court</b>.</p><p>Para entrar a corte federal necesitas: <b>Federal Question</b> o <b>Diversity Jurisdiction</b> (partes de distintos estados y disputa > $75,000).</p>" },
-      { t: "Stare Decisis", body: "<p>Obligación de seguir precedentes (<i>Binding authority</i>). La <b>Ratio Decidendi</b> es la razón del fallo (obliga); el <b>Obiter Dictum</b> son comentarios al margen (no obligan).</p>" }
-    ], quiz: [
-      { q: "¿Quién regula los contratos mercantiles en EE. UU.?", o: ["El derecho federal", "El derecho estatal", "El Código Napoleónico", "La ONU"], a: 1, e: "El contract law es estatal." },
-      { q: "¿Qué es Stare Decisis?", o: ["Cosa juzgada", "Seguir precedentes", "Prescripción", "Apelación"], a: 1, e: "Obligación de respetar fallos anteriores." }
-    ]},
-    { id: "m2", title: "Contract Drafting Masterclass", es: "Redacción Contractual", level: "B2-C1", hours: 12, lessons: [
-      { t: "Shall vs May vs Shall Not", body: "<p><b>Shall</b> = Obligación. <b>May</b> = Facultad. <b>Shall not</b> = Prohibición.</p><div class='tip'>Nunca uses 'will' para obligaciones. 'Will' solo expresa futuro.</div>" },
-      { t: "Conditions Precedent", body: "<p>Evento que debe ocurrir antes de que una obligación sea exigible. Se redacta con: <i>Subject to...</i> (Sujeto a), <i>Provided that...</i> (Siempre que).</p>" },
-      { t: "Best Efforts", body: "<p>Los tribunales odian 'Best Efforts' por ser subjetivo. Se prefiere <b>Commercially Reasonable Efforts</b>.</p>" }
-    ], quiz: [
-      { q: "¿Qué verbo crea una prohibición?", o: ["May", "Will", "Shall not", "Should"], a: 2, e: "Shall not es la fórmula estándar." },
-      { q: "¿Cómo se traduce 'Subject to Section 5'?", o: ["Sujeto a la sección 5", "Con sujeción a la sección 5", "Eliminado", "De acuerdo a"], a: 1, e: "Significa que está condicionada." }
-    ]},
-    { id: "m3", title: "Representations & Warranties", es: "Declaraciones y Garantías", level: "C1", hours: 10, lessons: [
-      { t: "Reps vs Warranties", body: "<p><b>Representation</b>: Declaración de hechos pasados/presentes. <b>Warranty</b>: Promesa de que un hecho es verdadero. Si son falsas, el comprador puede reclamar.</p>" },
-      { t: "Knowledge Qualifier", body: "<p>Limita la garantía al conocimiento actual del vendedor: <i>\"To the Seller's Knowledge...\"</i>.</p>" }
-    ], quiz: [
-      { q: "Una promesa sobre conducta futura es...", o: ["Representation", "Warranty", "Covenant", "Recital"], a: 2, e: "Covenant es promesa de hacer/no hacer." }
-    ]},
-    { id: "m4", title: "Liability & Remedies", es: "Responsabilidad y Remedios", level: "C1", hours: 10, lessons: [
-      { t: "Limitation of Liability", body: "<p>Exclusión de daños indirectos + <b>Cap</b> (tope máximo) + <b>Carve-outs</b> (excepciones como dolo o confidencialidad).</p>" },
-      { t: "Indemnification", body: "<p><b>Indemnify</b> = reembolsar pérdidas; <b>Defend</b> = asumir defensa; <b>Hold Harmless</b> = mantener indemne.</p>" }
-    ], quiz: [
-      { q: "¿Qué es un 'Cap'?", o: ["Un sombrero", "El tope de responsabilidad", "Un seguro", "Una garantía"], a: 1, e: "Limita el monto a pagar." }
-    ]},
-    { id: "m5", title: "Boilerplate Clauses", es: "Cláusulas Generales", level: "B2-C1", hours: 8, lessons: [
-      { t: "Entire Agreement", body: "<p>Excluye acuerdos previos. Evita que alguien alegue promesas verbales anteriores.</p>" },
-      { t: "Severability", body: "<p>Si una cláusula es nula, el resto del contrato sobrevive.</p>" }
-    ], quiz: [
-      { q: "¿Qué cláusula salva el resto del contrato si una parte es nula?", o: ["Waiver", "Severability", "Notices", "Assignment"], a: 1, e: "Divisibilidad." }
-    ]},
-    { id: "m6", title: "M&A & Corporate Law", es: "Fusiones y Adquisiciones", level: "C1", hours: 14, lessons: [
-      { t: "Due Diligence", body: "<p>Auditoría legal previa a la compra. Se revisan Liens (gravámenes), Litigation y Labor Liabilities.</p>" },
-      { t: "Escrow & Earn-out", body: "<p><b>Escrow</b>: dinero retenido por un tercero. <b>Earn-out</b>: pago contingente si la empresa logra metas futuras.</p>" }
-    ], quiz: [
-      { q: "¿Qué es un 'Earn-out'?", o: ["Un impuesto", "Un pago contingente por metas futuras", "Una multa", "Un despido"], a: 1, e: "Precio contingente." }
-    ]},
-    { id: "m7", title: "Civil Litigation", es: "Litigio Civil", level: "C1", hours: 12, lessons: [
-      { t: "Discovery Phase", body: "<p>Fase pre-juicio. Incluye <b>Interrogatories</b> (preguntas escritas) y <b>Depositions</b> (declaraciones orales bajo juramento).</p>" },
-      { t: "Motions", body: "<p><b>Motion to Dismiss</b>: pedir al juez que cierre el caso por falta de fundamento (12(b)(6)). <b>Summary Judgment</b>: sentencia sin juicio si no hay hechos en disputa.</p>" }
-    ], quiz: [
-      { q: "¿Qué es una 'Deposition'?", o: ["Una sentencia", "Un interrogatorio escrito", "Una declaración oral bajo juramento", "Una apelación"], a: 2, e: "Testimonio oral pre-juicio." }
-    ]},
-    { id: "m8", title: "International Arbitration", es: "Arbitraje Internacional", level: "C1-C2", hours: 10, lessons: [
-      { t: "New York Convention", body: "<p>Convención de 1958. Obliga a los países a ejecutar (<i>enforce</i>) los laudos arbitrales extranjeros.</p>" },
-      { t: "The Seat", body: "<p>La sede jurídica del arbitraje (ej. San José o Nueva York). Determina qué ley procesal aplica y qué tribunales supervisan.</p>" }
-    ], quiz: [
-      { q: "¿Qué es el 'Seat' del arbitraje?", o: ["La silla del árbitro", "La sede jurídica que determina la ley procesal", "El hotel de la audiencia", "El país de las partes"], a: 1, e: "La sede legal del arbitraje." }
-    ]},
-    { id: "m9", title: "Intellectual Property", es: "Propiedad Intelectual", level: "C1", hours: 10, lessons: [
-      { t: "Work Made for Hire", body: "<p>En EE. UU., el empleador es dueño de la obra. En Costa Rica, el autor es siempre la persona física; requiere cesión expresa.</p>" }
-    ], quiz: [
-      { q: "En Costa Rica, ¿quién es el autor originario?", o: ["El empleador", "La persona física que creó la obra", "El Estado", "El notario"], a: 1, e: "Derecho moral irrenunciable." }
-    ]},
-    { id: "m10", title: "Employment & Compliance", es: "Laboral y Compliance", level: "B2-C1", hours: 8, lessons: [
-      { t: "At-Will Employment", body: "<p>En EE. UU. puedes despedir sin causa (salvo discriminación). En Costa Rica, rige el despido con responsabilidad (cesantía).</p>" },
-      { t: "FCPA", body: "<p>Ley anticorrupción de EE. UU. Prohíbe sobornar funcionarios extranjeros. Aplica a empresas latinoamericanas que usan el sistema financiero de EE. UU.</p>" }
-    ], quiz: [
-      { q: "¿Qué prohíbe la FCPA?", o: ["El lavado de dinero", "El soborno a funcionarios extranjeros", "Los monopolios", "La evasión fiscal"], a: 1, e: "Anticorrupción." }
-    ]},
-    { id: "m11", title: "Legal Writing", es: "Escritura Jurídica", level: "B2-C1", hours: 8, lessons: [
-      { t: "Plain English", body: "<p>Voz activa, oraciones cortas, sin dobletes (null and void). IRAC: Issue, Rule, Application, Conclusion.</p>" }
-    ], quiz: [
-      { q: "¿Qué significa 'Without prejudice'?", o: ["Sin discriminación", "No utilizable como prueba en juicio", "Sin costo", "Efectos inmediatos"], a: 1, e: "Protege la negociación." }
-    ]},
-    { id: "m12", title: "Common Law vs Civil Law", es: "Common Law vs Civil Law", level: "C1", hours: 8, lessons: [
-      { t: "Consideration", body: "<p>En Common Law, un contrato requiere contraprestación (intercambio). En Civil Law basta la causa lícita.</p>" }
-    ], quiz: [
-      { q: "¿Qué requiere el Common Law para un contrato válido?", o: ["Notario", "Consideration", "Dos testigos", "Registro público"], a: 1, e: "Contraprestación." }
-    ]},
-    { id: "m13", title: "Negotiation & Deal-Making", es: "Negociación", level: "C1", hours: 10, lessons: [
-      { t: "BATNA", body: "<p>Best Alternative To a Negotiated Agreement. Tu plan B si no hay acuerdo. Define tu poder real en la mesa.</p>" }
-    ], quiz: [
-      { q: "¿Qué es el BATNA?", o: ["Una táctica de presión", "Tu mejor alternativa si no hay acuerdo", "El contrato final", "La primera oferta"], a: 1, e: "Plan B." }
-    ]},
-    { id: "m14", title: "IP Litigation", es: "Litigio de Propiedad Intelectual", level: "C1", hours: 10, lessons: [
-      { t: "Cease and Desist", body: "<p>Carta formal exigiendo el cese de una infracción (marca, patente).</p>" }
-    ], quiz: [
-      { q: "¿A quién se envía un 'DMCA Takedown'?", o: ["Al tribunal", "A la plataforma digital (ej. YouTube)", "Al Registro de Patentes", "Al notario"], a: 1, e: "Para bajar contenido infractor." }
-    ]},
-    { id: "m15", title: "Data Privacy", es: "Privacidad de Datos", level: "C1", hours: 10, lessons: [
-      { t: "GDPR", body: "<p>Reglamento europeo. Aplica extraterritorialmente si tratas datos de residentes de la UE.</p>" }
-    ], quiz: [
-      { q: "¿Cuánto tiempo hay para notificar una brecha bajo GDPR?", o: ["24 horas", "72 horas", "30 días", "1 año"], a: 1, e: "72 horas." }
-    ]},
-    { id: "m16", title: "Legal Tech & AI", es: "Tecnología Legal e IA", level: "C1-C2", hours: 10, lessons: [
-      { t: "TAR", body: "<p>Technology-Assisted Review. Uso de machine learning para revisar millones de documentos en Discovery.</p>" }
-    ], quiz: [
-      { q: "¿Qué significa TAR?", o: ["Trade Arbitration Rule", "Technology-Assisted Review", "Tax Audit Report", "Total Access Review"], a: 1, e: "Revisión asistida por tecnología." }
-    ]}
-  ],
-  glossary: [
-    { t: "Consideration", es: "Contraprestación", d: "Requisito del Common Law: intercambio de valor." },
-    { t: "Estoppel", es: "Actos propios", d: "No alegar contrario a la conducta previa." },
-    { t: "Fiduciary Duty", es: "Deber fiduciario", d: "Lealtad y cuidado." },
-    { t: "Tort", es: "Responsabilidad extracontractual", d: "Daño civil sin contrato." },
-    { t: "Specific Performance", es: "Cumplimiento forzoso", d: "Obligar a cumplir lo pactado." },
-    { t: "Escrow", es: "Depósito en garantía", d: "Fondos retenidos por tercero." },
-    { t: "Warranty", es: "Garantía", d: "Promesa de que un hecho es cierto." },
-    { t: "Indemnity", es: "Indemnidad", d: "Reembolsar pérdidas." },
-    { t: "Lien", es: "Gravamen", d: "Carga sobre un bien." },
-    { t: "Discovery", es: "Exhibición de pruebas", d: "Fase de intercambio pre-juicio." },
-    { t: "Deposition", es: "Declaración jurada", d: "Testimonio oral pre-juicio." },
-    { t: "Arbitration", es: "Arbitraje", d: "Resolución por tercero neutral." },
-    { t: "Award", es: "Laudo", d: "Decisión arbitral final." },
-    { t: "Breach", es: "Incumplimiento", d: "Violación de obligación." },
-    { t: "Force Majeure", es: "Fuerza mayor", d: "Evento imprevisible que excusa." },
-    { t: "Severability", es: "Divisibilidad", d: "Salva el contrato si una parte es nula." },
-    { t: "Boilerplate", es: "Cláusulas generales", d: "Disposiciones estándar finales." },
-    { t: "Summary Judgment", es: "Sentencia sumaria", d: "Resolución sin juicio." },
-    { t: "Injunction", es: "Medida cautelar", d: "Orden judicial de hacer/no hacer." },
-    { t: "Waiver", es: "Renuncia", d: "Abandono de un derecho." }
-  ],
-  falseFriends: [
-    { en: "Actionable", wrong: "Accionable", right: "Que da base a una demanda", ex: "The statement is actionable." },
-    { en: "Consideration", wrong: "Consideración (amabilidad)", right: "Contraprestación", ex: "Without consideration, it's a gift." },
-    { en: "Execute", wrong: "Ejecutar (matar)", right: "Firmar un documento", ex: "The lease was executed yesterday." },
-    { en: "Damages", wrong: "Daños físicos", right: "Indemnización económica", ex: "The court awarded $50,000 in damages." },
-    { en: "Attorney", wrong: "Apoderado", right: "Abogado", ex: "I need to consult my attorney." },
-    { en: "Sentence", wrong: "Sentencia civil", right: "Pena penal", ex: "He received a 5-year sentence." },
-    { en: "Process", wrong: "Proceso judicial", right: "Notificación / Emplazamiento", ex: "Service of process was completed." },
-    { en: "Jurisdiction", wrong: "Jurisdicción (territorio)", right: "Competencia del tribunal", ex: "The court lacks jurisdiction." },
-    { en: "Demand", wrong: "Demanda judicial", right: "Requerimiento / Intimación", ex: "We sent a demand letter." },
-    { en: "Compromise", wrong: "Compromiso (obligación)", right: "Transacción / Acuerdo", ex: "They reached a compromise." },
-    { en: "Firm", wrong: "Firma (rúbrica)", right: "Bufete / Despacho", ex: "She works at a top law firm." },
-    { en: "Policy", wrong: "Policía", right: "Póliza / Política", ex: "The insurance policy covers floods." },
-    { en: "Library", wrong: "Librería (tienda)", right: "Biblioteca", ex: "The law library is on the 3rd floor." },
-    { en: "Discovery", wrong: "Descubrimiento", right: "Exhibición de pruebas", ex: "Discovery closes next week." },
-    { en: "Sensible", wrong: "Sensible (sensitivo)", right: "Sensato / Razonable", ex: "A sensible approach." },
-    { en: "Assist", wrong: "Asistir (ir a un lugar)", right: "Ayudar", ex: "Counsel will assist the witness." },
-    { en: "Attend", wrong: "Atender (un cliente)", right: "Asistir a un evento", ex: "All board members attended." },
-    { en: "Evidence", wrong: "Evidencia (obviedad)", right: "Prueba", ex: "The evidence was inadmissible." },
-    { en: "Hearing", wrong: "Oído", right: "Audiencia", ex: "The hearing is set for Monday." },
-    { en: "Injunction", wrong: "Injunción", right: "Medida cautelar", ex: "The judge issued a preliminary injunction." }
-  ]
-};
+const CURRICULUM = [
+  { month: 1, title: "Fundamentos del Common Law", focus: "Estructura judicial, precedentes y formación contractual", weeks: [
+    { w: 1, topic: "The American Legal System & Federalism", lab: "Pronunciación: /ˈfɛdərəlɪzəm/", reading: "Marbury v. Madison (1803)" },
+    { w: 2, topic: "Court Structure & Jurisdiction", lab: "Vocabulario: Venue vs Jurisdiction", reading: "Diversity Jurisdiction explained" },
+    { w: 3, topic: "Stare Decisis & Binding Precedent", lab: "Lectura: Ratio Decidendi vs Obiter Dictum", reading: "Case brief de Brown v. Board" },
+    { w: 4, topic: "Contract Formation: Offer & Acceptance", lab: "Role-play: Negotiating a term sheet", reading: "UCC Article 2 basics" }
+  ]},
+  { month: 2, title: "Redacción Contractual (Parte I)", focus: "Lenguaje operativo y estructura", weeks: [
+    { w: 5, topic: "Shall, May, Must, Shall Not", lab: "Drill: 20 oraciones con modales", reading: "The language of obligation" },
+    { w: 6, topic: "Conditions Precedent & Subject To", lab: "Redlining: Identificar condiciones", reading: "Condition precedent clause" },
+    { w: 7, topic: "Representations & Warranties", lab: "Pronunciación: /ˌrɛprɪzɛnˈteɪʃən/", reading: "Reps vs Warranties en SPA" },
+    { w: 8, topic: "Covenants & Knowledge Qualifiers", lab: "Simulación: Negotiating knowledge", reading: "Knowledge qualifier clause" }
+  ]},
+  { month: 3, title: "Redacción Contractual (Parte II)", focus: "Indemnidades y limitación de responsabilidad", weeks: [
+    { w: 9, topic: "Indemnify, Defend & Hold Harmless", lab: "Role-play: Redlining indemnity", reading: "Indemnity clause analysis" },
+    { w: 10, topic: "Limitation of Liability: Cap & Carve-outs", lab: "Drill: Calcular un cap", reading: "LoL clause standard" },
+    { w: 11, topic: "Liquidated Damages vs Penalties", lab: "Pronunciación: /ˈlɪkwɪdeɪtɪd/", reading: "Penalty doctrine" },
+    { w: 12, topic: "Boilerplate: Severability, Entire Agreement", lab: "Lectura: Cláusulas generales", reading: "Boilerplate clauses" }
+  ]},
+  { month: 4, title: "Litigio Civil (Parte I)", focus: "Pleadings y Discovery", weeks: [
+    { w: 13, topic: "Complaint, Answer & Motion to Dismiss", lab: "Role-play: 12(b)(6) motion", reading: "Rule 12(b)(6) explained" },
+    { w: 14, topic: "Discovery: Interrogatories & RFPs", lab: "Drill: Draft interrogatories", reading: "Discovery scope" },
+    { w: 15, topic: "Depositions & Cross-Examination", lab: "Simulación: Deposition", reading: "Deposition transcript" },
+    { w: 16, topic: "Summary Judgment & Trial", lab: "Pronunciación: /ˈsʌməri ˈdʒʌdʒmənt/", reading: "Summary judgment standard" }
+  ]},
+  { month: 5, title: "Litigio Civil (Parte II) & Arbitraje", focus: "Apelaciones y resolución de disputas", weeks: [
+    { w: 17, topic: "Appeals & Standards of Review", lab: "Lectura: De novo vs Clearly erroneous", reading: "Appellate brief" },
+    { w: 18, topic: "International Arbitration: New York Convention", lab: "Role-play: Draft arbitration clause", reading: "NY Convention Art. V" },
+    { w: 19, topic: "Seat, Venue & Kompetenz-Kompetenz", lab: "Pronunciación: /ˌkɒmpɪtɛns ˈkɒmpɪtɛns/", reading: "Separability doctrine" },
+    { w: 20, topic: "Emergency Arbitration & Enforcement", lab: "Simulación: Enforcement motion", reading: "Award enforcement" }
+  ]},
+  { month: 6, title: "M&A y Corporativo", focus: "Fusiones, adquisiciones y due diligence", weeks: [
+    { w: 21, topic: "M&A Process: NDA to Closing", lab: "Role-play: LOI negotiation", reading: "Term sheet anatomy" },
+    { w: 22, topic: "Due Diligence & Red Flags", lab: "Drill: Due diligence checklist", reading: "DD report" },
+    { w: 23, topic: "Escrow, Earn-out & MAC/MAE", lab: "Pronunciación: /ˈɛskroʊ/", reading: "Earn-out clause" },
+    { w: 24, topic: "Share Deal vs Asset Deal", lab: "Simulación: Share vs Asset", reading: "SPA excerpt" }
+  ]},
+  { month: 7, title: "Propiedad Intelectual", focus: "Patentes, marcas, copyright y licencias", weeks: [
+    { w: 25, topic: "Patents, Trademarks, Copyright", lab: "Lectura: Patent claim", reading: "IP pillars" },
+    { w: 26, topic: "Work Made for Hire vs Assignment", lab: "Role-play: IP assignment", reading: "Work for hire doctrine" },
+    { w: 27, topic: "License Agreements: Grant & Scope", lab: "Drill: License clauses", reading: "License agreement" },
+    { w: 28, topic: "IP Litigation & Cease and Desist", lab: "Simulación: C&D letter", reading: "DMCA takedown" }
+  ]},
+  { month: 8, title: "Laboral y Compliance", focus: "Empleo, FCPA y privacidad", weeks: [
+    { w: 29, topic: "At-Will Employment & Restrictive Covenants", lab: "Role-play: Termination call", reading: "At-will doctrine" },
+    { w: 30, topic: "FCPA & Anti-Corruption", lab: "Drill: Red flags", reading: "FCPA guide" },
+    { w: 31, topic: "Data Privacy: GDPR & CCPA", lab: "Simulación: DPA negotiation", reading: "GDPR breach notification" },
+    { w: 32, topic: "Cybersecurity & Incident Response", lab: "Role-play: Breach response", reading: "Incident response plan" }
+  ]},
+  { month: 9, title: "Real Estate y Notariado", focus: "Bienes raíces y función notarial", weeks: [
+    { w: 33, topic: "Purchase & Sale Agreements (PSA)", lab: "Role-play: PSA negotiation", reading: "PSA clause" },
+    { w: 34, topic: "Title, Liens & Escrow", lab: "Drill: Title search", reading: "Title insurance vs Registry" },
+    { w: 35, topic: "Notary Public vs Civil Law Notary", lab: "Lectura: Notary functions", reading: "Notary comparison" },
+    { w: 36, topic: "Zoning, Environmental & Permits", lab: "Simulación: Environmental DD", reading: "SETENA / ZMT" }
+  ]},
+  { month: 10, title: "Negociación y Escritura Legal", focus: "BATNA, ZOPA y redacción persuasiva", weeks: [
+    { w: 37, topic: "BATNA, ZOPA & Anchoring", lab: "Role-play: Settlement negotiation", reading: "Negotiation tactics" },
+    { w: 38, topic: "Legal Writing: IRAC & BLUF", lab: "Drill: Write a memo", reading: "IRAC method" },
+    { w: 39, topic: "Plain English & Drafting Clarity", lab: "Redlining: Simplify clauses", reading: "Plain English guide" },
+    { w: 40, topic: "Client Correspondence", lab: "Role-play: Client email", reading: "Professional email" }
+  ]},
+  { month: 11, title: "Legal Tech y Juicios Simulados", focus: "IA, TAR y mock trials", weeks: [
+    { w: 41, topic: "AI in Legal Practice & TAR", lab: "Lectura: TAR workflow", reading: "ABA Opinion 512" },
+    { w: 42, topic: "Mock Trial: Opening Statements", lab: "Simulación: Opening", reading: "Opening statement script" },
+    { w: 43, topic: "Mock Trial: Direct & Cross", lab: "Simulación: Cross-examination", reading: "Cross-exam tips" },
+    { w: 44, topic: "Mock Trial: Closing & Verdict", lab: "Simulación: Closing argument", reading: "Closing script" }
+  ]},
+  { month: 12, title: "Integración y Certificación", focus: "Repaso y examen final", weeks: [
+    { w: 45, topic: "Repaso: Contratos y Litigio", lab: "Quiz integrador", reading: "Case study" },
+    { w: 46, topic: "Repaso: M&A, IP y Compliance", lab: "Quiz integrador", reading: "Deal simulation" },
+    { w: 47, topic: "Examen Final (Parte 1)", lab: "Examen escrito", reading: "—" },
+    { w: 48, topic: "Examen Final (Parte 2) y Certificación", lab: "Examen oral", reading: "—" }
+  ]}
+];
 
+// Diccionario extendido (150+ términos organizados por área)
+const DICTIONARY = [
+  // Contratos
+  { t: "Consideration", es: "Contraprestación", area: "Contratos", def: "Intercambio de valor mutuo; requisito del Common Law." },
+  { t: "Offer", es: "Oferta", area: "Contratos", def: "Propuesta de contratar con intención de quedar obligado." },
+  { t: "Acceptance", es: "Aceptación", area: "Contratos", def: "Asentimiento inequívoco a los términos de la oferta." },
+  { t: "Breach", es: "Incumplimiento", area: "Contratos", def: "Violación de una obligación contractual." },
+  { t: "Material Breach", es: "Incumplimiento sustancial", area: "Contratos", def: "Incumplimiento que afecta el núcleo del contrato." },
+  { t: "Warranty", es: "Garantía", area: "Contratos", def: "Promesa de que un hecho es verdadero." },
+  { t: "Representation", es: "Declaración", area: "Contratos", def: "Afirmación de hechos pasados o presentes que induce a contratar." },
+  { t: "Covenant", es: "Compromiso", area: "Contratos", def: "Promesa de hacer o no hacer algo." },
+  { t: "Indemnify", es: "Indemnizar", area: "Contratos", def: "Reembolsar pérdidas a la otra parte." },
+  { t: "Hold Harmless", es: "Mantener indemne", area: "Contratos", def: "Liberar de responsabilidad a la otra parte." },
+  { t: "Cap", es: "Tope", area: "Contratos", def: "Límite máximo de responsabilidad." },
+  { t: "Carve-out", es: "Excepción", area: "Contratos", def: "Supuesto excluido de un límite o regla general." },
+  { t: "Severability", es: "Divisibilidad", area: "Contratos", def: "Cláusula que salva el resto del contrato si una parte es nula." },
+  { t: "Entire Agreement", es: "Acuerdo íntegro", area: "Contratos", def: "Cláusula que excluye acuerdos previos." },
+  { t: "Force Majeure", es: "Fuerza mayor", area: "Contratos", def: "Evento imprevisible que excusa el incumplimiento." },
+  { t: "Specific Performance", es: "Cumplimiento forzoso", area: "Contratos", def: "Remedio equitativo que obliga a cumplir lo pactado." },
+  { t: "Liquidated Damages", es: "Daños preestablecidos", area: "Contratos", def: "Suma pactada de antemano por incumplimiento." },
+  { t: "Consequential Damages", es: "Daños consecuenciales", area: "Contratos", def: "Daños indirectos derivados del incumplimiento." },
+  { t: "Escrow", es: "Depósito en garantía", area: "Contratos", def: "Fondos retenidos por un tercero neutral." },
+  { t: "Earn-out", es: "Precio contingente", area: "Contratos", def: "Pago adicional sujeto a resultados futuros." },
+
+  // Litigio
+  { t: "Complaint", es: "Demanda", area: "Litigio", def: "Escrito que inicia el pleito civil." },
+  { t: "Answer", es: "Contestación", area: "Litigio", def: "Respuesta del demandado a la demanda." },
+  { t: "Motion to Dismiss", es: "Moción de desestimación", area: "Litigio", def: "Solicitud de cierre por falta de fundamento legal." },
+  { t: "Discovery", es: "Exhibición de pruebas", area: "Litigio", def: "Fase de intercambio obligatorio de pruebas." },
+  { t: "Interrogatories", es: "Interrogatorios", area: "Litigio", def: "Preguntas escritas bajo juramento." },
+  { t: "Deposition", es: "Declaración jurada", area: "Litigio", def: "Testimonio oral bajo juramento antes del juicio." },
+  { t: "Summary Judgment", es: "Sentencia sumaria", area: "Litigio", def: "Resolución sin juicio si no hay hechos en disputa." },
+  { t: "Verdict", es: "Veredicto", area: "Litigio", def: "Decisión del jurado." },
+  { t: "Judgment", es: "Sentencia", area: "Litigio", def: "Decisión final del tribunal." },
+  { t: "Injunction", es: "Medida cautelar", area: "Litigio", def: "Orden judicial de hacer o no hacer." },
+  { t: "TRO", es: "Orden temporal", area: "Litigio", def: "Temporary Restraining Order, medida urgente." },
+  { t: "Class Action", es: "Demanda colectiva", area: "Litigio", def: "Acción en nombre de un grupo de afectados." },
+  { t: "Settlement", es: "Transacción", area: "Litigio", def: "Acuerdo que pone fin al litigio." },
+  { t: "Release", es: "Finiquito", area: "Litigio", def: "Renuncia a reclamar." },
+  { t: "Spoliation", es: "Destrucción de prueba", area: "Litigio", def: "Pérdida o destrucción de evidencia relevante." },
+  { t: "Hearsay", es: "Testimonio de oídas", area: "Litigio", def: "Prueba indirecta generalmente inadmisible." },
+  { t: "Privilege", es: "Privilegio", area: "Litigio", def: "Protección de comunicaciones abogado-cliente." },
+  { t: "Work Product", es: "Material de trabajo", area: "Litigio", def: "Materiales preparados en anticipación al litigio." },
+  { t: "Res Judicata", es: "Cosa juzgada", area: "Litigio", def: "Impide volver a litigar la misma controversia." },
+  { t: "Stare Decisis", es: "Precedente vinculante", area: "Litigio", def: "Obligación de seguir fallos anteriores." },
+
+  // Arbitraje
+  { t: "Arbitration", es: "Arbitraje", area: "Arbitraje", def: "Resolución de disputas por un tercero neutral." },
+  { t: "Award", es: "Laudo", area: "Arbitraje", def: "Decisión final del tribunal arbitral." },
+  { t: "Seat", es: "Sede", area: "Arbitraje", def: "Jurisdicción legal del arbitraje." },
+  { t: "Kompetenz-Kompetenz", es: "Competencia de la competencia", area: "Arbitraje", def: "El árbitro decide su propia jurisdicción." },
+  { t: "Separability", es: "Separabilidad", area: "Arbitraje", def: "La cláusula arbitral sobrevive a la nulidad del contrato." },
+  { t: "Enforcement", es: "Ejecución", area: "Arbitraje", def: "Reconocimiento y ejecución del laudo." },
+  { t: "New York Convention", es: "Convención de Nueva York", area: "Arbitraje", def: "Tratado de 1958 sobre ejecución de laudos extranjeros." },
+  { t: "Emergency Arbitrator", es: "Árbitro de emergencia", area: "Arbitraje", def: "Árbitro que otorga medidas urgentes antes de constituirse el tribunal." },
+  { t: "Costs Follow the Event", es: "El perdedor paga", area: "Arbitraje", def: "La parte vencida asume las costas." },
+
+  // M&A / Corporativo
+  { t: "Due Diligence", es: "Debida diligencia", area: "M&A", def: "Auditoría legal previa a la compra." },
+  { t: "LOI", es: "Carta de intención", area: "M&A", def: "Documento no vinculante que resume términos." },
+  { t: "Term Sheet", es: "Hoja de términos", area: "M&A", def: "Resumen de condiciones de la operación." },
+  { t: "SPA", es: "Contrato de compraventa de acciones", area: "M&A", def: "Share Purchase Agreement." },
+  { t: "APA", es: "Contrato de compraventa de activos", area: "M&A", def: "Asset Purchase Agreement." },
+  { t: "Closing", es: "Cierre", area: "M&A", def: "Consumación de la transacción." },
+  { t: "MAC/MAE", es: "Cambio material adverso", area: "M&A", def: "Evento que permite no cerrar la operación." },
+  { t: "Drag-along", es: "Derecho de arrastre", area: "M&A", def: "Mayoría puede obligar a minoría a vender." },
+  { t: "Tag-along", es: "Derecho de acompañamiento", area: "M&A", def: "Minoría puede vender en las mismas condiciones." },
+  { t: "Fiduciary Duty", es: "Deber fiduciario", area: "M&A", def: "Lealtad y cuidado de los directores." },
+  { t: "Business Judgment Rule", es: "Regla del criterio empresarial", area: "M&A", def: "Protege decisiones de buena fe e informadas." },
+  { t: "Piercing the Veil", es: "Levantamiento del velo", area: "M&A", def: "Responsabilidad de los socios por deudas sociales." },
+
+  // Propiedad Intelectual
+  { t: "Patent", es: "Patente", area: "PI", def: "Protección de invenciones." },
+  { t: "Trademark", es: "Marca", area: "PI", def: "Signo distintivo de productos o servicios." },
+  { t: "Copyright", es: "Derecho de autor", area: "PI", def: "Protección de obras originales." },
+  { t: "Trade Secret", es: "Secreto comercial", area: "PI", def: "Información confidencial con valor económico." },
+  { t: "Work Made for Hire", es: "Obra por encargo", area: "PI", def: "El empleador es autor inicial en ciertos casos." },
+  { t: "Assignment", es: "Cesión", area: "PI", def: "Transferencia de derechos patrimoniales." },
+  { t: "License", es: "Licencia", area: "PI", def: "Autorización de uso." },
+  { t: "Infringement", es: "Infracción", area: "PI", def: "Uso no autorizado de derechos de PI." },
+  { t: "Cease and Desist", es: "Cese y desistimiento", area: "PI", def: "Carta formal exigiendo el cese de una conducta." },
+  { t: "DMCA Takedown", es: "Retirada DMCA", area: "PI", def: "Notificación a plataformas para retirar contenido infractor." },
+  { t: "Likelihood of Confusion", es: "Probabilidad de confusión", area: "PI", def: "Estándar de infracción de marca." },
+
+  // Laboral / Compliance
+  { t: "At-Will Employment", es: "Empleo a voluntad", area: "Laboral", def: "Cualquiera puede terminar la relación sin causa." },
+  { t: "Non-compete", es: "No competencia", area: "Laboral", def: "Restricción para trabajar en la competencia." },
+  { t: "Non-solicitation", es: "No captación", area: "Laboral", def: "Prohibición de llevarse clientes o empleados." },
+  { t: "Severance", es: "Indemnización por despido", area: "Laboral", def: "Pago al terminar la relación laboral." },
+  { t: "Whistleblower", es: "Denunciante", area: "Laboral", def: "Persona que reporta irregularidades." },
+  { t: "FCPA", es: "Ley de Prácticas Corruptas", area: "Compliance", def: "Prohíbe sobornos a funcionarios extranjeros." },
+  { t: "Red Flag", es: "Señal de alerta", area: "Compliance", def: "Indicio de posible corrupción o incumplimiento." },
+  { t: "OFAC", es: "Oficina de Sanciones", area: "Compliance", def: "Administra sanciones económicas de EE. UU." },
+  { t: "GDPR", es: "Reglamento de Protección de Datos", area: "Privacidad", def: "Reglamento europeo de datos personales." },
+  { t: "CCPA", es: "Ley de Privacidad de California", area: "Privacidad", def: "Ley de privacidad del consumidor de California." },
+  { t: "Data Breach", es: "Brecha de datos", area: "Privacidad", def: "Acceso no autorizado a datos personales." },
+  { t: "DPA", es: "Acuerdo de Tratamiento de Datos", area: "Privacidad", def: "Data Processing Agreement." },
+
+  // Real Estate / Notariado
+  { t: "PSA", es: "Contrato de compraventa", area: "Real Estate", def: "Purchase and Sale Agreement." },
+  { t: "Title", es: "Título de propiedad", area: "Real Estate", def: "Derecho de propiedad sobre un inmueble." },
+  { t: "Lien", es: "Gravamen", area: "Real Estate", def: "Carga sobre un bien para garantizar una deuda." },
+  { t: "Encumbrance", es: "Gravamen", area: "Real Estate", def: "Carga o limitación sobre la propiedad." },
+  { t: "Easement", es: "Servidumbre", area: "Real Estate", def: "Derecho de uso sobre propiedad ajena." },
+  { t: "Escrow Agent", es: "Agente de custodia", area: "Real Estate", def: "Tercero que retiene fondos en garantía." },
+  { t: "Notary Public", es: "Fedatario público", area: "Real Estate", def: "Funcionario que certifica firmas (EE. UU.)." },
+  { t: "Civil Law Notary", es: "Notario público", area: "Real Estate", def: "Notario con fe pública (Latinoamérica)." },
+  { t: "Zoning", es: "Zonificación", area: "Real Estate", def: "Regulación del uso del suelo." },
+  { t: "Environmental Viability", es: "Viabilidad ambiental", area: "Real Estate", def: "Permiso ambiental para desarrollo." },
+
+  // Legal Tech
+  { t: "TAR", es: "Revisión asistida por tecnología", area: "Legal Tech", def: "Machine learning para revisión de documentos." },
+  { t: "CLM", es: "Gestión del ciclo contractual", area: "Legal Tech", def: "Contract Lifecycle Management." },
+  { t: "Hallucination", es: "Alucinación", area: "Legal Tech", def: "Cita o dato inventado por una IA." },
+  { t: "Privilege Waiver", es: "Renuncia al privilegio", area: "Legal Tech", def: "Pérdida de confidencialidad por divulgación." },
+  { t: "E-Discovery", es: "Descubrimiento electrónico", area: "Legal Tech", def: "Discovery de documentos electrónicos." },
+  { t: "Litigation Hold", es: "Conservación de prueba", area: "Legal Tech", def: "Obligación de preservar documentos ante litigio previsible." }
+];
+
+// ==========================================
+// ESTADO
+// ==========================================
 let state = {
   xp: parseInt(localStorage.getItem('xp') || '0'),
   completed: JSON.parse(localStorage.getItem('completed') || '[]'),
@@ -238,36 +307,40 @@ function markCompleted(id) {
   if (!state.completed.includes(id)) {
     state.completed.push(id);
     localStorage.setItem('completed', JSON.stringify(state.completed));
-    updateXP(50);
+    updateXP(20);
   }
 }
 
 // ==========================================
-// VOICE LAB: KOKORO (IA LOCAL) & TTSMAKER (IA NUBE)
+// VOZ IA: KOKORO CON 4 VOCES (2F, 2M)
 // ==========================================
 let ttsModel = null;
+const VOICES = {
+  f1: "af_bella",
+  f2: "af_nicole",
+  m1: "am_adam",
+  m2: "am_michael"
+};
 
-// 1. Función Kokoro (Descarga el modelo de 80MB)
-window.speakKokoro = async function(text, btnElement) {
+window.speakKokoro = async function(text, voiceId, btnElement) {
   const originalText = btnElement.innerHTML;
   
   if (ttsModel) {
     try {
       btnElement.innerHTML = "🔊...";
-      const audio = await ttsModel.generate(text, { voice: "af_bella" });
+      const audio = await ttsModel.generate(text, { voice: voiceId });
       const blob = new Blob([audio.toWav()], { type: "audio/wav" });
       const url = URL.createObjectURL(blob);
-      const player = new Audio(url);
-      player.play();
-      player.onended = () => { btnElement.innerHTML = originalText; };
+      new Audio(url).play();
+      btnElement.innerHTML = originalText;
     } catch (e) {
       btnElement.innerHTML = originalText;
-      alert("Error al reproducir.");
+      alert("Error al reproducir. Intenta con TTSMaker.");
     }
     return;
   }
 
-  btnElement.innerHTML = "⏳ Descargando...";
+  btnElement.innerHTML = "⏳...";
   btnElement.style.opacity = "0.7";
   
   try {
@@ -275,36 +348,29 @@ window.speakKokoro = async function(text, btnElement) {
     ttsModel = await module.KokoroTTS.from_pretrained("onnx-community/Kokoro-82M-v1.0-ONNX", { dtype: "q8" });
     btnElement.innerHTML = originalText;
     btnElement.style.opacity = "1";
-    window.speakKokoro(text, btnElement); // Reproducir al terminar
+    window.speakKokoro(text, voiceId, btnElement);
   } catch (e) {
     btnElement.innerHTML = originalText;
     btnElement.style.opacity = "1";
-    alert("No se pudo descargar Kokoro (80MB). Puede ser por falta de memoria o mala señal. Usa el botón 'TTSMaker' al lado.");
+    alert("No se pudo descargar el modelo de IA (80MB). Usa TTSMaker o intenta en WiFi.");
   }
 };
 
-// 2. Función TTSMaker (Copia y comparte de forma nativa)
 window.shareTTSMaker = async function(text) {
   try {
     if (navigator.share) {
-      await navigator.share({
-        title: 'Pronunciación Legal English',
-        text: text,
-      });
-      // Después de compartir, abrimos TTSMaker
+      await navigator.share({ title: 'Legal English', text: text });
       setTimeout(() => window.open("https://ttsmaker.com/", "_blank"), 500);
     } else {
       await navigator.clipboard.writeText(text);
-      alert("Texto copiado al portapapeles. Se abrirá TTSMaker para que pegues el texto y generes el MP3 con IA.");
+      alert("Texto copiado. Se abrirá TTSMaker para generar el audio.");
       window.open("https://ttsmaker.com/", "_blank");
     }
-  } catch (err) {
-    console.warn("Error compartiendo:", err);
-  }
+  } catch (err) { console.warn(err); }
 };
 
 // ==========================================
-// ROUTER Y VISTAS
+// ROUTER
 // ==========================================
 function router() {
   const hash = window.location.hash || '#/';
@@ -313,60 +379,132 @@ function router() {
   
   if (hash === '#/' || hash === '') {
     document.getElementById('nav-home').classList.add('active');
+    const totalWeeks = CURRICULUM.reduce((n,m) => n + m.weeks.length, 0);
     app.innerHTML = `
       <div class="hero">
-        <span class="eyebrow">Master Edition</span>
-        <h1>Legal English</h1>
-        <p>Domina el sistema del Common Law.</p>
-        <div class="badge">${state.completed.length} de 16 Módulos Completados</div>
+        <span class="eyebrow">12-Month Intensive · 480 Hours</span>
+        <h1>Legal English Master</h1>
+        <p>Programa completo de inglés jurídico estadounidense con laboratorios, simulaciones y casos reales.</p>
+        <div class="badge">${state.completed.length} de ${totalWeeks} semanas completadas</div>
       </div>
-      ${DATA.modules.map(m => {
-        const done = state.completed.includes(m.id);
-        return `
-        <a href="#/module/${m.id}" class="card link">
+      
+      <div class="card" style="border-color:var(--teal);">
+        <h4 style="color:var(--teal);margin-bottom:8px;">🎯 Estructura del Programa</h4>
+        <p style="font-size:13px;color:var(--mute);margin:0;">4 trimestres · 12 meses · 48 semanas · 10 horas semanales. Incluye laboratorios de pronunciación, lecturas de casos, redlining, simulaciones y diccionario de 150+ términos.</p>
+      </div>
+
+      <h3 style="margin:20px 0 12px;">Meses del Curso</h3>
+      ${CURRICULUM.map(m => `
+        <a href="#/month/${m.month}" class="card link">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <div>
-              <span class="eyebrow">${m.level} · ${m.hours} horas</span>
-              <h4 style="font-size:20px;margin:4px 0;">${m.title}</h4>
-              <p style="color:var(--mute);font-size:14px;margin:0;">${m.es}</p>
+              <span class="eyebrow">Mes ${m.month}</span>
+              <h4 style="font-size:17px;margin:4px 0;">${m.title}</h4>
+              <p style="color:var(--mute);font-size:12px;margin:0;">${m.focus}</p>
             </div>
-            ${done ? '<span style="color:var(--ok);font-size:20px;">✓</span>' : '<span style="color:var(--gold);font-size:20px;">→</span>'}
+            <span style="color:var(--gold);font-size:18px;">→</span>
           </div>
-        </a>`;
-      }).join('')}
+        </a>
+      `).join('')}
     `;
   } 
-  else if (hash.startsWith('#/module/')) {
-    const id = hash.split('/')[2];
-    const mod = DATA.modules.find(m => m.id === id);
-    if (!mod) return location.hash = '#/';
-    document.getElementById('nav-modules').classList.add('active');
-    app.innerHTML = `
-      <a href="#/" style="color:var(--mute);font-size:14px;">← Volver</a>
-      <h2 style="margin:20px 0 10px;">${mod.title}</h2>
-      <p style="color:var(--mute);margin-bottom:20px;">${mod.es}</p>
-      
-      ${mod.lessons.map(l => `
-        <div class="card">
-          <h4 style="color:var(--gold-light);margin-bottom:12px;">${l.t}</h4>
-          <div class="legal-text">${l.body}</div>
-          <div class="audio-controls">
-            <button class="say" onclick="speakKokoro('${l.t}', this)">🎙️ Kokoro IA</button>
-            <button class="say tts" onclick="shareTTSMaker('${l.t}')">☁️ TTSMaker</button>
+  else if (hash === '#/curriculum') {
+    document.getElementById('nav-curriculum').classList.add('active');
+    app.innerHTML = `<h2 style="margin-bottom:16px;">Programa Completo</h2>`;
+    CURRICULUM.forEach(m => {
+      app.innerHTML += `
+        <div class="month-block">
+          <div class="month-header" onclick="this.nextElementSibling.classList.toggle('open')">
+            <div>
+              <span class="eyebrow" style="margin:0;">Mes ${m.month}</span>
+              <h3>${m.title}</h3>
+            </div>
+            <span style="color:var(--gold);">▾</span>
+          </div>
+          <div class="month-body">
+            <p style="font-size:12px;color:var(--mute);margin:8px 0;">${m.focus}</p>
+            ${m.weeks.map(w => `
+              <div class="week-row">
+                <span><b>Sem ${w.w}</b> — ${w.topic}</span>
+                <a href="#/week/${m.month}/${w.w}">Abrir</a>
+              </div>
+            `).join('')}
           </div>
         </div>
+      `;
+    });
+  }
+  else if (hash.startsWith('#/month/')) {
+    const month = parseInt(hash.split('/')[2]);
+    const m = CURRICULUM.find(x => x.month === month);
+    if (!m) return location.hash = '#/';
+    app.innerHTML = `
+      <a href="#/" style="color:var(--mute);font-size:13px;">← Volver</a>
+      <h2 style="margin:16px 0 6px;">Mes ${m.month}: ${m.title}</h2>
+      <p style="color:var(--mute);font-size:13px;margin-bottom:16px;">${m.focus}</p>
+      ${m.weeks.map(w => `
+        <a href="#/week/${m.month}/${w.w}" class="card link">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <span class="eyebrow">Semana ${w.w}</span>
+              <h4 style="font-size:15px;margin:2px 0;">${w.topic}</h4>
+              <p style="font-size:11px;color:var(--mute);margin:0;">Lab: ${w.lab} · Lectura: ${w.reading}</p>
+            </div>
+            <span style="color:var(--gold);">→</span>
+          </div>
+        </a>
       `).join('')}
-      
-      <h3 style="margin:24px 0 16px;">Evaluación</h3>
-      ${mod.quiz.map((q, qIndex) => `
-        <div class="card">
-          <p style="font-weight:600;margin-bottom:12px;">${q.q}</p>
-          ${q.o.map((opt, oIndex) => `
-            <button class="opt" onclick="checkAnswer(this, ${oIndex === q.a}, '${q.e}', '${mod.id}')">${opt}</button>
-          `).join('')}
-          <div class="tip hidden"></div>
+    `;
+  }
+  else if (hash.startsWith('#/week/')) {
+    const parts = hash.split('/');
+    const month = parseInt(parts[2]);
+    const week = parseInt(parts[3]);
+    const m = CURRICULUM.find(x => x.month === month);
+    const w = m && m.weeks.find(x => x.w === week);
+    if (!w) return location.hash = '#/';
+    const weekId = `m${month}w${week}`;
+    const done = state.completed.includes(weekId);
+    
+    app.innerHTML = `
+      <a href="#/month/${month}" style="color:var(--mute);font-size:13px;">← Volver</a>
+      <div style="margin:16px 0;">
+        <span class="eyebrow">Mes ${month} · Semana ${week}</span>
+        <h2 style="font-size:22px;">${w.topic}</h2>
+      </div>
+
+      <!-- LABORATORIO DE PRONUNCIACIÓN -->
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">🎙️ Laboratorio de Pronunciación</h4>
+        <p class="legal-text" style="margin-bottom:12px;">${w.topic}</p>
+        <div class="audio-controls">
+          <button class="say f1" onclick="speakKokoro('${w.topic.replace(/'/g,"\\'")}', 'af_bella', this)">🔊 F1 · Bella</button>
+          <button class="say f2" onclick="speakKokoro('${w.topic.replace(/'/g,"\\'")}', 'af_nicole', this)">🔊 F2 · Nicole</button>
+          <button class="say m1" onclick="speakKokoro('${w.topic.replace(/'/g,"\\'")}', 'am_adam', this)">🔊 M1 · Adam</button>
+          <button class="say m2" onclick="speakKokoro('${w.topic.replace(/'/g,"\\'")}', 'am_michael', this)">🔊 M2 · Michael</button>
+          <button class="say tts" onclick="shareTTSMaker('${w.topic.replace(/'/g,"\\'")}')">☁️ TTSMaker</button>
         </div>
-      `).join('')}
+        <p style="font-size:11px;color:var(--mute);margin-top:8px;">Drill: ${w.lab}</p>
+      </div>
+
+      <!-- LECTURA -->
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">📖 Lectura Dirigida</h4>
+        <p class="legal-text">${w.reading}</p>
+        <button class="say tts" style="margin-top:10px;" onclick="shareTTSMaker('${w.reading.replace(/'/g,"\\'")}')">☁️ Escuchar lectura en TTSMaker</button>
+      </div>
+
+      <!-- VIDEO DE CASO REAL -->
+      <div class="card" style="border-color:var(--teal);">
+        <h4 style="color:var(--teal);margin-bottom:8px;">🎬 Video de Caso Real</h4>
+        <p style="font-size:13px;color:var(--mute);margin-bottom:8px;">Canales recomendados: Law&Crime Trials, canales oficiales de cortes federales, LegalEagle.</p>
+        <a href="https://www.youtube.com/@LawCrimeNetwork" target="_blank" class="btn" style="width:100%;background:var(--teal);color:var(--bg);">Abrir Law&Crime Trials ↗</a>
+      </div>
+
+      <!-- CHECK COMPLETADO -->
+      <button class="btn" style="width:100%;margin-top:10px;" onclick="markCompleted('${weekId}'); this.innerText='✓ Semana Completada'; this.disabled=true;">
+        ${done ? '✓ Semana Completada' : 'Marcar Semana como Completada'}
+      </button>
     `;
   }
   else if (hash === '#/lab') {
@@ -374,91 +512,138 @@ function router() {
     app.innerHTML = `
       <div class="hero">
         <span class="eyebrow">Voice Lab</span>
-        <h2>Pronunciación IA</h2>
-        <p>Elige entre IA Local (Rápida) o IA en la Nube (Máxima Calidad).</p>
+        <h2>Laboratorio de Pronunciación</h2>
+        <p>4 voces IA: Bella, Nicole, Adam y Michael.</p>
       </div>
-      
-      <div class="card" style="background:var(--bg2);border-color:var(--teal);">
-        <h4 style="color:var(--teal);margin-bottom:8px;">Prueba de Audio</h4>
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">Frase de Práctica</h4>
+        <p class="legal-text">"The parties agree to submit the dispute to arbitration in New York."</p>
         <div class="audio-controls">
-          <button class="say" onclick="speakKokoro('Welcome to the Legal English Voice Lab.', this)">🎙️ Kokoro IA</button>
-          <button class="say tts" onclick="shareTTSMaker('Welcome to the Legal English Voice Lab.')">☁️ TTSMaker</button>
+          <button class="say f1" onclick="speakKokoro('The parties agree to submit the dispute to arbitration in New York.', 'af_bella', this)">🔊 F1 · Bella</button>
+          <button class="say f2" onclick="speakKokoro('The parties agree to submit the dispute to arbitration in New York.', 'af_nicole', this)">🔊 F2 · Nicole</button>
+          <button class="say m1" onclick="speakKokoro('The parties agree to submit the dispute to arbitration in New York.', 'am_adam', this)">🔊 M1 · Adam</button>
+          <button class="say m2" onclick="speakKokoro('The parties agree to submit the dispute to arbitration in New York.', 'am_michael', this)">🔊 M2 · Michael</button>
         </div>
-        <p style="font-size:12px;color:var(--mute);margin-top:12px;"><b>Kokoro:</b> Descarga 80MB la primera vez.<br><b>TTSMaker:</b> Copia el texto y abre la web para generar MP3.</p>
       </div>
-      
-      <h4 style="margin:20px 0 10px;">Términos Clave</h4>
-      ${['Consideration', 'Indemnification', 'Stare Decisis', 'Fiduciary Duty', 'Estoppel', 'Specific Performance'].map(word => `
-        <div class="card" style="padding:16px;">
-          <h4 style="color:var(--gold-light);margin:0;">${word}</h4>
-          <div class="audio-controls">
-            <button class="say" onclick="speakKokoro('${word}', this)">🎙️ Kokoro IA</button>
-            <button class="say tts" onclick="shareTTSMaker('${word}')">☁️ TTSMaker</button>
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">Términos Clave</h4>
+        ${['Consideration', 'Indemnification', 'Stare Decisis', 'Fiduciary Duty', 'Estoppel', 'Specific Performance'].map(word => `
+          <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+            <p style="font-size:14px;margin:0 0 8px 0;">${word}</p>
+            <div class="audio-controls">
+              <button class="say f1" onclick="speakKokoro('${word}', 'af_bella', this)">F1</button>
+              <button class="say f2" onclick="speakKokoro('${word}', 'af_nicole', this)">F2</button>
+              <button class="say m1" onclick="speakKokoro('${word}', 'am_adam', this)">M1</button>
+              <button class="say m2" onclick="speakKokoro('${word}', 'am_michael', this)">M2</button>
+            </div>
           </div>
-        </div>
-      `).join('')}
+        `).join('')}
+      </div>
     `;
   }
   else if (hash === '#/practice') {
     document.getElementById('nav-practice').classList.add('active');
     app.innerHTML = `
       <h2 style="margin-bottom:16px;">Centro de Práctica</h2>
-      <a href="#/practice/ff" class="list-item"><div class="num">⇄</div><div class="content"><h4>Falsos Amigos</h4><p>Evita errores críticos</p></div><div class="arrow">›</div></a>
-      <a href="#/practice/glossary" class="list-item"><div class="num">📖</div><div class="content"><h4>Glosario Jurídico</h4><p>+20 términos esenciales</p></div><div class="arrow">›</div></a>
+      <a href="#/practice/mock" class="list-item"><div class="num">⚖️</div><div class="content"><h4>Simulación de Juicio</h4><p>Mock trial: apertura, interrogatorio y cierre</p></div><div class="arrow">›</div></a>
+      <a href="#/practice/redline" class="list-item"><div class="num">✍️</div><div class="content"><h4>Redlining</h4><p>Corrige cláusulas defectuosas</p></div><div class="arrow">›</div></a>
+      <a href="#/practice/reading" class="list-item"><div class="num">📖</div><div class="content"><h4>Sala de Lectura</h4><p>Casos y contratos con preguntas</p></div><div class="arrow">›</div></a>
     `;
   }
-  else if (hash === '#/practice/ff') {
+  else if (hash === '#/practice/mock') {
     app.innerHTML = `
-      <a href="#/practice" style="color:var(--mute);font-size:14px;">← Volver</a>
-      <h3 style="margin:20px 0;">Falsos Amigos</h3>
-      ${DATA.falseFriends.map(f => `
-        <div class="card" onclick="this.querySelector('.answer').classList.toggle('hidden')">
-          <h4 style="color:var(--gold-light);">${f.en}</h4>
-          <p style="color:var(--bad);text-decoration:line-through;margin:8px 0;">❌ ${f.wrong}</p>
-          <div class="answer hidden">
-            <p style="color:var(--ok);font-weight:600;">✅ ${f.right}</p>
-            <p class="legal-text" style="font-size:14px;margin-top:8px;">"${f.ex}"</p>
-          </div>
+      <a href="#/practice" style="color:var(--mute);font-size:13px;">← Volver</a>
+      <h2 style="margin:16px 0;">Simulación de Juicio</h2>
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">Opening Statement</h4>
+        <p class="legal-text">"May it please the Court. My name is [Name], and I represent the Plaintiff in this matter. This case is about a breach of contract..."</p>
+        <div class="audio-controls">
+          <button class="say f1" onclick="speakKokoro('May it please the Court. My name is Counsel, and I represent the Plaintiff in this matter.', 'af_bella', this)">🔊 F1</button>
+          <button class="say m1" onclick="speakKokoro('May it please the Court. My name is Counsel, and I represent the Plaintiff in this matter.', 'am_adam', this)">🔊 M1</button>
+        </div>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">Cross-Examination</h4>
+        <p class="legal-text">"Isn't it true that you signed the contract on March 5th, 2027?"</p>
+        <div class="audio-controls">
+          <button class="say f2" onclick="speakKokoro('Isn\\'t it true that you signed the contract on March fifth, twenty twenty-seven?', 'af_nicole', this)">🔊 F2</button>
+          <button class="say m2" onclick="speakKokoro('Isn\\'t it true that you signed the contract on March fifth, twenty twenty-seven?', 'am_michael', this)">🔊 M2</button>
+        </div>
+      </div>
+    `;
+  }
+  else if (hash === '#/practice/redline') {
+    app.innerHTML = `
+      <a href="#/practice" style="color:var(--mute);font-size:13px;">← Volver</a>
+      <h2 style="margin:16px 0;">Redlining</h2>
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">Indemnidad Ilimitada</h4>
+        <p style="font-size:13px;color:var(--bad);text-decoration:line-through;">❌ "Supplier shall indemnify Customer for all losses of any kind."</p>
+        <p style="font-size:13px;color:var(--ok);font-weight:600;">✅ "Supplier shall indemnify Customer against third-party claims alleging IP infringement, subject to the Limitation of Liability section."</p>
+        <p style="font-size:12px;color:var(--mute);margin-top:8px;"><b>¿Por qué?</b> La cláusula original es ilimitada. Se debe limitar a reclamos de terceros por IP y sujetarla al tope de responsabilidad.</p>
+        <button class="say" style="margin-top:10px;" onclick="speakKokoro('Supplier shall indemnify Customer against third-party claims alleging IP infringement, subject to the Limitation of Liability section.', 'af_bella', this)">🎙️ Escuchar versión corregida</button>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">Esfuerzos Ambiguos</h4>
+        <p style="font-size:13px;color:var(--bad);text-decoration:line-through;">❌ "Seller shall use best efforts to deliver on time."</p>
+        <p style="font-size:13px;color:var(--ok);font-weight:600;">✅ "Seller shall use commercially reasonable efforts to deliver by the Delivery Date."</p>
+        <p style="font-size:12px;color:var(--mute);margin-top:8px;"><b>¿Por qué?</b> “Best efforts” no tiene un estándar uniforme. Se prefiere “commercially reasonable efforts”.</p>
+        <button class="say" style="margin-top:10px;" onclick="speakKokoro('Seller shall use commercially reasonable efforts to deliver by the Delivery Date.', 'am_michael', this)">🎙️ Escuchar versión corregida</button>
+      </div>
+    `;
+  }
+  else if (hash === '#/practice/reading') {
+    app.innerHTML = `
+      <a href="#/practice" style="color:var(--mute);font-size:13px;">← Volver</a>
+      <h2 style="margin:16px 0;">Sala de Lectura</h2>
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">Marbury v. Madison (1803)</h4>
+        <p class="legal-text">"In 1803, the U.S. Supreme Court decided Marbury v. Madison, establishing the principle of judicial review. Chief Justice John Marshall held that it is 'emphatically the province and duty of the judicial department to say what the law is.'"</p>
+        <div class="audio-controls">
+          <button class="say f1" onclick="speakKokoro('In 1803, the U.S. Supreme Court decided Marbury v. Madison, establishing the principle of judicial review.', 'af_bella', this)">🔊 F1</button>
+          <button class="say m2" onclick="speakKokoro('In 1803, the U.S. Supreme Court decided Marbury v. Madison, establishing the principle of judicial review.', 'am_michael', this)">🔊 M2</button>
+        </div>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--gold-light);margin-bottom:10px;">At-Will Employment</h4>
+        <p class="legal-text">"In the United States, most employment is 'at-will,' meaning either party may terminate the relationship at any time, with or without cause. However, at-will employment is subject to statutory exceptions: anti-discrimination laws, whistleblower protections, and public policy."</p>
+        <div class="audio-controls">
+          <button class="say f2" onclick="speakKokoro('In the United States, most employment is at-will, meaning either party may terminate the relationship at any time.', 'af_nicole', this)">🔊 F2</button>
+          <button class="say m1" onclick="speakKokoro('In the United States, most employment is at-will, meaning either party may terminate the relationship at any time.', 'am_adam', this)">🔊 M1</button>
+        </div>
+      </div>
+    `;
+  }
+  else if (hash === '#/dictionary') {
+    document.getElementById('nav-dictionary').classList.add('active');
+    const areas = [...new Set(DICTIONARY.map(d => d.area))];
+    app.innerHTML = `
+      <h2 style="margin-bottom:12px;">Diccionario Jurídico</h2>
+      <p style="font-size:12px;color:var(--mute);margin-bottom:12px;">${DICTIONARY.length} términos organizados por área.</p>
+      <input type="text" class="search-bar" placeholder="Buscar término..." onkeyup="filterDict(this.value)">
+      ${areas.map(area => `
+        <h4 style="color:var(--teal);margin:16px 0 8px;font-size:13px;">${area}</h4>
+        <div class="dict-area" data-area="${area}">
+          ${DICTIONARY.filter(d => d.area === area).map(d => `
+            <div class="card dict-item" style="padding:14px;">
+              <h4 style="color:var(--gold-light);font-size:15px;">${d.t}</h4>
+              <p style="font-size:12px;color:var(--text);margin:4px 0;"><b>${d.es}</b> — ${d.def}</p>
+              <div class="audio-controls" style="margin-top:6px;">
+                <button class="say f1" style="padding:6px;font-size:10px;" onclick="speakKokoro('${d.t}', 'af_bella', this)">F1</button>
+                <button class="say m1" style="padding:6px;font-size:10px;" onclick="speakKokoro('${d.t}', 'am_adam', this)">M1</button>
+                <button class="say tts" style="padding:6px;font-size:10px;" onclick="shareTTSMaker('${d.t}')">☁️</button>
+              </div>
+            </div>
+          `).join('')}
         </div>
       `).join('')}
-    `;
-  }
-  else if (hash === '#/practice/glossary') {
-    app.innerHTML = `
-      <a href="#/practice" style="color:var(--mute);font-size:14px;">← Volver</a>
-      <h3 style="margin:20px 0;">Glosario</h3>
-      <input type="text" class="search-bar" placeholder="Buscar término..." onkeyup="filterGlossary(this.value)">
-      <div id="glossary-list">
-        ${DATA.glossary.map(g => `
-          <div class="card glossary-item">
-            <h4 style="color:var(--gold-light);">${g.t}</h4>
-            <p style="font-size:14px;color:var(--text);margin:4px 0;"><b>${g.es}</b> — ${g.d}</p>
-          </div>
-        `).join('')}
-      </div>
     `;
   }
   window.scrollTo(0,0);
 }
 
-window.checkAnswer = function(btn, isCorrect, explanation, modId) {
-  const container = btn.parentElement;
-  container.querySelectorAll('.opt').forEach(b => b.disabled = true);
-  const tip = container.querySelector('.tip');
-  tip.classList.remove('hidden');
-  if (isCorrect) {
-    btn.classList.add('correct');
-    tip.innerHTML = `<b>✅ Correcto.</b> ${explanation}`;
-    updateXP(10);
-  } else {
-    btn.classList.add('wrong');
-    tip.innerHTML = `<b>❌ Incorrecto.</b> ${explanation}`;
-  }
-  markCompleted(modId);
-};
-
-window.filterGlossary = function(query) {
-  const items = document.querySelectorAll('.glossary-item');
+window.filterDict = function(query) {
+  const items = document.querySelectorAll('.dict-item');
   query = query.toLowerCase();
   items.forEach(item => {
     const text = item.innerText.toLowerCase();
